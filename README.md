@@ -9,7 +9,9 @@ Marketing site for [PermitArc](https://permitarc.com) — static HTML on GitHub 
 
 | Page | Status |
 |------|--------|
-| Home (`index.html`) | Draft live |
-| Pricing, Legal, FAQ, Contact | Coming |
+| Home (`index.html`) | Live |
+| Pricing (`pricing.html`) | Live |
+| Privacy, Terms, AI disclaimer | Live |
+| Stripe checkout, Download page | Coming |
 
 Built to match the PermitArc app color palette (dark hero, teal accent).
