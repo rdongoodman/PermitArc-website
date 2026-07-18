@@ -442,6 +442,142 @@ section h2 {
   color: var(--hint, #484f58);
 }
 
+/* Subpages */
+.page-hero {
+  color: var(--text-light);
+  padding: 2.75rem 1.25rem 2.5rem;
+  text-align: center;
+}
+
+.page-hero-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.page-hero h1 {
+  font-size: clamp(1.5rem, 3.5vw, 2.15rem);
+  margin: 0 0 0.75rem;
+  font-weight: 700;
+}
+
+.page-hero p {
+  margin: 0;
+  color: var(--text-body);
+  font-size: 1.05rem;
+}
+
+.page-content {
+  padding: 2.5rem 1.25rem 3.5rem;
+}
+
+.page-content .section-inner {
+  max-width: 720px;
+}
+
+/* Full pricing */
+.pricing-full .pricing-cards {
+  margin-bottom: 2rem;
+}
+
+.price-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  text-align: left;
+  font-size: 0.9rem;
+  color: #4a5568;
+}
+
+.price-card li {
+  padding: 0.35rem 0 0.35rem 1.25rem;
+  position: relative;
+}
+
+.price-card li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--accent-teal);
+  font-weight: 700;
+}
+
+.pricing-anchor {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.pricing-anchor h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+}
+
+.pricing-anchor p {
+  margin: 0;
+  color: #4a5568;
+}
+
+.pricing-cta {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.btn-disabled {
+  background: #30363d;
+  color: var(--text-muted);
+  cursor: default;
+  pointer-events: none;
+}
+
+/* Legal documents */
+.legal-doc {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 2rem;
+  font-size: 0.95rem;
+  color: #2d3748;
+}
+
+.legal-doc .legal-meta {
+  font-size: 0.85rem;
+  color: #718096;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.legal-doc h2 {
+  font-size: 1.05rem;
+  margin: 1.75rem 0 0.5rem;
+  color: var(--text-dark);
+}
+
+.legal-doc h2:first-of-type {
+  margin-top: 0;
+}
+
+.legal-doc p,
+.legal-doc li {
+  line-height: 1.65;
+}
+
+.legal-doc ul {
+  padding-left: 1.25rem;
+  margin: 0.5rem 0 1rem;
+}
+
+.legal-doc .draft-notice {
+  background: rgba(255, 166, 87, 0.12);
+  border: 1px solid var(--urgent);
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
 @media (max-width: 768px) {
   .hero-inner {
     grid-template-columns: 1fr;
@@ -455,5 +591,9 @@ section h2 {
   .nav {
     width: 100%;
     justify-content: center;
+  }
+
+  .legal-doc {
+    padding: 1.25rem;
   }
 }
