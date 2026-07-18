@@ -124,9 +124,37 @@ a:hover {
   color: var(--accent-teal);
 }
 
+/* App-matched canvas — premium_canvas_background.dart */
+.premium-canvas {
+  position: relative;
+  background: radial-gradient(ellipse 115% 100% at 50% -20%, #1e2024 0%, #0b0c0e 100%);
+  overflow: hidden;
+}
+
+.premium-canvas::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 255, 224, 0.07) 0.75px, transparent 0.75px),
+    linear-gradient(90deg, rgba(0, 255, 224, 0.07) 0.75px, transparent 0.75px);
+  background-size: 36px 36px;
+  mask-image: radial-gradient(ellipse 85% 85% at 50% 50%, black 40%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 85% 85% at 50% 50%, black 40%, transparent 100%);
+  pointer-events: none;
+}
+
+.premium-canvas > * {
+  position: relative;
+  z-index: 1;
+}
+
+.section-light {
+  background: var(--bg-light);
+}
+
 /* Hero */
 .hero {
-  background: var(--bg-dark);
   color: var(--text-light);
   padding: 3.5rem 1.25rem 4rem;
 }
@@ -244,7 +272,6 @@ section h2 {
 }
 
 .section-dark {
-  background: var(--bg-panel);
   color: var(--text-body);
 }
 
@@ -380,7 +407,6 @@ section h2 {
 
 /* Footer */
 .site-footer {
-  background: var(--bg-dark);
   color: var(--text-muted);
   padding: 2rem 1.25rem;
   font-size: 0.85rem;
