@@ -184,7 +184,14 @@ a:hover {
 .hero .scope {
   font-size: 0.95rem;
   color: var(--text-muted);
+  margin: 0 0 0.5rem;
+}
+
+.hero-tag {
+  font-size: 0.92rem;
+  color: var(--text-body);
   margin: 0 0 1.5rem;
+  line-height: 1.55;
 }
 
 .hero-cta {
@@ -281,6 +288,114 @@ section h2 {
 
 .section-dark .section-lead {
   color: var(--text-muted);
+}
+
+.section-divider {
+  border-top: 1px solid #e2e8f0;
+}
+
+/* Why PermitArc */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.why-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.why-card-accent {
+  border-color: var(--accent-teal);
+  box-shadow: 0 0 0 1px rgba(45, 212, 191, 0.35);
+}
+
+.why-card h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+}
+
+.why-card ul {
+  margin: 0;
+  padding-left: 1.15rem;
+  color: #4a5568;
+  font-size: 0.95rem;
+}
+
+.why-card li {
+  margin-bottom: 0.45rem;
+}
+
+.why-close {
+  margin: 0;
+  font-size: 0.98rem;
+  color: #4a5568;
+}
+
+/* Scope pillars */
+.scope-pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.scope-pillar {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.15rem;
+}
+
+.pillar-num {
+  display: inline-block;
+  width: 1.75rem;
+  height: 1.75rem;
+  line-height: 1.75rem;
+  text-align: center;
+  background: var(--accent-teal);
+  color: #0d1117;
+  font-weight: 700;
+  border-radius: 50%;
+  font-size: 0.85rem;
+  margin-bottom: 0.65rem;
+}
+
+.scope-pillar h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  color: var(--text-light);
+}
+
+.scope-pillar p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.track-subhead {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-light);
+  margin: 0 0 1rem;
+}
+
+.track-item-accent {
+  border-color: var(--accent-teal);
+  color: var(--accent-teal);
+  font-weight: 600;
+}
+
+.track-foot {
+  margin: 1.25rem 0 0;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.55;
 }
 
 /* Steps */
@@ -466,6 +581,12 @@ section h2 {
   font-size: 1.05rem;
 }
 
+.page-hero-scope {
+  margin-top: 0.85rem !important;
+  font-size: 0.95rem !important;
+  color: var(--text-muted) !important;
+}
+
 .page-content {
   padding: 2.5rem 1.25rem 3.5rem;
 }
@@ -517,6 +638,95 @@ section h2 {
 .pricing-anchor p {
   margin: 0;
   color: #4a5568;
+}
+
+.pricing-scope-note {
+  text-align: center;
+  margin: 0 0 1.75rem;
+  font-size: 0.98rem;
+  color: #4a5568;
+  line-height: 1.55;
+}
+
+.pricing-included {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.pricing-included h3 {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+}
+
+.included-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.included-col h4 {
+  margin: 0 0 0.65rem;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+.included-col ul {
+  margin: 0;
+  padding-left: 1.15rem;
+  color: #4a5568;
+  font-size: 0.92rem;
+}
+
+.included-col li {
+  margin-bottom: 0.4rem;
+}
+
+.included-note {
+  margin: 0.75rem 0 0;
+  font-size: 0.85rem;
+  color: #718096;
+}
+
+/* Feedback page */
+.feedback-panel {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.75rem;
+}
+
+.feedback-intro {
+  margin: 0 0 1.5rem;
+  color: #4a5568;
+  font-size: 1.02rem;
+}
+
+.feedback-panel h2 {
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem;
+}
+
+.feedback-list {
+  margin: 0 0 1.5rem;
+  padding-left: 1.25rem;
+  color: #4a5568;
+}
+
+.feedback-list li {
+  margin-bottom: 0.5rem;
+}
+
+.feedback-cta {
+  margin-bottom: 1.25rem;
+}
+
+.feedback-note {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #718096;
 }
 
 .pricing-cta {

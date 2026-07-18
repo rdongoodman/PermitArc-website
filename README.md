@@ -9,8 +9,9 @@ Marketing site for [PermitArc](https://permitarc.com) — static HTML on GitHub 
 
 | Page | Status |
 |------|--------|
-| Home (`index.html`) | Live |
-| Pricing (`pricing.html`) | Live |
+| Home (`index.html`) | Live — Phase 1 copy Jul 19 |
+| Pricing (`pricing.html`) | Live — included vs metered Jul 19 |
+| Feedback (`feedback.html`) | Live — mailto v1 |
 | Privacy, Terms, AI disclaimer | Live |
 | Stripe checkout, Download page | Coming |
 
