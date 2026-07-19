@@ -299,46 +299,118 @@ section h2 {
   border-top: 1px solid #e2e8f0;
 }
 
-/* Why PermitArc */
-.why-grid {
+/* Why PermitArc — compare (dark canvas) */
+.why-compare {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
-.why-card {
-  background: #fff;
-  border: 1px solid #e2e8f0;
+.why-col {
   border-radius: 12px;
-  padding: 1.25rem;
+  padding: 1.25rem 1.35rem;
 }
 
-.why-card-accent {
-  border-color: var(--accent-teal);
-  box-shadow: 0 0 0 1px rgba(45, 212, 191, 0.35);
+.why-col-muted {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
 }
 
-.why-card h3 {
-  margin: 0 0 0.75rem;
+.why-col-accent {
+  background: rgba(45, 212, 191, 0.08);
+  border: 1px solid rgba(45, 212, 191, 0.45);
+  box-shadow: 0 0 24px rgba(45, 212, 191, 0.08);
+}
+
+.why-col h3 {
+  margin: 0 0 1rem;
   font-size: 1rem;
+  color: var(--text-light);
 }
 
-.why-card ul {
+.why-list {
+  list-style: none;
   margin: 0;
-  padding-left: 1.15rem;
-  color: #4a5568;
-  font-size: 0.95rem;
+  padding: 0;
 }
 
-.why-card li {
-  margin-bottom: 0.45rem;
+.why-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  margin-bottom: 0.65rem;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: var(--text-body);
+}
+
+.why-list li:last-child {
+  margin-bottom: 0;
+}
+
+.why-icon {
+  flex-shrink: 0;
+  width: 1.25rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.why-no .why-icon {
+  color: var(--expired);
+}
+
+.why-yes .why-icon {
+  color: var(--accent-teal);
 }
 
 .why-close {
   margin: 0;
-  font-size: 0.98rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* Intelligence section — light band (alternates with dark canvas) */
+#ai.section-light .section-lead {
   color: #4a5568;
+}
+
+#ai.section-light h2 {
+  color: var(--text-dark);
+}
+
+#ai .ai-included-banner {
+  background: rgba(45, 212, 191, 0.12);
+  border-color: rgba(45, 212, 191, 0.35);
+  color: #2d3748;
+}
+
+#ai .ai-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+}
+
+#ai .ai-card h3 {
+  color: var(--text-dark);
+}
+
+#ai .ai-card p {
+  color: #4a5568;
+}
+
+#ai .ai-where {
+  color: #718096 !important;
+}
+
+#ai .ai-foot {
+  color: #718096;
+}
+
+#ai .ai-foot a {
+  color: var(--accent-blue);
 }
 
 /* Scope pillars */
@@ -461,8 +533,16 @@ section h2 {
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.ai-benefit strong {
-  color: var(--accent-teal);
+#ai .ai-benefit {
+  border-top-color: #e2e8f0;
+}
+
+#ai .ai-benefit strong {
+  color: #0d9488;
+}
+
+.section-dark .why-close {
+  color: var(--text-muted);
 }
 
 .ai-foot {
