@@ -253,6 +253,48 @@ a:hover {
   flex-wrap: wrap;
 }
 
+.hero-platform {
+  margin: 0 0 0.85rem;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.hero-platform strong {
+  color: var(--text-body);
+  font-weight: 600;
+}
+
+.hero-pillars {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0 0 1.35rem;
+}
+
+.hero-pillar-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(45, 212, 191, 0.12);
+  color: var(--accent-teal);
+  border: 1px solid rgba(45, 212, 191, 0.38);
+}
+
+.hero-pillars-note {
+  flex: 1 1 100%;
+  margin: 0.1rem 0 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
 /* Phone mock */
 .phone-mock {
   background: var(--bg-panel);
@@ -314,6 +356,15 @@ a:hover {
   border-radius: 8px;
   padding: 0.75rem;
   font-size: 0.85rem;
+  color: var(--text-body);
+}
+
+.mock-proactive {
+  background: rgba(88, 166, 255, 0.1);
+  border: 1px solid rgba(88, 166, 255, 0.35);
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-size: 0.8rem;
   color: var(--text-body);
 }
 
@@ -1105,6 +1156,14 @@ section h2 {
 
   .phone-mock {
     margin-inline: auto;
+  }
+
+  .hero-pillars {
+    justify-content: center;
+  }
+
+  .hero-pillars-note {
+    text-align: center;
   }
 
   .hero-cta {
