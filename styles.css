@@ -96,7 +96,14 @@ a:hover {
   }
 }
 
-.logo span {
+.logo-wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+}
+
+.logo-arc {
   color: var(--accent-teal);
 }
 
@@ -734,6 +741,42 @@ section h2 {
   margin: 0;
   font-size: 0.85rem;
   color: #718096;
+}
+
+.satisfaction-guarantee {
+  margin: 1.75rem auto 0;
+  max-width: 42rem;
+  padding: 1.15rem 1.35rem;
+  background: linear-gradient(135deg, rgba(45, 212, 191, 0.12), rgba(88, 166, 255, 0.08));
+  border: 1px solid rgba(45, 212, 191, 0.35);
+  border-radius: 0.65rem;
+  text-align: center;
+}
+
+.satisfaction-guarantee h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+  color: var(--text-dark);
+}
+
+.satisfaction-guarantee p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #4a5568;
+  line-height: 1.55;
+}
+
+.satisfaction-guarantee-dark {
+  background: rgba(45, 212, 191, 0.08);
+  border-color: rgba(45, 212, 191, 0.28);
+}
+
+.satisfaction-guarantee-dark h3 {
+  color: var(--text-light);
+}
+
+.satisfaction-guarantee-dark p {
+  color: var(--text-body);
 }
 
 .pricing-note {
