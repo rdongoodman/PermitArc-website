@@ -68,10 +68,32 @@ a:hover {
 }
 
 .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
   font-weight: 700;
   font-size: 1.25rem;
   color: var(--text-light);
   letter-spacing: -0.02em;
+}
+
+.logo-mark {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 6px rgba(45, 212, 191, 0.35));
+  animation: logo-radar-glow 3.2s ease-in-out infinite;
+}
+
+@keyframes logo-radar-glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 5px rgba(45, 212, 191, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 10px rgba(45, 212, 191, 0.55));
+  }
 }
 
 .logo span {
