@@ -13,6 +13,11 @@
   --expired: #ff7b72;
   --bg-light: #fafaf8;
   --text-dark: #1a1f2e;
+  /* Desktop uses full width; phones/tablets stack via grids + breakpoint below */
+  --layout-max: 1280px;
+  --layout-content: 1160px;
+  --layout-read: 760px;
+  --layout-gutter: clamp(1rem, 3vw, 2.5rem);
 }
 
 *,
@@ -52,9 +57,9 @@ a:hover {
 }
 
 .header-inner {
-  max-width: 1100px;
+  max-width: var(--layout-max);
   margin: 0 auto;
-  padding: 0.85rem 1.25rem;
+  padding: 0.85rem var(--layout-gutter);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -156,15 +161,15 @@ a:hover {
 /* Hero */
 .hero {
   color: var(--text-light);
-  padding: 3.5rem 1.25rem 4rem;
+  padding: 3.5rem var(--layout-gutter) 4rem;
 }
 
 .hero-inner {
-  max-width: 1100px;
+  max-width: var(--layout-max);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(1.5rem, 4vw, 3rem);
   align-items: center;
 }
 
@@ -258,11 +263,11 @@ a:hover {
 
 /* Sections */
 section {
-  padding: 3.5rem 1.25rem;
+  padding: 3.5rem var(--layout-gutter);
 }
 
 .section-inner {
-  max-width: 900px;
+  max-width: var(--layout-content);
   margin: 0 auto;
 }
 
@@ -400,7 +405,7 @@ section h2 {
 
 /* AI intelligence section */
 .section-inner-wide {
-  max-width: 1000px;
+  max-width: var(--layout-max);
 }
 
 .ai-included-banner {
@@ -558,6 +563,30 @@ section h2 {
   gap: 1rem;
 }
 
+.pricing-cards-compact {
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+.pricing-expand {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin: 1rem 0 1.75rem;
+  text-align: center;
+}
+
+.pricing-expand h4 {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+}
+
+.pricing-expand p {
+  margin: 0;
+  color: #4a5568;
+  font-size: 0.95rem;
+}
+
 .price-card {
   background: #fff;
   border: 1px solid #e2e8f0;
@@ -621,12 +650,12 @@ section h2 {
 /* Footer */
 .site-footer {
   color: var(--text-muted);
-  padding: 2rem 1.25rem;
+  padding: 2rem var(--layout-gutter);
   font-size: 0.85rem;
 }
 
 .footer-inner {
-  max-width: 1100px;
+  max-width: var(--layout-max);
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -649,7 +678,7 @@ section h2 {
 }
 
 .disclaimer {
-  max-width: 1100px;
+  max-width: var(--layout-max);
   margin: 1rem auto 0;
   font-size: 0.8rem;
   color: var(--hint, #484f58);
@@ -658,12 +687,12 @@ section h2 {
 /* Subpages */
 .page-hero {
   color: var(--text-light);
-  padding: 2.75rem 1.25rem 2.5rem;
+  padding: 2.75rem var(--layout-gutter) 2.5rem;
   text-align: center;
 }
 
 .page-hero-inner {
-  max-width: 720px;
+  max-width: var(--layout-content);
   margin: 0 auto;
 }
 
@@ -686,11 +715,15 @@ section h2 {
 }
 
 .page-content {
-  padding: 2.5rem 1.25rem 3.5rem;
+  padding: 2.5rem var(--layout-gutter) 3.5rem;
 }
 
 .page-content .section-inner {
-  max-width: 720px;
+  max-width: var(--layout-read);
+}
+
+.pricing-full .section-inner {
+  max-width: var(--layout-max);
 }
 
 /* Full pricing */
@@ -903,5 +936,9 @@ section h2 {
 
   .legal-doc {
     padding: 1.25rem;
+  }
+
+  .pricing-cards-compact {
+    grid-template-columns: 1fr;
   }
 }
