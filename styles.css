@@ -870,6 +870,135 @@ section h2 {
   color: #4a5568;
 }
 
+.section-lead-tight {
+  margin-bottom: 1.35rem;
+  max-width: 42rem;
+}
+
+.section-cta-row {
+  margin: 1.25rem 0 0;
+  text-align: center;
+}
+
+.section-cta-block {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+.section-cta-sub {
+  margin: 0.75rem 0 0;
+  font-size: 0.9rem;
+}
+
+.text-link-arrow {
+  font-weight: 600;
+  color: var(--accent-blue);
+  text-decoration: none;
+}
+
+.text-link-arrow:hover {
+  color: var(--accent-teal);
+  text-decoration: underline;
+}
+
+.pillar-teaser-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.pillar-teaser {
+  display: block;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.15rem 1.25rem;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+}
+
+.pillar-teaser:hover {
+  border-color: rgba(45, 212, 191, 0.55);
+  box-shadow: 0 4px 20px rgba(45, 212, 191, 0.12);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.pillar-teaser h3 {
+  margin: 0.5rem 0 0.35rem;
+  font-size: 1rem;
+  color: var(--text-dark);
+}
+
+.pillar-teaser p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: #4a5568;
+  line-height: 1.45;
+}
+
+.scope-pillars-compact .scope-pillar p {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+.scope-pillar a {
+  color: var(--accent-teal);
+  font-weight: 500;
+}
+
+.satisfaction-guarantee-compact {
+  margin-top: 1.5rem;
+  padding: 1.15rem 1.25rem;
+}
+
+.satisfaction-guarantee-compact p {
+  margin: 0;
+  font-size: 0.92rem;
+}
+
+.faq-accordion {
+  max-width: var(--layout-read);
+}
+
+.faq-details {
+  border-bottom: 1px solid #e2e8f0;
+  padding: 0.35rem 0;
+}
+
+.faq-details summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.75rem 0;
+  list-style: none;
+  color: var(--text-dark);
+}
+
+.faq-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-details summary::after {
+  content: "+";
+  float: right;
+  color: var(--accent-teal);
+  font-weight: 700;
+}
+
+.faq-details[open] summary::after {
+  content: "−";
+}
+
+.faq-details p {
+  margin: 0 0 1rem;
+  padding-right: 1.5rem;
+  font-size: 0.95rem;
+  color: #4a5568;
+  line-height: 1.55;
+}
+
 /* Footer */
 .site-footer {
   color: var(--text-muted);
