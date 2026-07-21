@@ -1583,6 +1583,91 @@ section h2 {
     justify-content: center;
   }
 
+  /* Mobile rhythm — one dark hero band, then light sections until footer */
+  .section-seam {
+    height: 14px;
+  }
+
+  .why-band.premium-canvas {
+    background: var(--bg-light);
+    color: var(--text-dark);
+  }
+
+  .why-band.premium-canvas::before {
+    display: none;
+  }
+
+  .why-band h2 {
+    color: var(--text-dark);
+  }
+
+  .why-band .section-lead {
+    color: #4a5568;
+  }
+
+  .why-band .why-col-muted {
+    background: #fff;
+    border-color: #e2e8f0;
+  }
+
+  .why-band .why-col-accent {
+    background: rgba(45, 212, 191, 0.1);
+    border-color: rgba(45, 212, 191, 0.45);
+    box-shadow: none;
+  }
+
+  .why-band .why-col h3 {
+    color: var(--text-dark);
+  }
+
+  .why-band .why-list li {
+    color: #4a5568;
+  }
+
+  #track.section-dark.premium-canvas {
+    background: var(--bg-light);
+    color: var(--text-dark);
+  }
+
+  #track.section-dark.premium-canvas::before {
+    display: none;
+  }
+
+  #track h2,
+  #track .track-subhead {
+    color: var(--text-dark);
+  }
+
+  #track .section-lead {
+    color: #4a5568;
+  }
+
+  #track .scope-pillar {
+    background: #fff;
+    border-color: #e2e8f0;
+  }
+
+  #track .scope-pillar h3 {
+    color: var(--text-dark);
+  }
+
+  #track .scope-pillar p {
+    color: #4a5568;
+  }
+
+  #track .track-item {
+    background: #fff;
+    border-color: #e2e8f0;
+    color: var(--text-dark);
+  }
+
+  #included.section-light,
+  #how.section-light,
+  #pricing.section-light,
+  #faq.section-light {
+    border-top: 1px solid #e2e8f0;
+  }
+
   .legal-doc {
     padding: 1.25rem;
   }
