@@ -1583,54 +1583,83 @@ section h2 {
     justify-content: center;
   }
 
-  /* Mobile rhythm — one dark hero band, then light sections until footer */
+  .legal-doc {
+    padding: 1.25rem;
+  }
+
+  .pricing-cards-compact {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Homepage only — phones + tablets. Desktop (1025px+) keeps original dark/light bands. */
+@media (max-width: 1024px) {
   .section-seam {
-    height: 14px;
-  }
-
-  .why-band.premium-canvas {
+    height: 18px;
     background: var(--bg-light);
-    color: var(--text-dark);
   }
 
-  .why-band.premium-canvas::before {
+  #why.why-band.premium-canvas {
+    background: #e4ebf2;
+    background-image: none;
+    color: var(--text-dark);
+    border-top: 4px solid var(--accent-teal);
+  }
+
+  #why.premium-canvas::before,
+  #track.premium-canvas::before {
     display: none;
   }
 
-  .why-band h2 {
+  #why h2 {
     color: var(--text-dark);
   }
 
-  .why-band .section-lead {
+  #why .section-lead {
     color: #4a5568;
   }
 
-  .why-band .why-col-muted {
+  #why .why-col-muted {
     background: #fff;
-    border-color: #e2e8f0;
+    border-color: #c5d0dc;
+    box-shadow: 0 2px 10px rgba(15, 23, 42, 0.06);
   }
 
-  .why-band .why-col-accent {
-    background: rgba(45, 212, 191, 0.1);
-    border-color: rgba(45, 212, 191, 0.45);
-    box-shadow: none;
+  #why .why-col-accent {
+    background: #fff;
+    border-color: rgba(45, 212, 191, 0.55);
+    box-shadow: 0 4px 16px rgba(45, 212, 191, 0.12);
   }
 
-  .why-band .why-col h3 {
+  #why .why-col h3 {
     color: var(--text-dark);
   }
 
-  .why-band .why-list li {
+  #why .why-list li {
     color: #4a5568;
+  }
+
+  #included.section-light {
+    background-color: #ffffff;
+    border-top: 1px solid #b8c5d4;
+  }
+
+  #how.section-light {
+    background-color: #d5dee8;
+    border-top: 4px solid #94a3b8;
+  }
+
+  #how .step {
+    background: #fff;
+    border-color: #c5d0dc;
+    box-shadow: 0 3px 14px rgba(15, 23, 42, 0.08);
   }
 
   #track.section-dark.premium-canvas {
-    background: var(--bg-light);
+    background: #f3f0ea;
+    background-image: none;
     color: var(--text-dark);
-  }
-
-  #track.section-dark.premium-canvas::before {
-    display: none;
+    border-top: 4px solid var(--accent-teal);
   }
 
   #track h2,
@@ -1644,7 +1673,8 @@ section h2 {
 
   #track .scope-pillar {
     background: #fff;
-    border-color: #e2e8f0;
+    border-color: #c5d0dc;
+    box-shadow: 0 2px 10px rgba(15, 23, 42, 0.06);
   }
 
   #track .scope-pillar h3 {
@@ -1655,25 +1685,61 @@ section h2 {
     color: #4a5568;
   }
 
+  #track .track-subhead {
+    margin-top: 2rem;
+    padding-top: 1.35rem;
+    border-top: 2px dashed #b8c5d4;
+  }
+
   #track .track-item {
     background: #fff;
-    border-color: #e2e8f0;
+    border-color: #c5d0dc;
     color: var(--text-dark);
+    box-shadow: 0 1px 6px rgba(15, 23, 42, 0.05);
   }
 
-  #included.section-light,
-  #how.section-light,
-  #pricing.section-light,
+  #pricing.section-light {
+    background-color: #ffffff;
+    border-top: 1px solid #b8c5d4;
+  }
+
   #faq.section-light {
-    border-top: 1px solid #e2e8f0;
+    background-color: #e4ebf2;
+    border-top: 4px solid #94a3b8;
   }
 
-  .legal-doc {
-    padding: 1.25rem;
+  #included h2,
+  #how h2,
+  #track h2,
+  #pricing h2,
+  #faq h2,
+  #why h2 {
+    position: relative;
+    padding-top: 0.15rem;
   }
 
-  .pricing-cards-compact {
-    grid-template-columns: 1fr;
+  #included h2::before,
+  #how h2::before,
+  #track h2::before,
+  #pricing h2::before,
+  #faq h2::before,
+  #why h2::before {
+    content: "";
+    display: block;
+    width: 2.75rem;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--accent-teal);
+    margin-bottom: 0.75rem;
+  }
+
+  #included .pillar-teaser,
+  #pricing .price-card {
+    box-shadow: 0 2px 12px rgba(15, 23, 42, 0.07);
+  }
+
+  .site-footer.premium-canvas {
+    border-top: 18px solid var(--bg-light);
   }
 }
 
