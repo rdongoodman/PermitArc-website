@@ -1387,11 +1387,19 @@ section h2 {
   margin-top: 2rem;
 }
 
-.btn-disabled {
-  background: #30363d;
-  color: var(--text-muted);
+.btn-disabled,
+.btn-coming-soon {
+  display: inline-block;
+  margin-top: 1rem;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  background: rgba(45, 212, 191, 0.12);
+  color: #0f766e;
+  border: 1.5px solid rgba(45, 212, 191, 0.55);
   cursor: default;
   pointer-events: none;
+  font-weight: 600;
 }
 
 /* Legal documents */
