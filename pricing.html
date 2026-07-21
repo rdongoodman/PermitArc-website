@@ -47,13 +47,10 @@
           <p class="amount">$39<span>/mo</span></p>
           <p>Best for one storefront</p>
           <ul>
-            <li>Document scan &amp; AI extraction</li>
-            <li>Expiration alerts (email, in-app, optional push)</li>
-            <li>Weekly Regulatory Patrol for your ZIP</li>
-            <li>Location-scoped AI chat</li>
-            <li>Proactive compliance review per storefront (when enabled in Intel Deck)</li>
-            <li>Corporate Vault for optional HQ documents</li>
-            <li>Compliance binder &amp; audit-ready export</li>
+            <li>Scan, extract &amp; track every permit</li>
+            <li>Expiration alerts + Weekly Patrol</li>
+            <li>AI chat &amp; proactive review</li>
+            <li>Corporate Vault &amp; audit export</li>
           </ul>
           <a href="https://buy.stripe.com/test_9B66oHcDQ2MB7GY6aMasg00" class="btn btn-primary pricing-subscribe">Subscribe — $39/mo</a>
         </div>
@@ -103,29 +100,38 @@
         </div>
       </div>
 
-      <div class="pricing-expand pricing-beyond-five" id="beyond-five">
-        <h4>Beyond 5 locations?</h4>
-        <p>Start with <strong>Portfolio</strong> — your first five storefronts are included at <strong>$139/mo</strong>. Type the <strong>total</strong> number of locations you need (6 or more). We add <strong>$20/mo</strong> for each location beyond five — one checkout, one subscription.</p>
+      <div class="pricing-beyond-teaser" id="beyond-five">
+        <p class="pricing-beyond-teaser-lead"><strong>Need 6 or more locations?</strong> $139/mo covers your first five, then $20/mo per extra storefront.</p>
+        <button type="button" class="btn btn-secondary beyond-five-toggle" id="beyond-five-toggle" aria-expanded="false" aria-controls="beyond-five-panel">Configure your plan</button>
+      </div>
+
+      <div class="pricing-expand pricing-beyond-panel" id="beyond-five-panel" hidden>
+        <div class="beyond-five-panel-head">
+          <h4>6+ locations</h4>
+          <button type="button" class="beyond-five-close" id="beyond-five-close" aria-label="Close">×</button>
+        </div>
+        <p class="beyond-five-panel-intro">Enter your <strong>total</strong> storefront count and app email — we’ll total it up and send you to secure checkout.</p>
 
         <div class="beyond-five-form">
-          <label class="beyond-five-label" for="total-locations">Total locations you want (6 or more)</label>
-          <input class="beyond-five-input" type="number" id="total-locations" min="6" max="100" step="1" inputmode="numeric" placeholder="e.g. 19" autocomplete="off">
-
-          <label class="beyond-five-label" for="checkout-email">PermitArc login email</label>
-          <input class="beyond-five-input" type="email" id="checkout-email" placeholder="Same email you use in the app" autocomplete="email">
+          <div class="beyond-five-fields">
+            <div class="beyond-five-field">
+              <label class="beyond-five-label" for="total-locations">Total locations</label>
+              <input class="beyond-five-input" type="number" id="total-locations" min="6" max="100" step="1" inputmode="numeric" placeholder="e.g. 19" autocomplete="off">
+            </div>
+            <div class="beyond-five-field">
+              <label class="beyond-five-label" for="checkout-email">App login email</label>
+              <input class="beyond-five-input" type="email" id="checkout-email" placeholder="Same as PermitArc login" autocomplete="email">
+            </div>
+          </div>
 
           <p class="beyond-five-quote" id="beyond-five-quote" hidden></p>
           <p class="beyond-five-error" id="beyond-five-error" hidden></p>
 
-          <button type="button" class="btn btn-primary pricing-subscribe beyond-five-btn" id="beyond-five-checkout" disabled>Subscribe</button>
-
-          <p class="beyond-five-footnote">Example: <strong>19 locations</strong> = $139 + (14 × $20) = <strong>$419/mo</strong>. Need more than 100? <a href="mailto:support@permitarc.com">Contact us</a>.</p>
+          <button type="button" class="btn btn-primary pricing-subscribe beyond-five-btn" id="beyond-five-checkout" disabled>Continue to checkout</button>
         </div>
       </div>
 
-      <p class="pricing-scope-note">Weekly Patrol, expiration tracking, and proactive review are <strong>included</strong> in every plan. Each storefront adds a <strong>full monthly AI allowance</strong> for chat, voice, and document scanning — two locations means <strong>twice</strong> the allowance, three means <strong>triple</strong>, and so on. Exact allowance details are shown at checkout and in our <a href="terms.html">Terms of Service</a>.</p>
-
-      <p class="pricing-scope-note"><strong>Before you pay:</strong> create your PermitArc account in the app first, then subscribe here with the <strong>same email</strong> you use to log in — that links your plan to your account automatically.</p>
+      <p class="pricing-scope-note">Patrol, expiration radar, and proactive review are <strong>included</strong> on every plan. Create your PermitArc account in the app first, then subscribe here with the <strong>same email</strong> — that links billing to your account.</p>
 
       <div id="included" class="pricing-included">
         <h3>Included vs interactive AI</h3>
@@ -147,7 +153,7 @@
               <li>AI voice input and read-aloud on supported devices</li>
               <li>AI document scanning and extraction on upload</li>
             </ul>
-            <p class="included-note">Allowance scales with your storefront count — every location on your plan adds another full monthly allowance (1 shop = one pool, 2 shops = double, 3 = triple, etc.). Most solo shops stay within one location's allowance. Optional prepaid top-ups roll forward while subscribed — details at checkout.</p>
+            <p class="included-note">Allowance scales with each storefront on your plan. Most solo shops stay within one location’s pool. Details in our <a href="terms.html">Terms</a>.</p>
           </div>
         </div>
       </div>
@@ -158,33 +164,17 @@
       </div>
 
       <div class="faq-item">
-        <h3>Does AI allowance grow when I add locations?</h3>
-        <p>Yes. Interactive AI — chat, voice, and document scanning — uses a <strong>monthly allowance that scales with each storefront</strong> on your plan. One location gets one allowance; two locations get double; three get triple; and so on. Patrol, expiration radar, and proactive review are included per location and do not draw from that allowance.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>What's included in every plan?</h3>
-        <p>Patrol, expiration radar, and proactive review are included with no extra charge. AI chat, AI voice, and AI document scanning use a <strong>monthly allowance that scales with each storefront</strong> on your plan — two locations get double; three get triple; and so on. Email, push, SMS, and Discord when you turn them on in Communication Profile. No per-alert nickel-and-diming on patrol or expiration warnings.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>Who is PermitArc for?</h3>
-        <p>We lead with restaurants because the pain is real — but nail salons, auto shops, cafés, and any brick-and-mortar with permits and licenses can use PermitArc. You pick your business type when you add a location.</p>
-      </div>
-
-      <div class="faq-item">
         <h3>What if I have more than five locations?</h3>
-        <p>Use <strong>Beyond 5 locations?</strong> on this page: type the <strong>total</strong> storefront count (e.g. 19). You pay <strong>$139/mo</strong> for the first five (Portfolio) plus <strong>$20/mo</strong> for each additional location — 19 locations = $419/mo before tax. Same features per storefront. Email <a href="mailto:support@permitarc.com">support@permitarc.com</a> for 100+ locations.</p>
+        <p>Click <strong>Configure your plan</strong> above. Type your total storefront count (e.g. 19) — first five at $139/mo, then $20/mo each extra. Need 100+? Email <a href="mailto:support@permitarc.com">support@permitarc.com</a>.</p>
       </div>
 
       <div class="faq-item">
-        <h3>Billing, guarantee &amp; cancellation</h3>
-        <p>Subscriptions are billed monthly through Stripe on our website when you subscribe — <strong>paid upfront from day one</strong> (not a free trial). <strong>14-Day Satisfaction Guarantee:</strong> cancel within 14 days for a refund of your subscription fee <strong>minus interactive AI usage</strong> consumed during that period, as shown on your Intel Deck meter. Used AI allowance is not restored or credited on refund. Weekly Patrol, expiration alerts, and proactive vault review are included and are <strong>not</strong> deducted from your refund. Cancel anytime after that from your account portal. Questions? <a href="mailto:support@permitarc.com">support@permitarc.com</a></p>
+        <h3>Billing &amp; cancellation</h3>
+        <p>Monthly billing through Stripe when you subscribe. <strong>14-day satisfaction guarantee</strong> — refund minus AI usage shown on your Intel Deck meter. Cancel anytime from your billing portal. <a href="mailto:support@permitarc.com">support@permitarc.com</a></p>
       </div>
 
       <div class="pricing-cta">
-        <p class="pricing-note">All five plans above use Stripe Checkout (test mode). Pay with card <strong>4242 4242 4242 4242</strong> to try — no real charge.</p>
-        <p class="pricing-note" style="margin-top: 1rem;">Questions? <a href="mailto:support@permitarc.com">support@permitarc.com</a></p>
+        <p class="pricing-note">Questions? <a href="mailto:support@permitarc.com">support@permitarc.com</a></p>
       </div>
     </div>
   </section>

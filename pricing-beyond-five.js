@@ -7,13 +7,16 @@
   var SUPABASE_ANON_KEY =
     "sb_publishable_0GcdXT5HzH4JZgDJ7n72Vw_rw4KFrMW";
 
+  var toggleBtn = document.getElementById("beyond-five-toggle");
+  var closeBtn = document.getElementById("beyond-five-close");
+  var panel = document.getElementById("beyond-five-panel");
   var totalInput = document.getElementById("total-locations");
   var emailInput = document.getElementById("checkout-email");
   var quoteEl = document.getElementById("beyond-five-quote");
   var errorEl = document.getElementById("beyond-five-error");
   var checkoutBtn = document.getElementById("beyond-five-checkout");
 
-  if (!totalInput || !quoteEl || !checkoutBtn) return;
+  if (!totalInput || !quoteEl || !checkoutBtn || !panel) return;
 
   function quote(total) {
     var extra = total - 5;
@@ -22,6 +25,19 @@
       extraMonthly: extra * ADDON_EACH,
       monthlyTotal: PORTFOLIO_BASE + extra * ADDON_EACH,
     };
+  }
+
+  function setPanelOpen(open) {
+    panel.hidden = !open;
+    if (toggleBtn) {
+      toggleBtn.setAttribute("aria-expanded", open ? "true" : "false");
+      toggleBtn.textContent = open ? "Hide configuration" : "Configure your plan";
+    }
+    if (open) {
+      window.setTimeout(function () {
+        totalInput.focus();
+      }, 50);
+    }
   }
 
   function setError(message) {
@@ -41,37 +57,34 @@
     if (!raw) {
       quoteEl.hidden = true;
       checkoutBtn.disabled = true;
-      checkoutBtn.textContent = "Subscribe";
+      checkoutBtn.textContent = "Continue to checkout";
       return;
     }
 
     var total = parseInt(raw, 10);
     if (!Number.isFinite(total) || String(total) !== raw) {
       quoteEl.hidden = false;
-      quoteEl.innerHTML =
-        "Enter a whole number — no decimals.";
+      quoteEl.textContent = "Enter a whole number.";
       checkoutBtn.disabled = true;
-      checkoutBtn.textContent = "Subscribe";
+      checkoutBtn.textContent = "Continue to checkout";
       return;
     }
 
     if (total <= 5) {
       quoteEl.hidden = false;
       quoteEl.innerHTML =
-        "For <strong>1–5 locations</strong>, use the plan cards above. This section is for <strong>6 or more</strong>.";
+        "For 1–5 locations, use a plan card above.";
       checkoutBtn.disabled = true;
-      checkoutBtn.textContent = "Subscribe";
+      checkoutBtn.textContent = "Continue to checkout";
       return;
     }
 
     if (total > MAX_TOTAL) {
       quoteEl.hidden = false;
       quoteEl.innerHTML =
-        "For more than <strong>" +
-        MAX_TOTAL +
-        "</strong> locations, email <a href=\"mailto:support@permitarc.com\">support@permitarc.com</a>.";
+        "For 100+ locations, email <a href=\"mailto:support@permitarc.com\">support@permitarc.com</a>.";
       checkoutBtn.disabled = true;
-      checkoutBtn.textContent = "Subscribe";
+      checkoutBtn.textContent = "Continue to checkout";
       return;
     }
 
@@ -80,19 +93,17 @@
     quoteEl.innerHTML =
       "<strong>" +
       total +
-      " locations</strong> → $" +
-      PORTFOLIO_BASE +
-      "/mo (first 5) + $" +
-      q.extraMonthly +
-      "/mo (" +
-      q.extra +
-      " extra × $" +
-      ADDON_EACH +
-      ") = <strong>$" +
+      " locations</strong> · <strong>$" +
       q.monthlyTotal +
-      "/mo</strong><br><span class=\"beyond-five-tax-note\">Sales tax may apply at checkout based on your billing address.</span>";
+      "/mo</strong> ($" +
+      PORTFOLIO_BASE +
+      " + " +
+      q.extra +
+      " × $" +
+      ADDON_EACH +
+      ")";
     checkoutBtn.disabled = false;
-    checkoutBtn.textContent = "Subscribe — $" + q.monthlyTotal + "/mo";
+    checkoutBtn.textContent = "Continue to checkout — $" + q.monthlyTotal + "/mo";
   }
 
   async function startCheckout() {
@@ -105,7 +116,7 @@
 
     var email = emailInput ? emailInput.value.trim() : "";
     if (!email) {
-      setError("Enter the same email you use to log in to PermitArc.");
+      setError("Enter the same email you use in the PermitArc app.");
       return;
     }
 
@@ -132,7 +143,8 @@
       var data = await res.json();
       if (!res.ok || !data.url) {
         throw new Error(
-          data.error || "Could not start checkout. Try again or email support@permitarc.com.",
+          data.error ||
+            "Could not start checkout. Try again or email support@permitarc.com.",
         );
       }
       window.location.href = data.url;
@@ -140,6 +152,22 @@
       setError(err.message || String(err));
       refreshQuote();
     }
+  }
+
+  if (toggleBtn) {
+    toggleBtn.addEventListener("click", function () {
+      setPanelOpen(panel.hidden);
+    });
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener("click", function () {
+      setPanelOpen(false);
+    });
+  }
+
+  if (window.location.hash === "#beyond-five") {
+    setPanelOpen(true);
   }
 
   totalInput.addEventListener("input", refreshQuote);

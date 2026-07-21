@@ -774,6 +774,93 @@ section h2 {
   font-size: 0.95rem;
 }
 
+.pricing-beyond-teaser {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem 1.25rem;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin: 0 0 1.75rem;
+  text-align: center;
+}
+
+.pricing-beyond-teaser-lead {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #4a5568;
+  max-width: 36rem;
+  line-height: 1.45;
+}
+
+.beyond-five-toggle {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.pricing-beyond-panel {
+  text-align: left;
+  max-width: 28rem;
+  margin: -0.75rem auto 1.75rem;
+}
+
+.beyond-five-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.35rem;
+}
+
+.beyond-five-panel-head h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.beyond-five-close {
+  border: none;
+  background: transparent;
+  color: #718096;
+  font-size: 1.5rem;
+  line-height: 1;
+  padding: 0.15rem 0.35rem;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.beyond-five-close:hover {
+  color: #2d3748;
+  background: #edf2f7;
+}
+
+.beyond-five-panel-intro {
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+  color: #4a5568;
+  line-height: 1.45;
+}
+
+.beyond-five-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+@media (max-width: 540px) {
+  .beyond-five-fields {
+    grid-template-columns: 1fr;
+  }
+}
+
+.beyond-five-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
 .pricing-beyond-five {
   text-align: left;
   max-width: 32rem;
@@ -838,15 +925,7 @@ section h2 {
 
 .beyond-five-btn {
   max-width: none;
-  margin-top: 0.35rem;
-}
-
-.beyond-five-footnote {
-  margin: 0.5rem 0 0;
-  font-size: 0.85rem;
-  color: #718096;
-  text-align: center;
-  line-height: 1.45;
+  margin-top: 0.5rem;
 }
 
 .price-card {
@@ -855,6 +934,9 @@ section h2 {
   border-radius: 12px;
   padding: 1.5rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .price-card.featured {
@@ -1173,6 +1255,11 @@ section h2 {
   text-align: left;
   font-size: 0.9rem;
   color: #4a5568;
+  flex: 1 1 auto;
+}
+
+.price-card .pricing-subscribe {
+  margin-top: auto;
 }
 
 .price-card li {
