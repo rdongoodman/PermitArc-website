@@ -1603,7 +1603,7 @@ section h2 {
     background: #e4ebf2;
     background-image: none;
     color: var(--text-dark);
-    border-top: 4px solid var(--accent-teal);
+    border-top: 1px solid #b8c5d4;
   }
 
   #why.premium-canvas::before,
@@ -1646,7 +1646,7 @@ section h2 {
 
   #how.section-light {
     background-color: #d5dee8;
-    border-top: 4px solid #94a3b8;
+    border-top: 1px solid #b8c5d4;
   }
 
   #how .step {
@@ -1659,7 +1659,7 @@ section h2 {
     background: #f3f0ea;
     background-image: none;
     color: var(--text-dark);
-    border-top: 4px solid var(--accent-teal);
+    border-top: 1px solid #b8c5d4;
   }
 
   #track h2,
@@ -1705,36 +1705,48 @@ section h2 {
 
   #faq.section-light {
     background-color: #e4ebf2;
-    border-top: 4px solid #94a3b8;
+    border-top: 1px solid #b8c5d4;
   }
 
-  #included h2,
-  #how h2,
-  #track h2,
-  #pricing h2,
-  #faq h2,
-  #why h2 {
+  /* Hero: headline area stays dark; phone mock sits on a slightly lighter band */
+  .hero.premium-canvas {
+    background: radial-gradient(ellipse 115% 100% at 50% -20%, #1e2024 0%, #0b0c0e 52%, #1f242c 100%);
+  }
+
+  .hero.premium-canvas::before {
+    opacity: 0.55;
+  }
+
+  .hero-phone-col {
     position: relative;
-    padding-top: 0.15rem;
+    margin-top: 0.75rem;
+    padding-top: 1.35rem;
   }
 
-  #included h2::before,
-  #how h2::before,
-  #track h2::before,
-  #pricing h2::before,
-  #faq h2::before,
-  #why h2::before {
+  .hero-phone-col::before {
     content: "";
-    display: block;
-    width: 2.75rem;
-    height: 4px;
-    border-radius: 2px;
-    background: var(--accent-teal);
-    margin-bottom: 0.75rem;
+    position: absolute;
+    left: calc(-1 * var(--layout-gutter));
+    right: calc(-1 * var(--layout-gutter));
+    top: 0;
+    bottom: -0.5rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    pointer-events: none;
+  }
+
+  .hero-phone-col > * {
+    position: relative;
+    z-index: 1;
   }
 
   #included .pillar-teaser,
   #pricing .price-card {
+    box-shadow: 0 2px 12px rgba(15, 23, 42, 0.07);
+  }
+
+  #pricing .price-card.featured {
+    border-color: #c5d0dc;
     box-shadow: 0 2px 12px rgba(15, 23, 42, 0.07);
   }
 
