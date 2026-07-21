@@ -103,11 +103,24 @@
         </div>
       </div>
 
-      <div class="pricing-expand">
-        <h4>Need more than five locations?</h4>
-        <p>Start with <strong>Portfolio ($139/mo)</strong> above, then add <strong>$20/month</strong> for each additional storefront beyond five — same features per location.</p>
-        <a href="https://buy.stripe.com/test_dRm8wPcDQ5YNaTadDeasg05" class="btn btn-primary pricing-subscribe" style="max-width: 22rem;">Add locations — $20/mo each</a>
-        <p style="margin-top: 0.75rem; font-size: 0.9rem; color: #718096;">Use the quantity selector at checkout for how many extra locations you need (6th, 7th, 8th…). <a href="mailto:support@permitarc.com">Contact us</a> for larger rollouts.</p>
+      <div class="pricing-expand pricing-beyond-five" id="beyond-five">
+        <h4>Beyond 5 locations?</h4>
+        <p>Start with <strong>Portfolio</strong> — your first five storefronts are included at <strong>$139/mo</strong>. Type the <strong>total</strong> number of locations you need (6 or more). We add <strong>$20/mo</strong> for each location beyond five — one checkout, one subscription.</p>
+
+        <div class="beyond-five-form">
+          <label class="beyond-five-label" for="total-locations">Total locations you want (6 or more)</label>
+          <input class="beyond-five-input" type="number" id="total-locations" min="6" max="100" step="1" inputmode="numeric" placeholder="e.g. 19" autocomplete="off">
+
+          <label class="beyond-five-label" for="checkout-email">PermitArc login email</label>
+          <input class="beyond-five-input" type="email" id="checkout-email" placeholder="Same email you use in the app" autocomplete="email">
+
+          <p class="beyond-five-quote" id="beyond-five-quote" hidden></p>
+          <p class="beyond-five-error" id="beyond-five-error" hidden></p>
+
+          <button type="button" class="btn btn-primary pricing-subscribe beyond-five-btn" id="beyond-five-checkout" disabled>Subscribe</button>
+
+          <p class="beyond-five-footnote">Example: <strong>19 locations</strong> = $139 + (14 × $20) = <strong>$419/mo</strong>. Need more than 100? <a href="mailto:support@permitarc.com">Contact us</a>.</p>
+        </div>
       </div>
 
       <p class="pricing-scope-note">Weekly Patrol, expiration tracking, and proactive review are <strong>included</strong> in every plan. Each storefront adds a <strong>full monthly AI allowance</strong> for chat, voice, and document scanning — two locations means <strong>twice</strong> the allowance, three means <strong>triple</strong>, and so on. Exact allowance details are shown at checkout and in our <a href="terms.html">Terms of Service</a>.</p>
@@ -161,7 +174,7 @@
 
       <div class="faq-item">
         <h3>What if I have more than five locations?</h3>
-        <p>Plans cover up to five storefronts at the Portfolio tier ($139/mo). Each additional location is <strong>$20/month</strong> — same per-location features: patrol, expiration radar, proactive review, and included AI allowance. Email <a href="mailto:support@permitarc.com">support@permitarc.com</a> for larger rollouts.</p>
+        <p>Use <strong>Beyond 5 locations?</strong> on this page: type the <strong>total</strong> storefront count (e.g. 19). You pay <strong>$139/mo</strong> for the first five (Portfolio) plus <strong>$20/mo</strong> for each additional location — 19 locations = $419/mo before tax. Same features per storefront. Email <a href="mailto:support@permitarc.com">support@permitarc.com</a> for 100+ locations.</p>
       </div>
 
       <div class="faq-item">
@@ -190,5 +203,6 @@
     </div>
     <p class="disclaimer">AI-generated summaries — verify with official sources. Not legal advice.</p>
   </footer>
+  <script src="pricing-beyond-five.js"></script>
 </body>
 </html>

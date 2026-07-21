@@ -774,6 +774,81 @@ section h2 {
   font-size: 0.95rem;
 }
 
+.pricing-beyond-five {
+  text-align: left;
+  max-width: 32rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pricing-beyond-five > p:first-of-type {
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.beyond-five-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.beyond-five-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.beyond-five-input {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.beyond-five-input:focus {
+  outline: 2px solid rgba(45, 212, 191, 0.45);
+  border-color: var(--accent-teal);
+}
+
+.beyond-five-quote {
+  margin: 0.35rem 0 0;
+  padding: 0.85rem 1rem;
+  background: #f7fafc;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  color: #2d3748;
+  line-height: 1.5;
+}
+
+.beyond-five-tax-note {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.82rem;
+  color: #718096;
+}
+
+.beyond-five-error {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--expired);
+}
+
+.beyond-five-btn {
+  max-width: none;
+  margin-top: 0.35rem;
+}
+
+.beyond-five-footnote {
+  margin: 0.5rem 0 0;
+  font-size: 0.85rem;
+  color: #718096;
+  text-align: center;
+  line-height: 1.45;
+}
+
 .price-card {
   background: #fff;
   border: 1px solid #e2e8f0;
