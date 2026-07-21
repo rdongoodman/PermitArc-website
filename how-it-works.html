@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="PermitArc quick guide — alerts, Intel Deck, toggles, and how uploading documents makes AI smarter.">
+  <title>How to Use PermitArc | Quick Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .guide-steps { display: grid; gap: 1.25rem; margin-top: 2rem; }
+    @media (min-width: 768px) { .guide-steps { grid-template-columns: repeat(3, 1fr); } }
+    .guide-step {
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem 1.35rem;
+    }
+    .guide-step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.75rem;
+      height: 1.75rem;
+      border-radius: 999px;
+      background: rgba(45, 212, 191, 0.15);
+      color: var(--accent-teal);
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-bottom: 0.65rem;
+    }
+    .guide-step h3 { margin: 0 0 0.5rem; font-size: 1.05rem; }
+    .guide-step p { margin: 0; color: var(--text-body); font-size: 0.92rem; line-height: 1.55; }
+    .pillar-row { display: grid; gap: 1rem; margin-top: 1.5rem; }
+    @media (min-width: 768px) { .pillar-row { grid-template-columns: repeat(3, 1fr); } }
+    .pillar-card {
+      border-radius: 12px;
+      padding: 1.15rem 1.25rem;
+      border: 1px solid var(--border);
+      background: var(--bg-panel);
+    }
+    .pillar-card h3 { margin: 0.35rem 0 0.5rem; font-size: 1rem; }
+    .pillar-card p { margin: 0; font-size: 0.88rem; line-height: 1.5; color: var(--text-body); }
+    .badge-patrol { background: rgba(45, 212, 191, 0.15); color: var(--accent-teal); }
+    .badge-proactive { background: rgba(188, 140, 255, 0.15); color: #bc8cff; }
+    .badge-radar { background: rgba(255, 166, 87, 0.15); color: var(--urgent); }
+    .vault-callout {
+      margin-top: 2rem;
+      padding: 1.35rem 1.5rem;
+      border-radius: 12px;
+      border: 1px solid rgba(45, 212, 191, 0.35);
+      background: linear-gradient(135deg, rgba(45, 212, 191, 0.08), rgba(88, 166, 255, 0.06));
+    }
+    .vault-callout h3 { margin: 0 0 0.5rem; }
+    .vault-callout p { margin: 0; color: var(--text-body); line-height: 1.55; }
+    .toggle-table { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.9rem; }
+    .toggle-table th, .toggle-table td {
+      text-align: left;
+      padding: 0.65rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .toggle-table th { color: var(--text-muted); font-weight: 600; }
+    .faq-compact { max-width: 42rem; }
+    .faq-compact details {
+      border-bottom: 1px solid var(--border);
+      padding: 0.85rem 0;
+    }
+    .faq-compact summary { cursor: pointer; font-weight: 600; color: var(--text-light); }
+    .faq-compact p { margin: 0.5rem 0 0; color: var(--text-body); font-size: 0.9rem; line-height: 1.55; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo"><img src="assets/shield_logo.png" alt="" class="logo-mark" width="32" height="32"><span class="logo-wordmark">Permit<span class="logo-arc">Arc</span></span></a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+      </button>
+      <nav class="nav" id="site-nav">
+        <a href="index.html#why">Why PermitArc</a>
+        <a href="intelligence.html">What's included</a>
+        <a href="how-it-works.html" aria-current="page">Quick guide</a>
+        <a href="index.html#track">What we track</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="download.html">Download</a>
+        <a href="feedback.html">Feedback</a>
+      </nav>
+      <a href="pricing.html" class="btn btn-primary">See pricing</a>
+    </div>
+  </header>
+
+  <section class="page-hero premium-canvas">
+    <div class="page-hero-inner">
+      <h1>Quick guide — where to go in the app</h1>
+      <p>PermitArc stays out of your way. This page is the map: what each alert means, where to read it, and how uploads make AI smarter over time.</p>
+      <p class="page-hero-scope"><strong>~5 min read.</strong> Bookmark this page for your team.</p>
+    </div>
+  </section>
+
+  <section class="section-light page-content">
+    <div class="section-inner section-inner-wide">
+      <h2>Start here (first week)</h2>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <span class="guide-step-num">1</span>
+          <h3>Add a location</h3>
+          <p>Pick business type, address, and ZIP. Patrol and proactive review use that scope — not generic national checklists.</p>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step-num">2</span>
+          <h3>Scan your permits</h3>
+          <p>Camera or PDF. AI pulls expiration dates so Expiration Radar can warn you at 30, 15, and 5 days.</p>
+        </div>
+        <div class="guide-step">
+          <span class="guide-step-num">3</span>
+          <h3>Open Intel Deck</h3>
+          <p>Patrol updates, proactive suggestions, and your communication toggles live here. Check it once a week.</p>
+        </div>
+      </div>
+
+      <div class="vault-callout">
+        <h3>Upload more → smarter AI → fewer repeat nags</h3>
+        <p>The more licenses, insurance certificates, and permits you store for each shop, the better Proactive Compliance understands what's already on file. A thin vault gets more &ldquo;you may be missing&hellip;&rdquo; suggestions. A complete vault gets quieter, sharper reviews — and the same suggestion won't spam you week after week once you've addressed it or uploaded the document.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-dark page-content premium-canvas">
+    <div class="section-inner section-inner-wide">
+      <h2>Three kinds of alerts (don't mix them up)</h2>
+      <div class="pillar-row">
+        <div class="pillar-card">
+          <span class="badge badge-patrol">Weekly Patrol</span>
+          <h3>Law &amp; rule changes</h3>
+          <p><strong>Where:</strong> Intel Deck → Patrol Updates · Dashboard Alerts section.<br><strong>Not</strong> on the map strip.<br>Official-source scan for your ZIP + business type each week.</p>
+        </div>
+        <div class="pillar-card">
+          <span class="badge badge-proactive">Proactive</span>
+          <h3>Vault gap suggestions</h3>
+          <p><strong>Where:</strong> Intel Deck → Proactive Updates · purple strips on Dashboard map (optional dismiss with X).<br>Soft suggestions from documents you've uploaded — not legal accusations.</p>
+        </div>
+        <div class="pillar-card">
+          <span class="badge badge-radar">Expiration Radar</span>
+          <h3>Deadlines on file</h3>
+          <p><strong>Where:</strong> Dashboard · red/amber compliance metrics.<br>Based on expiration dates AI extracted from your scans — not guesses.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-light page-content">
+    <div class="section-inner section-inner-wide">
+      <h2>Communication Profile (email, push, Discord)</h2>
+      <p class="page-hero-scope">Intel Deck → open Communication Profile. Same toggles control Patrol, Proactive, and Expiration Radar outbound alerts.</p>
+      <table class="toggle-table">
+        <thead>
+          <tr><th>Toggle</th><th>What it does</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>In-app (Intel Deck)</strong></td><td>Always on — your compliance inbox inside the app.</td></tr>
+          <tr><td><strong>Email</strong></td><td>HTML brief to the address you saved. Recommended ON.</td></tr>
+          <tr><td><strong>Device push</strong></td><td>Phone pop-up when the app is closed. Optional — you choose.</td></tr>
+          <tr><td><strong>Discord</strong></td><td>Webhook for power users. Optional.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section-dark page-content premium-canvas">
+    <div class="section-inner section-inner-wide">
+      <h2>Reading alerts (important)</h2>
+      <div class="guide-steps">
+        <div class="guide-step">
+          <h3>Hide on map ≠ read</h3>
+          <p>Tapping <strong>X</strong> on a proactive map strip hides it until you open the full brief in Intel Deck. Your unread badge stays until you read there.</p>
+        </div>
+        <div class="guide-step">
+          <h3>View full brief</h3>
+          <p>In Patrol or Proactive lists, tap <strong>View full brief</strong> to read and mark an item read. Scrolling past a row does not count as reading.</p>
+        </div>
+        <div class="guide-step">
+          <h3>Mark all read</h3>
+          <p>The ✓ icon in an inbox clears everything at once if you're caught up.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-light page-content">
+    <div class="section-inner section-inner-wide faq-compact">
+      <h2>Quick FAQ</h2>
+      <details>
+        <summary>Why did I get email but no push?</summary>
+        <p>Push must be ON in Communication Profile and your phone must allow notifications for PermitArc. Email and in-app still work if push is off.</p>
+      </details>
+      <details>
+        <summary>Why no proactive suggestion this week?</summary>
+        <p>Quiet weeks are normal when your vault hasn't changed or nothing new applies to your business type and area. Patrol can also be quiet when no official changes appear.</p>
+      </details>
+      <details>
+        <summary>Will it keep telling me about the same grease trap / food handler cert?</summary>
+        <p>Once you upload the document or we've already suggested the same item, Proactive suppresses repeats. Fill the vault and suggestions drop sharply.</p>
+      </details>
+      <details>
+        <summary>Is this legal advice?</summary>
+        <p>No. PermitArc summarizes your documents and public sources. Verify with officials before you rely on any date or requirement.</p>
+      </details>
+      <p style="margin-top: 2rem;"><a href="intelligence.html">What's included vs AI allowance →</a> · <a href="pricing.html">Pricing →</a> · <a href="index.html">← Back to home</a></p>
+    </div>
+  </section>
+
+  <footer class="site-footer premium-canvas">
+    <div class="footer-inner">
+      <p>&copy; 2026 PermitArc LLC</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="how-it-works.html">Quick guide</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="download.html">Download</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="mailto:support@permitarc.com">support@permitarc.com</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+  </footer>
+  <script src="site-nav.js" defer></script>
+</body>
+</html>
