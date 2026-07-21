@@ -810,6 +810,14 @@ section h2 {
   color: #718096;
 }
 
+.pricing-subscribe {
+  display: inline-block;
+  margin-top: 1.25rem;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
 .satisfaction-guarantee {
   margin: 1.75rem auto 0;
   max-width: 42rem;
