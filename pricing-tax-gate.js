@@ -9,11 +9,7 @@
   var ack = document.getElementById('tax-gate-ack');
   if (!gate || !select || !window.PermitArcSalesTax) return;
 
-  gate.hidden = false;
-
-  var links = document.querySelectorAll(
-    'a.stripe-checkout-link, button.stripe-checkout-link, a.pricing-subscribe, button.pricing-subscribe'
-  );
+  var links = document.querySelectorAll('a.stripe-checkout-link');
   links.forEach(function (el) {
     el.dataset.permitarcHref = el.getAttribute('href') || '';
     if (el.tagName === 'A') {

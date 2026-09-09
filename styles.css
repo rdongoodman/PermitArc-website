@@ -1030,24 +1030,59 @@ section h2 {
   box-sizing: border-box;
 }
 
-.pricing-tax-note {
+.pricing-tax-callout {
   margin: 0 0 1.25rem;
+  padding: 1rem 1.15rem;
+  border-radius: 0.65rem;
+  border: 1px solid #5eead4;
+  background: #ecfdf5;
   font-size: 0.92rem;
   line-height: 1.55;
-  color: #4a5568;
+  color: #1e293b;
 }
 
-.pricing-tax-note a {
-  font-weight: 600;
-  white-space: nowrap;
+.pricing-tax-callout a {
+  font-weight: 700;
+  color: #0369a1;
 }
 
 .tax-gate {
   margin: 0 0 1.75rem;
   padding: 1.15rem 1.25rem;
   border-radius: 0.65rem;
-  border: 1px solid rgba(45, 212, 191, 0.28);
-  background: rgba(45, 212, 191, 0.06);
+  border: 1px solid #94a3b8;
+  background: #f8fafc;
+}
+
+.tax-gate-title {
+  margin: 0 0 0.45rem;
+  font-size: 1.05rem;
+  color: #0f172a;
+}
+
+.tax-gate-intro {
+  margin: 0 0 0.85rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #475569;
+}
+
+.tax-gate-intro a {
+  font-weight: 600;
+  color: #0369a1;
+}
+
+.price-card-tax-hint {
+  margin: 0.65rem 0 0;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: #64748b;
+  text-align: center;
+}
+
+.price-card-tax-hint a {
+  font-weight: 600;
+  color: #0369a1;
 }
 
 .tax-gate-label {
