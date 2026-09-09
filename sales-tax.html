@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="How PermitArc handles U.S. sales tax on subscriptions — what is included in listed prices and when tax may apply at checkout or on renewals.">
+  <title>Sales Tax | PermitArc</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .tax-summary {
+      margin-top: 1.5rem;
+      padding: 1.25rem 1.35rem;
+      border-radius: 12px;
+      border: 1px solid rgba(45, 212, 191, 0.35);
+      background: linear-gradient(135deg, rgba(45, 212, 191, 0.08), rgba(88, 166, 255, 0.06));
+    }
+    .tax-summary p { margin: 0 0 0.75rem; line-height: 1.6; color: var(--text-body); }
+    .tax-summary p:last-child { margin-bottom: 0; }
+    .tax-legend { display: flex; flex-wrap: wrap; gap: 0.65rem; margin: 1.25rem 0 1rem; }
+    .tax-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.35rem 0.65rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+    }
+    .tax-badge-active { background: rgba(45, 212, 191, 0.15); color: var(--accent-teal); }
+    .tax-badge-future { background: rgba(255, 166, 87, 0.15); color: var(--urgent); }
+    .tax-badge-none { background: rgba(140, 160, 180, 0.12); color: var(--text-muted); }
+    .tax-table-wrap { overflow-x: auto; margin-top: 1rem; }
+    .tax-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      min-width: 640px;
+    }
+    .tax-table th, .tax-table td {
+      text-align: left;
+      padding: 0.65rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .tax-table th { color: var(--text-muted); font-weight: 600; }
+    .tax-table td:first-child { font-weight: 600; color: var(--text-light); white-space: nowrap; }
+    .tax-faq details {
+      border-bottom: 1px solid var(--border);
+      padding: 0.85rem 0;
+    }
+    .tax-faq summary { cursor: pointer; font-weight: 600; color: var(--text-light); }
+    .tax-faq p { margin: 0.5rem 0 0; color: var(--text-body); font-size: 0.9rem; line-height: 1.55; }
+    .tax-updated { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo"><img src="assets/shield_logo.png" alt="" class="logo-mark" width="32" height="32"><span class="logo-wordmark">Permit<span class="logo-arc">Arc</span></span></a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+      </button>
+      <nav class="nav" id="site-nav">
+        <a href="index.html#why">Why PermitArc</a>
+        <a href="intelligence.html">What's included</a>
+        <a href="how-it-works.html">Quick guide</a>
+        <a href="index.html#track">What we track</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="sales-tax.html" aria-current="page">Sales tax</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="download.html">Download</a>
+        <a href="feedback.html">Feedback</a>
+      </nav>
+      <a href="pricing.html" class="btn btn-primary">See pricing</a>
+    </div>
+  </header>
+
+  <section class="page-hero premium-canvas">
+    <div class="page-hero-inner">
+      <h1>Sales tax on PermitArc subscriptions</h1>
+      <p>Listed monthly and annual prices <strong>exclude</strong> sales tax unless tax is shown at checkout. This page explains when tax applies and how registration by state affects your total.</p>
+      <p class="page-hero-scope"><strong>Not tax advice.</strong> Rules vary by state and change over time. Last updated September 2026.</p>
+    </div>
+  </section>
+
+  <section class="section-light page-content">
+    <div class="section-inner section-inner-wide">
+      <div class="tax-summary">
+        <p><strong>How checkout works:</strong> When you subscribe, Stripe Checkout shows your subscription price and, where required, <strong>sales tax added on top</strong> based on your billing address. You approve the full total before you pay.</p>
+        <p><strong>Launch phase:</strong> PermitArc registers for sales tax <strong>state by state</strong> as required. <strong>Texas</strong> is registered first (our business home state). Other states are added when we are legally required to collect there. Until we register in your state, checkout may show <strong>no sales tax line</strong> even if your state taxes SaaS in general.</p>
+        <p><strong>Future renewals:</strong> If we register in your state after you subscribe, <strong>applicable sales tax may be added to future renewals</strong>. We update this page when a state moves from &ldquo;may apply later&rdquo; to &ldquo;tax at checkout.&rdquo;</p>
+      </div>
+
+      <div class="tax-legend" aria-label="Status legend">
+        <span class="tax-badge tax-badge-active">Tax at checkout</span>
+        <span class="tax-badge tax-badge-future">May apply on a future renewal</span>
+        <span class="tax-badge tax-badge-none">No SaaS sales tax / not applicable</span>
+      </div>
+
+      <h2>Status by state</h2>
+      <p class="tax-updated">PermitArc is B2B software (SaaS). Some states tax business software subscriptions; others do not. Combined state + local rates vary by city and county.</p>
+
+      <div class="tax-table-wrap">
+        <table class="tax-table">
+          <thead>
+            <tr>
+              <th>State</th>
+              <th>PermitArc status</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody id="tax-state-rows"></tbody>
+        </table>
+      </div>
+
+      <h2 style="margin-top: 2.5rem;">Common questions</h2>
+      <div class="tax-faq">
+        <details open>
+          <summary>Why isn&rsquo;t tax on my checkout today?</summary>
+          <p>We only collect sales tax in states where PermitArc is <strong>registered</strong> with the tax authority. During launch we register gradually. If your state is listed as &ldquo;may apply on a future renewal,&rdquo; tax is not collected until we complete registration there.</p>
+        </details>
+        <details>
+          <summary>Will my price go up later?</summary>
+          <p>Your <strong>subscription tier price</strong> (for example $39/mo Solo) stays as subscribed unless you change plans. <strong>Sales tax is separate</strong> and may appear on checkout or on a later renewal when we register in your state. Tax is a pass-through to your state &mdash; not a PermitArc price increase.</p>
+        </details>
+        <details>
+          <summary>How will I know when tax starts in my state?</summary>
+          <p>We update this page and may email account holders before tax applies to a renewal. At checkout, Stripe always shows the full total before payment.</p>
+        </details>
+        <details>
+          <summary>What about annual billing?</summary>
+          <p>Same rules: listed annual prices exclude tax unless shown at checkout. Tax may apply to the renewal charge when we are registered in your state.</p>
+        </details>
+        <details>
+          <summary>Questions?</summary>
+          <p>Email <a href="mailto:support@permitarc.com">support@permitarc.com</a>. For official rules, contact your state tax agency or a qualified tax professional.</p>
+        </details>
+      </div>
+
+      <p style="margin-top: 2rem;"><a href="pricing.html">← Back to pricing</a> · <a href="terms.html">Terms of Service</a></p>
+    </div>
+  </section>
+
+  <footer class="site-footer premium-canvas">
+    <div class="footer-inner">
+      <p>&copy; 2026 PermitArc LLC</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="download.html">Download</a>
+        <a href="mailto:support@permitarc.com">support@permitarc.com</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="sales-tax.html">Sales tax</a>
+      </div>
+    </div>
+  </footer>
+  <script src="site-nav.js" defer></script>
+  <script src="sales-tax-data.js"></script>
+  <script>
+    (function renderTaxTable() {
+      var tbody = document.getElementById('tax-state-rows');
+      if (!tbody || !window.PermitArcSalesTax) return;
+      var rows = window.PermitArcSalesTax.states.map(function (row) {
+        var badgeClass = row.status === 'active' ? 'tax-badge-active'
+          : row.status === 'future' ? 'tax-badge-future' : 'tax-badge-none';
+        var label = row.status === 'active' ? 'Tax at checkout'
+          : row.status === 'future' ? 'May apply on a future renewal'
+          : row.status === 'no_state_tax' ? 'No state sales tax'
+          : 'No SaaS sales tax (2026)';
+        return '<tr><td>' + row.name + '</td><td><span class="tax-badge ' + badgeClass + '">' + label + '</span></td><td>' + row.note + '</td></tr>';
+      });
+      tbody.innerHTML = rows.join('');
+    })();
+  </script>
+</body>
+</html>

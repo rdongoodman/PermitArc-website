@@ -25,6 +25,7 @@
         <a href="how-it-works.html">Quick guide</a>
         <a href="index.html#track">What we track</a>
         <a href="pricing.html">Pricing</a>
+        <a href="sales-tax.html">Sales tax</a>
         <a href="index.html#faq">FAQ</a>
         <a href="download.html">Download</a>
         <a href="feedback.html">Feedback</a>
@@ -47,6 +48,20 @@
 
   <section id="plans" class="section-light page-content pricing-full">
     <div class="section-inner">
+      <p class="pricing-tax-note">Subscription prices shown exclude sales tax. Applicable sales tax is added at checkout based on your billing address. <a href="sales-tax.html">Sales tax &amp; your state →</a></p>
+
+      <div id="permitarc-tax-gate" class="tax-gate" hidden>
+        <label class="tax-gate-label" for="billing-state">Your billing state</label>
+        <select id="billing-state" class="tax-gate-select" aria-describedby="tax-gate-message">
+          <option value="">Select state (recommended)</option>
+        </select>
+        <p id="tax-gate-message" class="tax-gate-message"></p>
+        <label id="tax-gate-ack-wrap" class="tax-gate-ack" hidden>
+          <input type="checkbox" id="tax-gate-ack">
+          <span>I have read the <a href="sales-tax.html" target="_blank" rel="noopener">Sales tax page</a> and understand that applicable sales tax may be added at checkout or on a future renewal.</span>
+        </label>
+      </div>
+
       <div class="pricing-cards">
         <div class="price-card featured">
           <h3>Solo — 1 location</h3>
@@ -58,7 +73,7 @@
             <li>AI chat &amp; proactive review</li>
             <li>Corporate Vault &amp; audit export</li>
           </ul>
-          <a href="https://buy.stripe.com/test_9B66oHcDQ2MB7GY6aMasg00" class="btn btn-primary pricing-subscribe">Subscribe — $39/mo</a>
+          <a href="https://buy.stripe.com/test_9B66oHcDQ2MB7GY6aMasg00" class="btn btn-primary pricing-subscribe stripe-checkout-link">Subscribe — $39/mo</a>
         </div>
         <div class="price-card">
           <h3>Operator — 2 locations</h3>
@@ -70,7 +85,7 @@
             <li>Patrol scoped to each ZIP + business type</li>
             <li>One login, two shops</li>
           </ul>
-          <a href="https://buy.stripe.com/test_dRm28r7jwfzn5yQfLmasg01" class="btn btn-primary pricing-subscribe">Subscribe — $69/mo</a>
+          <a href="https://buy.stripe.com/test_dRm28r7jwfzn5yQfLmasg01" class="btn btn-primary pricing-subscribe stripe-checkout-link">Subscribe — $69/mo</a>
         </div>
         <div class="price-card">
           <h3>Multi — 3 locations</h3>
@@ -80,7 +95,7 @@
             <li>Everything in Operator, third location included</li>
             <li>Best value for small multi-unit operators</li>
           </ul>
-          <a href="https://buy.stripe.com/test_4gMeVd47kaf3d1i9mYasg02" class="btn btn-primary pricing-subscribe">Subscribe — $95/mo</a>
+          <a href="https://buy.stripe.com/test_4gMeVd47kaf3d1i9mYasg02" class="btn btn-primary pricing-subscribe stripe-checkout-link">Subscribe — $95/mo</a>
         </div>
         <div class="price-card">
           <h3>Growth — 4 locations</h3>
@@ -91,7 +106,7 @@
             <li>Patrol and radar per ZIP + business type</li>
             <li>One login, four storefronts</li>
           </ul>
-          <a href="https://buy.stripe.com/test_9B69AT1Zcbj7f9qgPqasg03" class="btn btn-primary pricing-subscribe">Subscribe — $119/mo</a>
+          <a href="https://buy.stripe.com/test_9B69AT1Zcbj7f9qgPqasg03" class="btn btn-primary pricing-subscribe stripe-checkout-link">Subscribe — $119/mo</a>
         </div>
         <div class="price-card">
           <h3>Portfolio — 5 locations</h3>
@@ -102,7 +117,7 @@
             <li>One login, five storefronts</li>
             <li>Built for regional operators</li>
           </ul>
-          <a href="https://buy.stripe.com/test_bJe6oH1Zcbj74uM6aMasg04" class="btn btn-primary pricing-subscribe">Subscribe — $139/mo</a>
+          <a href="https://buy.stripe.com/test_bJe6oH1Zcbj74uM6aMasg04" class="btn btn-primary pricing-subscribe stripe-checkout-link">Subscribe — $139/mo</a>
         </div>
       </div>
 
@@ -195,10 +210,13 @@
         <a href="mailto:support@permitarc.com">support@permitarc.com</a>
         <a href="privacy.html">Privacy</a>
         <a href="terms.html">Terms</a>
+        <a href="sales-tax.html">Sales tax</a>
       </div>
     </div>
   </footer>
   <script src="site-nav.js" defer></script>
+  <script src="sales-tax-data.js"></script>
+  <script src="pricing-tax-gate.js"></script>
   <script src="pricing-beyond-five.js"></script>
 </body>
 </html>

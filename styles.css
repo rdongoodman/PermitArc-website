@@ -1030,6 +1030,74 @@ section h2 {
   box-sizing: border-box;
 }
 
+.pricing-tax-note {
+  margin: 0 0 1.25rem;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: #4a5568;
+}
+
+.pricing-tax-note a {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.tax-gate {
+  margin: 0 0 1.75rem;
+  padding: 1.15rem 1.25rem;
+  border-radius: 0.65rem;
+  border: 1px solid rgba(45, 212, 191, 0.28);
+  background: rgba(45, 212, 191, 0.06);
+}
+
+.tax-gate-label {
+  display: block;
+  margin-bottom: 0.45rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.tax-gate-select {
+  width: 100%;
+  max-width: 22rem;
+  padding: 0.55rem 0.65rem;
+  border-radius: 0.45rem;
+  border: 1px solid #cbd5e0;
+  font: inherit;
+  background: #fff;
+}
+
+.tax-gate-message {
+  margin: 0.75rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: #4a5568;
+}
+
+.tax-gate-ack {
+  display: flex;
+  gap: 0.55rem;
+  align-items: flex-start;
+  margin-top: 0.85rem;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: #4a5568;
+  cursor: pointer;
+}
+
+.tax-gate-ack input {
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.pricing-subscribe.is-gated,
+.stripe-checkout-link.is-gated {
+  opacity: 0.55;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
 .satisfaction-guarantee {
   margin: 1.75rem auto 0;
   max-width: 42rem;
