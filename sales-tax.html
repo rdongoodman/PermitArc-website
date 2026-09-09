@@ -10,51 +10,107 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
+    /* Light section — dark text only (do not use dark-theme --text-light / --text-body here). */
+    .tax-page-content h2 {
+      color: #1a1f2e;
+      margin-top: 0;
+    }
     .tax-summary {
       margin-top: 1.5rem;
       padding: 1.25rem 1.35rem;
       border-radius: 12px;
-      border: 1px solid rgba(45, 212, 191, 0.35);
-      background: linear-gradient(135deg, rgba(45, 212, 191, 0.08), rgba(88, 166, 255, 0.06));
+      border: 1px solid #5eead4;
+      background: #ecfdf5;
     }
-    .tax-summary p { margin: 0 0 0.75rem; line-height: 1.6; color: var(--text-body); }
+    .tax-summary p {
+      margin: 0 0 0.75rem;
+      line-height: 1.65;
+      color: #1e293b;
+      font-size: 0.95rem;
+    }
+    .tax-summary p strong { color: #0f172a; }
     .tax-summary p:last-child { margin-bottom: 0; }
     .tax-legend { display: flex; flex-wrap: wrap; gap: 0.65rem; margin: 1.25rem 0 1rem; }
     .tax-badge {
       display: inline-flex;
       align-items: center;
       gap: 0.35rem;
-      font-size: 0.78rem;
-      font-weight: 600;
-      padding: 0.35rem 0.65rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.4rem 0.7rem;
       border-radius: 999px;
-      border: 1px solid var(--border);
+      border: 1px solid transparent;
+      line-height: 1.3;
     }
-    .tax-badge-active { background: rgba(45, 212, 191, 0.15); color: var(--accent-teal); }
-    .tax-badge-future { background: rgba(255, 166, 87, 0.15); color: var(--urgent); }
-    .tax-badge-none { background: rgba(140, 160, 180, 0.12); color: var(--text-muted); }
+    .tax-badge-active {
+      background: #ccfbf1;
+      color: #115e59;
+      border-color: #5eead4;
+    }
+    .tax-badge-future {
+      background: #ffedd5;
+      color: #9a3412;
+      border-color: #fdba74;
+    }
+    .tax-badge-none {
+      background: #f3f4f6;
+      color: #374151;
+      border-color: #d1d5db;
+    }
     .tax-table-wrap { overflow-x: auto; margin-top: 1rem; }
     .tax-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 0.88rem;
+      font-size: 0.9rem;
       min-width: 640px;
     }
     .tax-table th, .tax-table td {
       text-align: left;
-      padding: 0.65rem 0.75rem;
-      border-bottom: 1px solid var(--border);
+      padding: 0.7rem 0.75rem;
+      border-bottom: 1px solid #d1d5db;
       vertical-align: top;
     }
-    .tax-table th { color: var(--text-muted); font-weight: 600; }
-    .tax-table td:first-child { font-weight: 600; color: var(--text-light); white-space: nowrap; }
+    .tax-table th {
+      color: #374151;
+      font-weight: 700;
+      background: #f9fafb;
+    }
+    .tax-table td { color: #374151; line-height: 1.5; }
+    .tax-table td:first-child {
+      font-weight: 700;
+      color: #0f172a;
+      white-space: nowrap;
+    }
     .tax-faq details {
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid #d1d5db;
       padding: 0.85rem 0;
     }
-    .tax-faq summary { cursor: pointer; font-weight: 600; color: var(--text-light); }
-    .tax-faq p { margin: 0.5rem 0 0; color: var(--text-body); font-size: 0.9rem; line-height: 1.55; }
-    .tax-updated { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem; }
+    .tax-faq summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: #1a1f2e;
+      font-size: 0.95rem;
+    }
+    .tax-faq p {
+      margin: 0.5rem 0 0;
+      color: #374151;
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+    .tax-updated {
+      font-size: 0.9rem;
+      color: #4b5563;
+      margin-top: 0.5rem;
+      line-height: 1.55;
+    }
+    .tax-page-content .tax-footer-links {
+      margin-top: 2rem;
+      font-size: 0.95rem;
+    }
+    .tax-page-content .tax-footer-links a {
+      color: #0369a1;
+      font-weight: 600;
+    }
   </style>
 </head>
 <body>
@@ -89,7 +145,7 @@
     </div>
   </section>
 
-  <section class="section-light page-content">
+  <section class="section-light page-content tax-page-content">
     <div class="section-inner section-inner-wide">
       <div class="tax-summary">
         <p><strong>How checkout works:</strong> When you subscribe, Stripe Checkout shows your subscription price and, where required, <strong>sales tax added on top</strong> based on your billing address. You approve the full total before you pay.</p>
@@ -143,7 +199,7 @@
         </details>
       </div>
 
-      <p style="margin-top: 2rem;"><a href="pricing.html">← Back to pricing</a> · <a href="terms.html">Terms of Service</a></p>
+      <p class="tax-footer-links"><a href="pricing.html">← Back to pricing</a> · <a href="terms.html">Terms of Service</a></p>
     </div>
   </section>
 

@@ -147,7 +147,8 @@
             "Could not start checkout. Try again or email support@permitarc.com.",
         );
       }
-      window.location.href = data.url;
+      window.open(data.url, "_blank", "noopener,noreferrer");
+      refreshQuote();
     } catch (err) {
       setError(err.message || String(err));
       refreshQuote();

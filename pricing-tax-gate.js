@@ -16,7 +16,11 @@
   );
   links.forEach(function (el) {
     el.dataset.permitarcHref = el.getAttribute('href') || '';
-    if (el.tagName === 'A') el.removeAttribute('href');
+    if (el.tagName === 'A') {
+      el.removeAttribute('href');
+      el.setAttribute('target', '_blank');
+      el.setAttribute('rel', 'noopener noreferrer');
+    }
     el.setAttribute('aria-disabled', 'true');
     el.classList.add('is-gated');
   });
@@ -33,7 +37,11 @@
   function setLinksEnabled(enabled) {
     links.forEach(function (el) {
       if (enabled && el.dataset.permitarcHref) {
-        if (el.tagName === 'A') el.setAttribute('href', el.dataset.permitarcHref);
+        if (el.tagName === 'A') {
+          el.setAttribute('href', el.dataset.permitarcHref);
+          el.setAttribute('target', '_blank');
+          el.setAttribute('rel', 'noopener noreferrer');
+        }
         el.removeAttribute('aria-disabled');
         el.classList.remove('is-gated');
       } else {
