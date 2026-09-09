@@ -49,10 +49,15 @@
   function popupCopy(row) {
     if (row.status === 'active') {
       return {
-        summary: 'Sales tax for ' + row.name + ': about 6–8% at checkout today.',
+        summary: 'Sales tax for ' + row.name + ': about 6–8% at checkout today (varies by ZIP).',
         detail:
-          'Added on top of your plan price (for example $39/mo plus tax). Stripe shows your exact total before you pay.',
-        ack: 'I understand sales tax will be added at checkout for ' + row.name + '.',
+          'Added on top of your plan price (for example $39/mo plus tax). The exact rate depends on your billing ZIP in ' +
+          row.name +
+          ' — state tax plus city, county, and other local taxes differ by area. Stripe shows your full total before you pay.',
+        ack:
+          'I understand sales tax at checkout for ' +
+          row.name +
+          ' depends on my billing ZIP and will be shown on Stripe before I pay.',
       };
     }
     if (row.status === 'future') {
@@ -60,11 +65,11 @@
         summary: 'Sales tax for ' + row.name + ': $0 on your checkout total today.',
         detail:
           row.name +
-          ' may require tax on software subscriptions. When PermitArc finishes registration there, tax may apply — often within the next few months or on your next renewal.',
+          ' may require tax on software subscriptions. When PermitArc registers there, the rate will depend on your billing ZIP — state, city, county, and local rules vary by address (not one flat rate for the whole state). Not charged today; may apply on a future renewal.',
         ack:
-          'I understand sales tax is $0 today but may apply on a future renewal in ' +
+          'I understand sales tax is $0 today but may apply later in ' +
           row.name +
-          '.',
+          ', based on my billing ZIP when PermitArc is registered there.',
       };
     }
     return {
