@@ -1133,6 +1133,10 @@ body.tax-modal-open {
   color: #475569;
 }
 
+.tax-modal-reassurance[hidden] {
+  display: none !important;
+}
+
 .tax-modal-more {
   margin: 0 0 1rem;
   font-size: 0.85rem;

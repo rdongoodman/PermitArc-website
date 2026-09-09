@@ -20,9 +20,6 @@
   var beyondBtn = document.getElementById('beyond-five-checkout');
   var unlocked = false;
 
-  var REASSURANCE =
-    'Not every state has sales tax on checkout yet — PermitArc is registering state by state. If tax is not on your total today, it may appear on a future renewal, often within the next few months. You always approve the full amount on Stripe before you pay.';
-
   try {
     localStorage.removeItem('permitarc_tax_ack_v1');
     localStorage.removeItem('permitarc_tax_ack_v2');
@@ -49,36 +46,29 @@
   function popupCopy(row) {
     if (row.status === 'active') {
       return {
-        summary: 'Sales tax for ' + row.name + ': about 6–8% at checkout today (varies by ZIP).',
+        summary: 'About 6–8% sales tax at checkout today — exact rate depends on your ZIP.',
         detail:
-          'Added on top of your plan price (for example $39/mo plus tax). The exact rate depends on your billing ZIP in ' +
-          row.name +
-          ' — state tax plus city, county, and other local taxes differ by area. Stripe shows your full total before you pay.',
-        ack:
-          'I understand sales tax at checkout for ' +
-          row.name +
-          ' depends on my billing ZIP and will be shown on Stripe before I pay.',
+          'Added on top of your plan price. Stripe uses your billing address and shows the full total before you pay.',
+        reassurance: '',
+        ack: 'I understand sales tax for ' + row.name + ' will appear at checkout.',
       };
     }
     if (row.status === 'future') {
       return {
-        summary: 'Sales tax for ' + row.name + ': $0 on your checkout total today.',
+        summary: 'Sales tax is $0 at checkout today.',
         detail:
+          'When PermitArc registers in ' +
           row.name +
-          ' may require tax on software subscriptions. When PermitArc registers there, the rate will depend on your billing ZIP — state, city, county, and local rules vary by address (not one flat rate for the whole state). Not charged today; may apply on a future renewal.',
-        ack:
-          'I understand sales tax is $0 today but may apply later in ' +
-          row.name +
-          ', based on my billing ZIP when PermitArc is registered there.',
+          ', tax may apply on a later renewal. The rate would depend on your billing ZIP.',
+        reassurance: '',
+        ack: 'I understand tax is $0 today and may apply later in ' + row.name + '.',
       };
     }
     return {
-      summary: 'Sales tax for ' + row.name + ': $0 (no state sales tax on this product).',
-      detail:
-        'Your listed plan price is what you pay at Stripe checkout for PermitArc in ' +
-        row.name +
-        ' (2026).',
-      ack: 'I understand sales tax is $0 for PermitArc in ' + row.name + '.',
+      summary: 'Sales tax is $0 for this product in ' + row.name + '.',
+      detail: 'Your listed plan price is what you pay at checkout.',
+      reassurance: '',
+      ack: 'I understand sales tax is $0 in ' + row.name + '.',
     };
   }
 
@@ -100,7 +90,8 @@
     modalTitle.textContent = row.name + ' — sales tax';
     modalSummary.textContent = copy.summary;
     modalDetail.textContent = copy.detail;
-    modalReassurance.textContent = REASSURANCE;
+    modalReassurance.textContent = copy.reassurance || '';
+    modalReassurance.hidden = !copy.reassurance;
     modalAckLabel.textContent = copy.ack;
     modalAck.checked = false;
     modal.hidden = false;
