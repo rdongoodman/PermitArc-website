@@ -54,14 +54,23 @@
       };
     }
     if (row.status === 'future') {
+      var rate = row.rateHint || '6–8%';
       return {
-        summary: 'Sales tax is $0 at checkout today.',
+        summary:
+          'Sales tax is $0 at checkout today. If it applies later: about ' +
+          rate +
+          ' (varies by ZIP).',
         detail:
           'When PermitArc registers in ' +
           row.name +
-          ', tax may apply on a later renewal. The rate would depend on your billing ZIP.',
+          ', tax may apply on a later renewal. Stripe uses your billing address and shows the full total before you pay.',
         reassurance: '',
-        ack: 'I understand tax is $0 today and may apply later in ' + row.name + '.',
+        ack:
+          'I understand tax is $0 today and may apply later in ' +
+          row.name +
+          ' (about ' +
+          rate +
+          ', varies by ZIP).',
       };
     }
     return {
