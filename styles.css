@@ -1030,20 +1030,44 @@ section h2 {
   box-sizing: border-box;
 }
 
-.pricing-tax-callout {
-  margin: 0 0 1.25rem;
-  padding: 1rem 1.15rem;
-  border-radius: 0.65rem;
-  border: 1px solid #5eead4;
-  background: #ecfdf5;
-  font-size: 0.92rem;
-  line-height: 1.55;
-  color: #1e293b;
+.pricing-tax-callout-prominent {
+  margin: 0 0 1.35rem;
+  padding: 1.15rem 1.25rem;
+  border-radius: 0.75rem;
+  border: 2px solid #2dd4bf;
+  background: linear-gradient(135deg, #ccfbf1 0%, #ecfeff 100%);
+  box-shadow: 0 0 0 1px rgba(45, 212, 191, 0.25);
 }
 
-.pricing-tax-callout a {
+.pricing-tax-callout-label {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #0f766e;
+}
+
+.pricing-tax-callout-body {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #0f172a;
+}
+
+.pricing-tax-callout-link {
+  display: inline-block;
+  padding: 0.45rem 0.85rem;
+  border-radius: 0.45rem;
+  background: #0f766e;
+  color: #fff !important;
   font-weight: 700;
-  color: #0369a1;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.pricing-tax-callout-link:hover {
+  background: #115e59;
 }
 
 .tax-gate {
@@ -1103,11 +1127,65 @@ section h2 {
   background: #fff;
 }
 
-.tax-gate-message {
-  margin: 0.75rem 0 0;
-  font-size: 0.9rem;
+.tax-gate-result {
+  margin-top: 1rem;
+  padding: 0.95rem 1rem;
+  border-radius: 0.55rem;
+  border: 2px solid transparent;
+}
+
+.tax-gate-result-badge {
+  margin: 0 0 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.tax-gate-result-text {
+  margin: 0;
+  font-size: 0.95rem;
   line-height: 1.55;
-  color: #4a5568;
+  font-weight: 500;
+}
+
+.tax-gate-result-active {
+  background: #ecfdf5;
+  border-color: #14b8a6;
+}
+
+.tax-gate-result-active .tax-gate-result-badge {
+  color: #0f766e;
+}
+
+.tax-gate-result-active .tax-gate-result-text {
+  color: #134e4a;
+}
+
+.tax-gate-result-future {
+  background: #fff7ed;
+  border-color: #fb923c;
+}
+
+.tax-gate-result-future .tax-gate-result-badge {
+  color: #c2410c;
+}
+
+.tax-gate-result-future .tax-gate-result-text {
+  color: #7c2d12;
+}
+
+.tax-gate-result-none {
+  background: #f8fafc;
+  border-color: #64748b;
+}
+
+.tax-gate-result-none .tax-gate-result-badge {
+  color: #334155;
+}
+
+.tax-gate-result-none .tax-gate-result-text {
+  color: #1e293b;
 }
 
 .tax-gate-ack {

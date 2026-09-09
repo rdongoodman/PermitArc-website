@@ -48,18 +48,23 @@
 
   <section id="plans" class="section-light page-content pricing-full">
     <div class="section-inner">
-      <div class="pricing-tax-callout">
-        <p><strong>Sales tax:</strong> Prices shown exclude tax. Applicable sales tax is added at checkout based on your billing address. <a href="sales-tax.html" target="_blank" rel="noopener">Sales tax &amp; your state (read before you pay) →</a></p>
+      <div class="pricing-tax-callout pricing-tax-callout-prominent">
+        <p class="pricing-tax-callout-label">Sales tax — read before you pay</p>
+        <p class="pricing-tax-callout-body">Plan prices exclude tax. Stripe adds applicable sales tax at checkout based on your billing address — not on this page.</p>
+        <a class="pricing-tax-callout-link" href="sales-tax.html" target="_blank" rel="noopener">Open sales tax &amp; your state →</a>
       </div>
 
       <div id="permitarc-tax-gate" class="tax-gate">
-        <h3 class="tax-gate-title">Before you subscribe — check your state</h3>
-        <p class="tax-gate-intro">Select your billing state below. Some states require reading our <a href="sales-tax.html" target="_blank" rel="noopener">sales tax page</a> before Subscribe unlocks.</p>
+        <h3 class="tax-gate-title">Step 1 — Choose your billing state</h3>
+        <p class="tax-gate-intro">Pick the U.S. state where your shop bills from. Subscribe buttons stay locked until you choose. This preview does <strong>not</strong> charge tax here — <strong>Stripe Checkout</strong> shows the exact total before you pay.</p>
         <label class="tax-gate-label" for="billing-state">Your billing state</label>
-        <select id="billing-state" class="tax-gate-select" aria-describedby="tax-gate-message">
-          <option value="">Select state (recommended)</option>
+        <select id="billing-state" class="tax-gate-select" aria-describedby="tax-gate-result">
+          <option value="">Choose your state…</option>
         </select>
-        <p id="tax-gate-message" class="tax-gate-message">Select your state to see how sales tax may apply before you choose a plan.</p>
+        <div id="tax-gate-result" class="tax-gate-result tax-gate-result-empty" role="status" aria-live="polite" hidden>
+          <p class="tax-gate-result-badge" id="tax-gate-result-badge"></p>
+          <p class="tax-gate-result-text" id="tax-gate-message"></p>
+        </div>
         <label id="tax-gate-ack-wrap" class="tax-gate-ack" hidden>
           <input type="checkbox" id="tax-gate-ack">
           <span>I have read the <a href="sales-tax.html" target="_blank" rel="noopener">Sales tax page</a> and understand that applicable sales tax may be added at checkout or on a future renewal.</span>
@@ -78,7 +83,7 @@
             <li>Corporate Vault &amp; audit export</li>
           </ul>
           <a href="https://buy.stripe.com/test_9B66oHcDQ2MB7GY6aMasg00" class="btn btn-primary pricing-subscribe stripe-checkout-link" target="_blank" rel="noopener noreferrer">Subscribe — $39/mo</a>
-          <p class="price-card-tax-hint"><a href="sales-tax.html" target="_blank" rel="noopener">Sales tax by state</a> · select state above first</p>
+          <p class="price-card-tax-hint">Choose your state above to unlock Subscribe</p>
         </div>
         <div class="price-card">
           <h3>Operator — 2 locations</h3>
@@ -91,7 +96,7 @@
             <li>One login, two shops</li>
           </ul>
           <a href="https://buy.stripe.com/test_dRm28r7jwfzn5yQfLmasg01" class="btn btn-primary pricing-subscribe stripe-checkout-link" target="_blank" rel="noopener noreferrer">Subscribe — $69/mo</a>
-          <p class="price-card-tax-hint"><a href="sales-tax.html" target="_blank" rel="noopener">Sales tax by state</a> · select state above first</p>
+          <p class="price-card-tax-hint">Choose your state above to unlock Subscribe</p>
         </div>
         <div class="price-card">
           <h3>Multi — 3 locations</h3>
@@ -102,7 +107,7 @@
             <li>Best value for small multi-unit operators</li>
           </ul>
           <a href="https://buy.stripe.com/test_4gMeVd47kaf3d1i9mYasg02" class="btn btn-primary pricing-subscribe stripe-checkout-link" target="_blank" rel="noopener noreferrer">Subscribe — $95/mo</a>
-          <p class="price-card-tax-hint"><a href="sales-tax.html" target="_blank" rel="noopener">Sales tax by state</a> · select state above first</p>
+          <p class="price-card-tax-hint">Choose your state above to unlock Subscribe</p>
         </div>
         <div class="price-card">
           <h3>Growth — 4 locations</h3>
@@ -114,7 +119,7 @@
             <li>One login, four storefronts</li>
           </ul>
           <a href="https://buy.stripe.com/test_9B69AT1Zcbj7f9qgPqasg03" class="btn btn-primary pricing-subscribe stripe-checkout-link" target="_blank" rel="noopener noreferrer">Subscribe — $119/mo</a>
-          <p class="price-card-tax-hint"><a href="sales-tax.html" target="_blank" rel="noopener">Sales tax by state</a> · select state above first</p>
+          <p class="price-card-tax-hint">Choose your state above to unlock Subscribe</p>
         </div>
         <div class="price-card">
           <h3>Portfolio — 5 locations</h3>
@@ -126,7 +131,7 @@
             <li>Built for regional operators</li>
           </ul>
           <a href="https://buy.stripe.com/test_bJe6oH1Zcbj74uM6aMasg04" class="btn btn-primary pricing-subscribe stripe-checkout-link" target="_blank" rel="noopener noreferrer">Subscribe — $139/mo</a>
-          <p class="price-card-tax-hint"><a href="sales-tax.html" target="_blank" rel="noopener">Sales tax by state</a> · select state above first</p>
+          <p class="price-card-tax-hint">Choose your state above to unlock Subscribe</p>
         </div>
       </div>
 
