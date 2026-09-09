@@ -3,7 +3,7 @@
  * Plain-language disclosure only — Stripe calculates tax at checkout.
  */
 (function () {
-  var STORAGE_KEY = 'permitarc_tax_ack_v2';
+  var STORAGE_KEY = 'permitarc_tax_ack_v3';
 
   var select = document.getElementById('billing-state');
   var modal = document.getElementById('tax-state-modal');
@@ -25,6 +25,7 @@
 
   try {
     localStorage.removeItem('permitarc_tax_ack_v1');
+    localStorage.removeItem('permitarc_tax_ack_v2');
   } catch (_e) {}
 
   function getAcks() {
