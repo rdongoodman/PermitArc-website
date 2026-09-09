@@ -38,6 +38,10 @@ body {
   background: var(--bg-light);
   line-height: 1.6;
   overflow-x: hidden;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -1365,6 +1369,8 @@ body.tax-modal-open {
   color: var(--text-muted);
   padding: 2rem var(--layout-gutter);
   font-size: 0.85rem;
+  margin-top: auto;
+  flex-shrink: 0;
 }
 
 .footer-inner {
@@ -1539,12 +1545,26 @@ body.tax-modal-open {
   color: #718096;
 }
 
+/* Short pages — grow main content and center the panel (feedback, etc.) */
+.page-content-fill {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.page-content-fill .section-inner {
+  width: 100%;
+}
+
 /* Feedback page */
 .feedback-panel {
   background: #fff;
   border: 1px solid #e2e8f0;
   border-radius: 12px;
   padding: 1.75rem;
+  max-width: 42rem;
+  margin: 0 auto;
 }
 
 .feedback-intro {
