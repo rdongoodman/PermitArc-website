@@ -58,9 +58,10 @@
         <h3 class="tax-gate-title">Step 1 — Choose your billing state</h3>
         <p class="tax-gate-intro">Pick the U.S. state where your shop bills from. A short sales tax notice will pop up — check the box, then close it. Subscribe stays locked until you do. Tax is added at <strong>Stripe Checkout</strong>, not on this page.</p>
         <label class="tax-gate-label" for="billing-state">Your billing state</label>
-        <select id="billing-state" class="tax-gate-select" aria-describedby="tax-gate-result">
+        <select id="billing-state" class="tax-gate-select" aria-describedby="tax-gate-selected tax-gate-status">
           <option value="">Choose your state…</option>
         </select>
+        <p id="tax-gate-selected" class="tax-gate-selected" hidden>Selected billing state: <strong id="tax-gate-selected-name"></strong></p>
         <p id="tax-gate-status" class="tax-gate-status" hidden role="status" aria-live="polite"></p>
       </div>
 
@@ -74,11 +75,14 @@
           <p id="tax-modal-body" class="tax-modal-body"></p>
           <p id="tax-modal-note" class="tax-modal-note"></p>
           <p class="tax-modal-more"><a href="sales-tax.html" target="_blank" rel="noopener">Full sales tax page for all states →</a></p>
-          <label class="tax-modal-ack" for="tax-modal-ack">
-            <input type="checkbox" id="tax-modal-ack">
-            <span id="tax-modal-ack-label">I understand how sales tax applies for my state.</span>
-          </label>
-          <button type="button" class="btn btn-primary tax-modal-done" id="tax-modal-done" disabled>I understand — continue to plans</button>
+          <p class="tax-modal-steps">Check the box first, then tap Continue.</p>
+          <div class="tax-modal-ack-box">
+            <label class="tax-modal-ack" for="tax-modal-ack">
+              <input type="checkbox" id="tax-modal-ack">
+              <span id="tax-modal-ack-label">I understand how sales tax applies for my state.</span>
+            </label>
+          </div>
+          <button type="button" class="btn btn-primary tax-modal-done" id="tax-modal-done" disabled>Continue to plans</button>
         </div>
       </div>
 
@@ -240,8 +244,8 @@
     </div>
   </footer>
   <script src="site-nav.js" defer></script>
-  <script src="sales-tax-data.js?v=20260910"></script>
-  <script src="pricing-tax-gate.js?v=20260910"></script>
+  <script src="sales-tax-data.js?v=20260910b"></script>
+  <script src="pricing-tax-gate.js?v=20260910b"></script>
   <script src="pricing-beyond-five.js"></script>
 </body>
 </html>

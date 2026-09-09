@@ -72,7 +72,11 @@
   }
 
   var active = withStatus(
-    [{ code: 'TX', name: 'Texas', note: 'Home state. Tax on ~80% of charge when registered (data processing).' }],
+    [{
+      code: 'TX',
+      name: 'Texas',
+      note: 'Not an 80% tax rate. Texas taxes SaaS as data processing — about 80% of your subscription is taxable (~20% exempt by state rule). Stripe adds the normal ~6–8% sales tax on that taxable portion at checkout.',
+    }],
     'active'
   );
 

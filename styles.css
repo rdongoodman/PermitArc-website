@@ -1369,11 +1369,36 @@ body.tax-modal-open {
   color: #0369a1;
 }
 
+.tax-gate-selected {
+  margin: 0.65rem 0 0;
+  font-size: 0.92rem;
+  color: #334155;
+}
+
+.tax-gate-selected strong {
+  color: #0f172a;
+}
+
+.tax-modal-steps {
+  margin: 0 0 0.65rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #0f766e;
+}
+
+.tax-modal-ack-box {
+  margin: 0 0 1rem;
+  padding: 0.85rem 0.9rem;
+  border-radius: 0.5rem;
+  border: 2px solid #2dd4bf;
+  background: #f0fdfa;
+}
+
 .tax-modal-ack {
   display: flex;
   gap: 0.55rem;
   align-items: flex-start;
-  margin: 0 0 1rem;
+  margin: 0;
   font-size: 0.9rem;
   line-height: 1.45;
   color: #1e293b;
@@ -1388,6 +1413,12 @@ body.tax-modal-open {
 .tax-modal-done {
   width: 100%;
   text-align: center;
+}
+
+.tax-modal-done:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  filter: grayscale(0.4);
 }
 
 .satisfaction-guarantee {
