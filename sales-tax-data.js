@@ -75,7 +75,7 @@
     [{
       code: 'TX',
       name: 'Texas',
-      note: 'Not an 80% tax rate. Texas taxes SaaS as data processing — about 80% of your subscription is taxable (~20% exempt by state rule). Stripe adds the normal ~6–8% sales tax on that taxable portion at checkout.',
+      note: 'About 6–8% sales tax at Stripe checkout today (exact rate depends on your address).',
     }],
     'active'
   );

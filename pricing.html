@@ -48,42 +48,12 @@
 
   <section id="plans" class="section-light page-content pricing-full">
     <div class="section-inner">
-      <div class="pricing-tax-callout pricing-tax-callout-prominent">
-        <p class="pricing-tax-callout-label">Sales tax — read before you pay</p>
-        <p class="pricing-tax-callout-body">Plan prices exclude tax. Stripe adds applicable sales tax at checkout based on your billing address — not on this page.</p>
-        <a class="pricing-tax-callout-link" href="sales-tax.html" target="_blank" rel="noopener">Open sales tax &amp; your state →</a>
-      </div>
-
-      <div id="permitarc-tax-gate" class="tax-gate">
-        <h3 class="tax-gate-title">Step 1 — Choose your billing state</h3>
-        <p class="tax-gate-intro">Pick the U.S. state where your shop bills from. A short sales tax notice will pop up — check the box, then close it. Subscribe stays locked until you do. Tax is added at <strong>Stripe Checkout</strong>, not on this page.</p>
-        <label class="tax-gate-label" for="billing-state">Your billing state</label>
-        <select id="billing-state" class="tax-gate-select" aria-describedby="tax-gate-selected tax-gate-status">
+      <div id="permitarc-tax-gate" class="tax-gate-minimal">
+        <label class="tax-gate-label" for="billing-state">Billing state</label>
+        <select id="billing-state" class="tax-gate-select" aria-describedby="tax-gate-hint">
           <option value="">Choose your state…</option>
         </select>
-        <p id="tax-gate-selected" class="tax-gate-selected" hidden>Selected billing state: <strong id="tax-gate-selected-name"></strong></p>
-        <p id="tax-gate-status" class="tax-gate-status" hidden role="status" aria-live="polite"></p>
-      </div>
-
-      <div id="tax-state-modal" class="tax-state-modal" hidden role="dialog" aria-modal="true" aria-labelledby="tax-modal-title">
-        <div class="tax-state-modal-backdrop" data-tax-modal-dismiss="false"></div>
-        <div class="tax-state-modal-panel">
-          <button type="button" class="tax-state-modal-close" id="tax-modal-close" aria-label="Close" disabled title="Check the box below first">×</button>
-          <p class="tax-modal-eyebrow">Sales tax for your state</p>
-          <h3 id="tax-modal-title" class="tax-modal-title">Your state</h3>
-          <p id="tax-modal-badge" class="tax-modal-badge"></p>
-          <p id="tax-modal-body" class="tax-modal-body"></p>
-          <p id="tax-modal-note" class="tax-modal-note"></p>
-          <p class="tax-modal-more"><a href="sales-tax.html" target="_blank" rel="noopener">Full sales tax page for all states →</a></p>
-          <p class="tax-modal-steps">Check the box first, then tap Continue.</p>
-          <div class="tax-modal-ack-box">
-            <label class="tax-modal-ack" for="tax-modal-ack">
-              <input type="checkbox" id="tax-modal-ack">
-              <span id="tax-modal-ack-label">I understand how sales tax applies for my state.</span>
-            </label>
-          </div>
-          <button type="button" class="btn btn-primary tax-modal-done" id="tax-modal-done" disabled>Continue to plans</button>
-        </div>
+        <p id="tax-gate-hint" class="tax-gate-hint">Choose your state — a short sales tax notice will pop up.</p>
       </div>
 
       <div class="pricing-cards">
@@ -98,7 +68,6 @@
             <li>Corporate Vault &amp; audit export</li>
           </ul>
           <a class="btn btn-primary pricing-subscribe stripe-checkout-link" data-stripe-href="https://buy.stripe.com/test_9B66oHcDQ2MB7GY6aMasg00" role="button" tabindex="0" aria-disabled="true">Subscribe — $39/mo</a>
-          <p class="price-card-tax-hint">Choose your state above to unlock Subscribe</p>
         </div>
         <div class="price-card">
           <h3>Operator — 2 locations</h3>
@@ -111,7 +80,6 @@
             <li>One login, two shops</li>
           </ul>
           <a class="btn btn-primary pricing-subscribe stripe-checkout-link" data-stripe-href="https://buy.stripe.com/test_dRm28r7jwfzn5yQfLmasg01" role="button" tabindex="0" aria-disabled="true">Subscribe — $69/mo</a>
-          <p class="price-card-tax-hint">Choose your state above to unlock Subscribe</p>
         </div>
         <div class="price-card">
           <h3>Multi — 3 locations</h3>
@@ -122,7 +90,6 @@
             <li>Best value for small multi-unit operators</li>
           </ul>
           <a class="btn btn-primary pricing-subscribe stripe-checkout-link" data-stripe-href="https://buy.stripe.com/test_4gMeVd47kaf3d1i9mYasg02" role="button" tabindex="0" aria-disabled="true">Subscribe — $95/mo</a>
-          <p class="price-card-tax-hint">Choose your state above to unlock Subscribe</p>
         </div>
         <div class="price-card">
           <h3>Growth — 4 locations</h3>
@@ -134,7 +101,6 @@
             <li>One login, four storefronts</li>
           </ul>
           <a class="btn btn-primary pricing-subscribe stripe-checkout-link" data-stripe-href="https://buy.stripe.com/test_9B69AT1Zcbj7f9qgPqasg03" role="button" tabindex="0" aria-disabled="true">Subscribe — $119/mo</a>
-          <p class="price-card-tax-hint">Choose your state above to unlock Subscribe</p>
         </div>
         <div class="price-card">
           <h3>Portfolio — 5 locations</h3>
@@ -146,7 +112,6 @@
             <li>Built for regional operators</li>
           </ul>
           <a class="btn btn-primary pricing-subscribe stripe-checkout-link" data-stripe-href="https://buy.stripe.com/test_bJe6oH1Zcbj74uM6aMasg04" role="button" tabindex="0" aria-disabled="true">Subscribe — $139/mo</a>
-          <p class="price-card-tax-hint">Choose your state above to unlock Subscribe</p>
         </div>
       </div>
 
@@ -229,6 +194,21 @@
     </div>
   </section>
 
+  <div id="tax-state-modal" class="tax-state-modal" hidden role="dialog" aria-modal="true" aria-labelledby="tax-modal-title">
+    <div class="tax-state-modal-backdrop"></div>
+    <div class="tax-state-modal-panel">
+      <h3 id="tax-modal-title" class="tax-modal-title">Your state</h3>
+      <p id="tax-modal-summary" class="tax-modal-summary"></p>
+      <p id="tax-modal-detail" class="tax-modal-detail"></p>
+      <p id="tax-modal-reassurance" class="tax-modal-reassurance"></p>
+      <p class="tax-modal-more"><a href="sales-tax.html" target="_blank" rel="noopener">Full details for all states →</a></p>
+      <label class="tax-modal-ack" for="tax-modal-ack">
+        <input type="checkbox" id="tax-modal-ack">
+        <span id="tax-modal-ack-label">I understand</span>
+      </label>
+    </div>
+  </div>
+
   <footer class="site-footer premium-canvas">
     <div class="footer-inner">
       <p>&copy; 2026 PermitArc LLC</p>
@@ -244,8 +224,8 @@
     </div>
   </footer>
   <script src="site-nav.js" defer></script>
-  <script src="sales-tax-data.js?v=20260910b"></script>
-  <script src="pricing-tax-gate.js?v=20260910b"></script>
+  <script src="sales-tax-data.js?v=20260910d"></script>
+  <script src="pricing-tax-gate.js?v=20260910d"></script>
   <script src="pricing-beyond-five.js"></script>
 </body>
 </html>
