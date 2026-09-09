@@ -1598,6 +1598,35 @@ body.tax-modal-open {
   color: #718096;
 }
 
+.coming-soon-panel {
+  text-align: center;
+}
+
+.coming-soon-badge {
+  display: inline-block;
+  margin: 0 0 1rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #115e59;
+  background: #ccfbf1;
+  border: 1px solid #5eead4;
+}
+
+.tutorial-topics {
+  margin: 0 0 1.25rem;
+  padding-left: 1.25rem;
+  text-align: left;
+  color: #4a5568;
+}
+
+.tutorial-topics li {
+  margin-bottom: 0.55rem;
+}
+
 .pricing-cta {
   text-align: center;
   margin-top: 2rem;
