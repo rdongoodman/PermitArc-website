@@ -1206,9 +1206,188 @@ section h2 {
 
 .pricing-subscribe.is-gated,
 .stripe-checkout-link.is-gated {
-  opacity: 0.55;
-  pointer-events: none;
+  opacity: 0.45;
   cursor: not-allowed;
+  filter: grayscale(0.35);
+  box-shadow: none;
+}
+
+.tax-gate-status {
+  margin: 0.85rem 0 0;
+  padding: 0.75rem 0.9rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.tax-gate-status-warn {
+  background: #fff7ed;
+  border: 1px solid #fdba74;
+  color: #9a3412;
+}
+
+.tax-gate-status-active {
+  background: #ecfdf5;
+  border: 1px solid #5eead4;
+  color: #115e59;
+}
+
+.tax-gate-status-future {
+  background: #fff7ed;
+  border: 1px solid #fdba74;
+  color: #9a3412;
+}
+
+.tax-gate-status-none,
+.tax-gate-status-ok {
+  background: #f1f5f9;
+  border: 1px solid #94a3b8;
+  color: #1e293b;
+}
+
+body.tax-modal-open {
+  overflow: hidden;
+}
+
+.tax-state-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.tax-state-modal[hidden] {
+  display: none !important;
+}
+
+.tax-state-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.72);
+}
+
+.tax-state-modal-panel {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 32rem);
+  max-height: min(90vh, 640px);
+  overflow-y: auto;
+  padding: 1.35rem 1.35rem 1.25rem;
+  border-radius: 0.75rem;
+  border: 2px solid #2dd4bf;
+  background: #fff;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35);
+}
+
+.tax-state-modal-close {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.75rem;
+  border: none;
+  background: transparent;
+  font-size: 1.65rem;
+  line-height: 1;
+  color: #64748b;
+  cursor: pointer;
+  padding: 0.15rem 0.35rem;
+}
+
+.tax-state-modal-close:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.tax-modal-eyebrow {
+  margin: 0 0 0.25rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #0f766e;
+}
+
+.tax-modal-title {
+  margin: 0 0 0.65rem;
+  padding-right: 1.75rem;
+  font-size: 1.25rem;
+  color: #0f172a;
+}
+
+.tax-modal-badge {
+  display: inline-block;
+  margin: 0 0 0.85rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.tax-modal-badge-active {
+  background: #ccfbf1;
+  color: #115e59;
+  border: 1px solid #5eead4;
+}
+
+.tax-modal-badge-future {
+  background: #ffedd5;
+  color: #9a3412;
+  border: 1px solid #fdba74;
+}
+
+.tax-modal-badge-none {
+  background: #f1f5f9;
+  color: #334155;
+  border: 1px solid #94a3b8;
+}
+
+.tax-modal-body,
+.tax-modal-note {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #334155;
+}
+
+.tax-modal-note {
+  font-size: 0.88rem;
+  color: #64748b;
+}
+
+.tax-modal-more {
+  margin: 0 0 1rem;
+  font-size: 0.88rem;
+}
+
+.tax-modal-more a {
+  font-weight: 600;
+  color: #0369a1;
+}
+
+.tax-modal-ack {
+  display: flex;
+  gap: 0.55rem;
+  align-items: flex-start;
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: #1e293b;
+  cursor: pointer;
+}
+
+.tax-modal-ack input {
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.tax-modal-done {
+  width: 100%;
+  text-align: center;
 }
 
 .satisfaction-guarantee {

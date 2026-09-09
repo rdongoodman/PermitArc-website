@@ -56,19 +56,30 @@
 
       <div id="permitarc-tax-gate" class="tax-gate">
         <h3 class="tax-gate-title">Step 1 — Choose your billing state</h3>
-        <p class="tax-gate-intro">Pick the U.S. state where your shop bills from. Subscribe buttons stay locked until you choose. This preview does <strong>not</strong> charge tax here — <strong>Stripe Checkout</strong> shows the exact total before you pay.</p>
+        <p class="tax-gate-intro">Pick the U.S. state where your shop bills from. A short sales tax notice will pop up — check the box, then close it. Subscribe stays locked until you do. Tax is added at <strong>Stripe Checkout</strong>, not on this page.</p>
         <label class="tax-gate-label" for="billing-state">Your billing state</label>
         <select id="billing-state" class="tax-gate-select" aria-describedby="tax-gate-result">
           <option value="">Choose your state…</option>
         </select>
-        <div id="tax-gate-result" class="tax-gate-result tax-gate-result-empty" role="status" aria-live="polite" hidden>
-          <p class="tax-gate-result-badge" id="tax-gate-result-badge"></p>
-          <p class="tax-gate-result-text" id="tax-gate-message"></p>
+        <p id="tax-gate-status" class="tax-gate-status" hidden role="status" aria-live="polite"></p>
+      </div>
+
+      <div id="tax-state-modal" class="tax-state-modal" hidden role="dialog" aria-modal="true" aria-labelledby="tax-modal-title">
+        <div class="tax-state-modal-backdrop" data-tax-modal-dismiss="false"></div>
+        <div class="tax-state-modal-panel">
+          <button type="button" class="tax-state-modal-close" id="tax-modal-close" aria-label="Close" disabled title="Check the box below first">×</button>
+          <p class="tax-modal-eyebrow">Sales tax for your state</p>
+          <h3 id="tax-modal-title" class="tax-modal-title">Your state</h3>
+          <p id="tax-modal-badge" class="tax-modal-badge"></p>
+          <p id="tax-modal-body" class="tax-modal-body"></p>
+          <p id="tax-modal-note" class="tax-modal-note"></p>
+          <p class="tax-modal-more"><a href="sales-tax.html" target="_blank" rel="noopener">Full sales tax page for all states →</a></p>
+          <label class="tax-modal-ack" for="tax-modal-ack">
+            <input type="checkbox" id="tax-modal-ack">
+            <span id="tax-modal-ack-label">I understand how sales tax applies for my state.</span>
+          </label>
+          <button type="button" class="btn btn-primary tax-modal-done" id="tax-modal-done" disabled>I understand — continue to plans</button>
         </div>
-        <label id="tax-gate-ack-wrap" class="tax-gate-ack" hidden>
-          <input type="checkbox" id="tax-gate-ack">
-          <span>I have read the <a href="sales-tax.html" target="_blank" rel="noopener">Sales tax page</a> and understand that applicable sales tax may be added at checkout or on a future renewal.</span>
-        </label>
       </div>
 
       <div class="pricing-cards">
@@ -82,7 +93,7 @@
             <li>AI chat &amp; proactive review</li>
             <li>Corporate Vault &amp; audit export</li>
           </ul>
-          <a href="https://buy.stripe.com/test_9B66oHcDQ2MB7GY6aMasg00" class="btn btn-primary pricing-subscribe stripe-checkout-link" target="_blank" rel="noopener noreferrer">Subscribe — $39/mo</a>
+          <a class="btn btn-primary pricing-subscribe stripe-checkout-link" data-stripe-href="https://buy.stripe.com/test_9B66oHcDQ2MB7GY6aMasg00" role="button" tabindex="0" aria-disabled="true">Subscribe — $39/mo</a>
           <p class="price-card-tax-hint">Choose your state above to unlock Subscribe</p>
         </div>
         <div class="price-card">
@@ -95,7 +106,7 @@
             <li>Patrol scoped to each ZIP + business type</li>
             <li>One login, two shops</li>
           </ul>
-          <a href="https://buy.stripe.com/test_dRm28r7jwfzn5yQfLmasg01" class="btn btn-primary pricing-subscribe stripe-checkout-link" target="_blank" rel="noopener noreferrer">Subscribe — $69/mo</a>
+          <a class="btn btn-primary pricing-subscribe stripe-checkout-link" data-stripe-href="https://buy.stripe.com/test_dRm28r7jwfzn5yQfLmasg01" role="button" tabindex="0" aria-disabled="true">Subscribe — $69/mo</a>
           <p class="price-card-tax-hint">Choose your state above to unlock Subscribe</p>
         </div>
         <div class="price-card">
@@ -106,7 +117,7 @@
             <li>Everything in Operator, third location included</li>
             <li>Best value for small multi-unit operators</li>
           </ul>
-          <a href="https://buy.stripe.com/test_4gMeVd47kaf3d1i9mYasg02" class="btn btn-primary pricing-subscribe stripe-checkout-link" target="_blank" rel="noopener noreferrer">Subscribe — $95/mo</a>
+          <a class="btn btn-primary pricing-subscribe stripe-checkout-link" data-stripe-href="https://buy.stripe.com/test_4gMeVd47kaf3d1i9mYasg02" role="button" tabindex="0" aria-disabled="true">Subscribe — $95/mo</a>
           <p class="price-card-tax-hint">Choose your state above to unlock Subscribe</p>
         </div>
         <div class="price-card">
@@ -118,7 +129,7 @@
             <li>Patrol and radar per ZIP + business type</li>
             <li>One login, four storefronts</li>
           </ul>
-          <a href="https://buy.stripe.com/test_9B69AT1Zcbj7f9qgPqasg03" class="btn btn-primary pricing-subscribe stripe-checkout-link" target="_blank" rel="noopener noreferrer">Subscribe — $119/mo</a>
+          <a class="btn btn-primary pricing-subscribe stripe-checkout-link" data-stripe-href="https://buy.stripe.com/test_9B69AT1Zcbj7f9qgPqasg03" role="button" tabindex="0" aria-disabled="true">Subscribe — $119/mo</a>
           <p class="price-card-tax-hint">Choose your state above to unlock Subscribe</p>
         </div>
         <div class="price-card">
@@ -130,7 +141,7 @@
             <li>One login, five storefronts</li>
             <li>Built for regional operators</li>
           </ul>
-          <a href="https://buy.stripe.com/test_bJe6oH1Zcbj74uM6aMasg04" class="btn btn-primary pricing-subscribe stripe-checkout-link" target="_blank" rel="noopener noreferrer">Subscribe — $139/mo</a>
+          <a class="btn btn-primary pricing-subscribe stripe-checkout-link" data-stripe-href="https://buy.stripe.com/test_bJe6oH1Zcbj74uM6aMasg04" role="button" tabindex="0" aria-disabled="true">Subscribe — $139/mo</a>
           <p class="price-card-tax-hint">Choose your state above to unlock Subscribe</p>
         </div>
       </div>
@@ -229,8 +240,8 @@
     </div>
   </footer>
   <script src="site-nav.js" defer></script>
-  <script src="sales-tax-data.js"></script>
-  <script src="pricing-tax-gate.js"></script>
+  <script src="sales-tax-data.js?v=20260910"></script>
+  <script src="pricing-tax-gate.js?v=20260910"></script>
   <script src="pricing-beyond-five.js"></script>
 </body>
 </html>
