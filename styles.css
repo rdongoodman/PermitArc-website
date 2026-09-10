@@ -1078,6 +1078,30 @@ section h2 {
   font-weight: 600;
 }
 
+/* Owner preview on dark page-hero — do not reuse yellow prelaunch-notice here */
+.page-hero .owner-preview-banner {
+  display: block;
+  margin: 0 auto 1.25rem;
+  max-width: 42rem;
+  padding: 0.85rem 1.1rem;
+  text-align: left;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  background: rgba(15, 23, 42, 0.92);
+  border: 1px solid rgba(45, 212, 191, 0.55);
+  color: #e2e8f0 !important;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.page-hero .owner-preview-banner code {
+  color: #5eead4;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 0.12em 0.35em;
+  border-radius: 4px;
+  font-size: 0.88em;
+}
+
 .pricing-subscribe.is-gated,
 .stripe-checkout-link.is-gated {
   opacity: 0.45;
