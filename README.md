@@ -35,6 +35,16 @@ Temporary workaround while fixing DNS: https://rdongoodman.github.io/PermitArc-w
 | Pricing (`pricing.html`) | Live — included vs metered Jul 19 |
 | Feedback (`feedback.html`) | Live — mailto v1 |
 | Privacy, Terms, AI disclaimer | Live |
-| Stripe checkout, Download page | Coming |
+| Stripe checkout, Download page | Gated until launch (`launch-config.js`) |
+
+## Pre-launch gates (`launch-config.js`)
+
+| Flag | `false` (now) | `true` (when ready) |
+|------|---------------|---------------------|
+| `checkoutEnabled` | Pricing preview only — Subscribe buttons never open Stripe | Live Payment Links after Step 3b |
+| `downloadsPublic` | Download hidden from nav; `/download.html` redirects to Pricing | Show nav + public download page after files hosted |
+
+**Owner preview (download layout):**  
+`https://permitarc.com/download.html?preview=permitarc-owner-preview`
 
 Built to match the PermitArc app color palette (dark hero, teal accent).

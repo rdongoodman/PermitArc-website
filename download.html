@@ -3,12 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
   <meta name="description" content="Download PermitArc for Android, Windows, iPhone, iPad, and Mac after your subscription is active.">
   <title>Download | PermitArc</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20260911">
+  <script src="launch-config.js?v=20260911"></script>
+  <script src="download-gate.js?v=20260911"></script>
 </head>
 <body>
   <header class="site-header">
@@ -24,7 +27,7 @@
         <a href="how-it-works.html">Quick guide</a>
         <a href="tutorial.html">Tutorial</a>
         <a href="pricing.html">Pricing</a>
-        <a href="download.html">Download</a>
+        <a href="download.html" class="nav-item-download">Download</a>
         <a href="feedback.html">Feedback</a>
       </nav>
       <a href="pricing.html" class="btn btn-primary">Pricing</a>
@@ -33,6 +36,7 @@
 
   <section class="page-hero premium-canvas">
     <div class="page-hero-inner">
+      <p class="prelaunch-notice owner-preview-banner" id="owner-preview-banner" hidden tabindex="-1">Owner preview — install files are not public yet. Flip <code>downloadsPublic</code> in <code>launch-config.js</code> when APK/installers are hosted.</p>
       <h1>Download PermitArc</h1>
       <p>Install after your subscription is active, then log in with the <strong>same email you used to pay</strong> so your plan and location limit sync to the app.</p>
     </div>
@@ -82,12 +86,23 @@
       <div class="footer-links">
         <a href="index.html">Home</a>
         <a href="pricing.html">Pricing</a>
-        <a href="download.html">Download</a>
+        <a href="download.html" class="nav-item-download">Download</a>
         <a href="privacy.html">Privacy</a>
         <a href="terms.html">Terms</a>
       </div>
     </div>
   </footer>
+  <script src="site-public.js?v=20260911" defer></script>
   <script src="site-nav.js" defer></script>
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var cfg = window.PermitArcLaunch || {};
+      if (params.get('preview') === (cfg.downloadPreviewToken || 'permitarc-owner-preview')) {
+        var banner = document.getElementById('owner-preview-banner');
+        if (banner) banner.hidden = false;
+      }
+    })();
+  </script>
 </body>
 </html>

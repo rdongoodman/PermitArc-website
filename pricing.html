@@ -8,7 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260910g">
+  <link rel="stylesheet" href="styles.css?v=20260911">
+  <script src="launch-config.js?v=20260911"></script>
 </head>
 <body>
   <header class="site-header">
@@ -28,7 +29,7 @@
         <a href="pricing.html">Pricing</a>
         <a href="sales-tax.html">Sales tax</a>
         <a href="index.html#faq">FAQ</a>
-        <a href="download.html">Download</a>
+        <a href="download.html" class="nav-item-download">Download</a>
         <a href="feedback.html">Feedback</a>
       </nav>
       <a href="#plans" class="btn btn-primary">See plans</a>
@@ -49,6 +50,9 @@
 
   <section id="plans" class="section-light page-content pricing-full">
     <div class="section-inner">
+      <div class="prelaunch-notice" id="prelaunch-notice" hidden tabindex="-1">
+        <strong>Preview mode.</strong> Friends and colleagues can browse plans and sales tax info here. Self-serve checkout opens when install files are ready (very soon). Questions or early access: <a href="mailto:support@permitarc.com">support@permitarc.com</a>.
+      </div>
       <div id="permitarc-tax-gate" class="tax-gate-minimal">
         <label class="tax-gate-label" for="billing-state">Billing state</label>
         <select id="billing-state" class="tax-gate-select" aria-describedby="tax-gate-hint">
@@ -216,7 +220,7 @@
       <div class="footer-links">
         <a href="index.html">Home</a>
         <a href="feedback.html">Feedback</a>
-        <a href="download.html">Download</a>
+        <a href="download.html" class="nav-item-download">Download</a>
         <a href="mailto:support@permitarc.com">support@permitarc.com</a>
         <a href="privacy.html">Privacy</a>
         <a href="terms.html">Terms</a>
@@ -224,9 +228,10 @@
       </div>
     </div>
   </footer>
+  <script src="site-public.js?v=20260911" defer></script>
   <script src="site-nav.js" defer></script>
   <script src="sales-tax-data.js?v=20260910i"></script>
-  <script src="pricing-tax-gate.js?v=20260910i"></script>
+  <script src="pricing-tax-gate.js?v=20260911"></script>
   <script src="pricing-beyond-five.js"></script>
 </body>
 </html>

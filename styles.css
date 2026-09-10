@@ -1062,6 +1062,22 @@ section h2 {
   color: #64748b;
 }
 
+.prelaunch-notice {
+  margin: 0 0 1.25rem;
+  padding: 1rem 1.15rem;
+  border-radius: 10px;
+  background: #fef3c7;
+  border: 1px solid #fcd34d;
+  color: #78350f;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.prelaunch-notice a {
+  color: #92400e;
+  font-weight: 600;
+}
+
 .pricing-subscribe.is-gated,
 .stripe-checkout-link.is-gated {
   opacity: 0.45;
