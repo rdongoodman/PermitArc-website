@@ -1,17 +1,18 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="PermitArc pricing — from $39/mo. Expiration Radar, Weekly Patrol, and Proactive review included. iPhone, iPad, Android, Windows, and Mac.">
+  <meta name="description" content="PermitArc pricing â€” from $39/mo. Expiration Radar, Weekly Patrol, and Proactive review included. iPhone, iPad, Android, Windows, and Mac.">
   <title>Pricing | PermitArc</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css?v=20260911">
-  <script src="launch-config.js?v=20260911"></script>
+  <script src="launch-config.js?v=20260911c"></script>
+  <script src="site-nav-config.js?v=20260911c"></script>
 </head>
-<body>
+<body data-nav-page="pricing">
   <header class="site-header">
     <div class="header-inner">
       <a href="index.html" class="logo"><img src="assets/shield_logo.png" alt="" class="logo-mark" width="32" height="32"><span class="logo-wordmark">Permit<span class="logo-arc">Arc</span></span></a>
@@ -20,18 +21,7 @@
         <span class="nav-toggle-bar" aria-hidden="true"></span>
         <span class="nav-toggle-bar" aria-hidden="true"></span>
       </button>
-      <nav class="nav" id="site-nav">
-        <a href="index.html#why">Why PermitArc</a>
-        <a href="intelligence.html">What's included</a>
-        <a href="how-it-works.html">Quick guide</a>
-        <a href="tutorial.html">Tutorial</a>
-        <a href="index.html#track">What we track</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="sales-tax.html">Sales tax</a>
-        <a href="index.html#faq">FAQ</a>
-        <a href="download.html" class="nav-item-download">Download</a>
-        <a href="feedback.html">Feedback</a>
-      </nav>
+            <nav class="nav" id="site-nav" aria-label="Main"></nav>
       <a href="#plans" class="btn btn-primary">See plans</a>
     </div>
   </header>
@@ -39,8 +29,8 @@
   <section class="page-hero premium-canvas">
     <div class="page-hero-inner">
       <h1>Pricing that fits your shop count</h1>
-      <p>One missed renewal can cost hundreds — or a closed door. PermitArc costs less than a single hour with a lawyer.</p>
-      <p class="page-hero-scope">Permits, licenses, insurance, certifications, and every expiration that matters to your shop — plus a corporate vault for the rest.</p>
+      <p>One missed renewal can cost hundreds â€” or a closed door. PermitArc costs less than a single hour with a lawyer.</p>
+      <p class="page-hero-scope">Permits, licenses, insurance, certifications, and every expiration that matters to your shop â€” plus a corporate vault for the rest.</p>
       <div class="satisfaction-guarantee satisfaction-guarantee-dark">
         <h3>14-Day Satisfaction Guarantee</h3>
         <p>Subscribe today. If PermitArc isn't right for you within 14 days, we'll refund your subscription fee <strong>minus interactive AI usage</strong> (chat and document scans) shown on your Intel Deck meter. Weekly Patrol, expiration alerts, and proactive compliance review are included either way. Voice read-aloud uses no meter credits.</p>
@@ -56,14 +46,14 @@
       <div id="permitarc-tax-gate" class="tax-gate-minimal">
         <label class="tax-gate-label" for="billing-state">Billing state</label>
         <select id="billing-state" class="tax-gate-select" aria-describedby="tax-gate-hint">
-          <option value="">Choose your state…</option>
+          <option value="">Choose your stateâ€¦</option>
         </select>
-        <p id="tax-gate-hint" class="tax-gate-hint">Choose your state — a short sales tax notice will pop up.</p>
+        <p id="tax-gate-hint" class="tax-gate-hint">Choose your state â€” a short sales tax notice will pop up.</p>
       </div>
 
       <div class="pricing-cards">
         <div class="price-card featured">
-          <h3>Solo — 1 location</h3>
+          <h3>Solo â€” 1 location</h3>
           <p class="amount">$39<span>/mo</span></p>
           <p>Best for one storefront</p>
           <ul>
@@ -72,10 +62,10 @@
             <li>AI chat &amp; proactive review</li>
             <li>Corporate Vault &amp; audit export</li>
           </ul>
-          <a class="btn btn-primary pricing-subscribe stripe-checkout-link" data-stripe-href="https://buy.stripe.com/test_9B66oHcDQ2MB7GY6aMasg00" role="button" tabindex="0" aria-disabled="true">Subscribe — $39/mo</a>
+          <a class="btn btn-primary pricing-subscribe stripe-checkout-link" data-stripe-href="https://buy.stripe.com/test_9B66oHcDQ2MB7GY6aMasg00" role="button" tabindex="0" aria-disabled="true">Subscribe â€” $39/mo</a>
         </div>
         <div class="price-card">
-          <h3>Operator — 2 locations</h3>
+          <h3>Operator â€” 2 locations</h3>
           <p class="amount">$69<span>/mo</span></p>
           <p>Volume discount per shop</p>
           <ul>
@@ -84,20 +74,20 @@
             <li>Patrol scoped to each ZIP + business type</li>
             <li>One login, two shops</li>
           </ul>
-          <a class="btn btn-primary pricing-subscribe stripe-checkout-link" data-stripe-href="https://buy.stripe.com/test_dRm28r7jwfzn5yQfLmasg01" role="button" tabindex="0" aria-disabled="true">Subscribe — $69/mo</a>
+          <a class="btn btn-primary pricing-subscribe stripe-checkout-link" data-stripe-href="https://buy.stripe.com/test_dRm28r7jwfzn5yQfLmasg01" role="button" tabindex="0" aria-disabled="true">Subscribe â€” $69/mo</a>
         </div>
         <div class="price-card">
-          <h3>Multi — 3 locations</h3>
+          <h3>Multi â€” 3 locations</h3>
           <p class="amount">$95<span>/mo</span></p>
           <p>Three storefronts, one account</p>
           <ul>
             <li>Everything in Operator, third location included</li>
             <li>Best value for small multi-unit operators</li>
           </ul>
-          <a class="btn btn-primary pricing-subscribe stripe-checkout-link" data-stripe-href="https://buy.stripe.com/test_4gMeVd47kaf3d1i9mYasg02" role="button" tabindex="0" aria-disabled="true">Subscribe — $95/mo</a>
+          <a class="btn btn-primary pricing-subscribe stripe-checkout-link" data-stripe-href="https://buy.stripe.com/test_4gMeVd47kaf3d1i9mYasg02" role="button" tabindex="0" aria-disabled="true">Subscribe â€” $95/mo</a>
         </div>
         <div class="price-card">
-          <h3>Growth — 4 locations</h3>
+          <h3>Growth â€” 4 locations</h3>
           <p class="amount">$119<span>/mo</span></p>
           <p>Four shops under one roof</p>
           <ul>
@@ -105,10 +95,10 @@
             <li>Patrol and radar per ZIP + business type</li>
             <li>One login, four storefronts</li>
           </ul>
-          <a class="btn btn-primary pricing-subscribe stripe-checkout-link" data-stripe-href="https://buy.stripe.com/test_9B69AT1Zcbj7f9qgPqasg03" role="button" tabindex="0" aria-disabled="true">Subscribe — $119/mo</a>
+          <a class="btn btn-primary pricing-subscribe stripe-checkout-link" data-stripe-href="https://buy.stripe.com/test_9B69AT1Zcbj7f9qgPqasg03" role="button" tabindex="0" aria-disabled="true">Subscribe â€” $119/mo</a>
         </div>
         <div class="price-card">
-          <h3>Portfolio — 5 locations</h3>
+          <h3>Portfolio â€” 5 locations</h3>
           <p class="amount">$139<span>/mo</span></p>
           <p>Small chain pricing</p>
           <ul>
@@ -116,7 +106,7 @@
             <li>One login, five storefronts</li>
             <li>Built for regional operators</li>
           </ul>
-          <a class="btn btn-primary pricing-subscribe stripe-checkout-link" data-stripe-href="https://buy.stripe.com/test_bJe6oH1Zcbj74uM6aMasg04" role="button" tabindex="0" aria-disabled="true">Subscribe — $139/mo</a>
+          <a class="btn btn-primary pricing-subscribe stripe-checkout-link" data-stripe-href="https://buy.stripe.com/test_bJe6oH1Zcbj74uM6aMasg04" role="button" tabindex="0" aria-disabled="true">Subscribe â€” $139/mo</a>
         </div>
       </div>
 
@@ -128,9 +118,9 @@
       <div class="pricing-expand pricing-beyond-panel" id="beyond-five-panel" hidden>
         <div class="beyond-five-panel-head">
           <h4>6+ locations</h4>
-          <button type="button" class="beyond-five-close" id="beyond-five-close" aria-label="Close">×</button>
+          <button type="button" class="beyond-five-close" id="beyond-five-close" aria-label="Close">Ã—</button>
         </div>
-        <p class="beyond-five-panel-intro">Enter your <strong>total</strong> storefront count and app email — we’ll total it up and send you to secure checkout.</p>
+        <p class="beyond-five-panel-intro">Enter your <strong>total</strong> storefront count and app email â€” weâ€™ll total it up and send you to secure checkout.</p>
 
         <div class="beyond-five-form">
           <div class="beyond-five-fields">
@@ -151,13 +141,13 @@
         </div>
       </div>
 
-      <p class="pricing-scope-note">Patrol, expiration radar, and proactive review are <strong>included</strong> on every plan. Create your PermitArc account in the app first, then subscribe here with the <strong>same email</strong> — that links billing to your account.</p>
+      <p class="pricing-scope-note">Patrol, expiration radar, and proactive review are <strong>included</strong> on every plan. Create your PermitArc account in the app first, then subscribe here with the <strong>same email</strong> â€” that links billing to your account.</p>
 
       <div id="included" class="pricing-included">
         <h3>Included vs interactive AI</h3>
         <div class="included-grid">
           <div class="included-col">
-            <h4>Included — no extra charge</h4>
+            <h4>Included â€” no extra charge</h4>
             <ul>
               <li>Weekly Regulatory Patrol for your ZIP and business type</li>
               <li>Expiration Radar (30 / 15 / 5 day warnings)</li>
@@ -173,24 +163,24 @@
               <li>AI voice input and read-aloud on supported devices</li>
               <li>AI document scanning and extraction on upload</li>
             </ul>
-            <p class="included-note">Allowance scales with each storefront on your plan. Most solo shops stay within one location’s pool. Details in our <a href="terms.html">Terms</a>.</p>
+            <p class="included-note">Allowance scales with each storefront on your plan. Most solo shops stay within one locationâ€™s pool. Details in our <a href="terms.html">Terms</a>.</p>
           </div>
         </div>
       </div>
 
       <div class="pricing-anchor">
         <h3>Why this price?</h3>
-        <p>A health permit lapse, expired GL certificate, or missed ABC renewal can trigger fines, insurance gaps, or a shutdown — often far more than $39–$139 per month. PermitArc is your always-on compliance folder: scan once, get warned before deadlines, and see whether regulatory requirements or law changes may affect your area each week.</p>
+        <p>A health permit lapse, expired GL certificate, or missed ABC renewal can trigger fines, insurance gaps, or a shutdown â€” often far more than $39â€“$139 per month. PermitArc is your always-on compliance folder: scan once, get warned before deadlines, and see whether regulatory requirements or law changes may affect your area each week.</p>
       </div>
 
       <div class="faq-item">
         <h3>What if I have more than five locations?</h3>
-        <p>Click <strong>Configure your plan</strong> above. Type your total storefront count (e.g. 19) — first five at $139/mo, then $20/mo each extra. Need 100+? Email <a href="mailto:support@permitarc.com">support@permitarc.com</a>.</p>
+        <p>Click <strong>Configure your plan</strong> above. Type your total storefront count (e.g. 19) â€” first five at $139/mo, then $20/mo each extra. Need 100+? Email <a href="mailto:support@permitarc.com">support@permitarc.com</a>.</p>
       </div>
 
       <div class="faq-item">
         <h3>Billing &amp; cancellation</h3>
-        <p>Monthly billing through Stripe when you subscribe. <strong>14-day satisfaction guarantee</strong> — refund minus AI usage shown on your Intel Deck meter. Cancel anytime from your billing portal. <a href="mailto:support@permitarc.com">support@permitarc.com</a></p>
+        <p>Monthly billing through Stripe when you subscribe. <strong>14-day satisfaction guarantee</strong> â€” refund minus AI usage shown on your Intel Deck meter. Cancel anytime from your billing portal. <a href="mailto:support@permitarc.com">support@permitarc.com</a></p>
       </div>
 
       <div class="pricing-cta">
@@ -206,7 +196,7 @@
       <p id="tax-modal-summary" class="tax-modal-summary"></p>
       <p id="tax-modal-detail" class="tax-modal-detail"></p>
       <p id="tax-modal-reassurance" class="tax-modal-reassurance"></p>
-      <p class="tax-modal-more"><a href="sales-tax.html" target="_blank" rel="noopener">Full details for all states →</a></p>
+      <p class="tax-modal-more"><a href="sales-tax.html" target="_blank" rel="noopener">Full details for all states â†’</a></p>
       <label class="tax-modal-ack" for="tax-modal-ack">
         <input type="checkbox" id="tax-modal-ack">
         <span id="tax-modal-ack-label">I understand</span>
@@ -217,21 +207,14 @@
   <footer class="site-footer premium-canvas">
     <div class="footer-inner">
       <p>&copy; 2026 PermitArc LLC</p>
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="feedback.html">Feedback</a>
-        <a href="download.html" class="nav-item-download">Download</a>
-        <a href="mailto:support@permitarc.com">support@permitarc.com</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-        <a href="sales-tax.html">Sales tax</a>
-      </div>
+      <div class="footer-links" id="site-footer-links"></div>
     </div>
   </footer>
-  <script src="site-public.js?v=20260911" defer></script>
+  <script src="site-chrome.js?v=20260911c"></script>
+  <script src="site-public.js?v=20260911c" defer></script>
   <script src="site-nav.js" defer></script>
   <script src="sales-tax-data.js?v=20260910i"></script>
-  <script src="pricing-tax-gate.js?v=20260911"></script>
+  <script src="pricing-tax-gate.js?v=20260911c"></script>
   <script src="pricing-beyond-five.js"></script>
 </body>
 </html>

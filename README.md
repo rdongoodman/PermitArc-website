@@ -47,4 +47,6 @@ Temporary workaround while fixing DNS: https://rdongoodman.github.io/PermitArc-w
 **Owner preview (download layout):**  
 `https://permitarc.com/download.html?preview=permitarc-owner-preview`
 
+**Nav (Sep 10):** One shared menu via `site-nav-config.js` + `site-chrome.js`. Sales tax = footer + pricing only (Option B).
+
 Built to match the PermitArc app color palette (dark hero, teal accent).

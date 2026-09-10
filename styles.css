@@ -1056,6 +1056,14 @@ section h2 {
   background: #fff;
 }
 
+#site-nav:not(.nav-ready) {
+  visibility: hidden;
+}
+
+#site-nav.nav-ready {
+  visibility: visible;
+}
+
 .tax-gate-hint {
   margin: 0.45rem 0 0;
   font-size: 0.85rem;
