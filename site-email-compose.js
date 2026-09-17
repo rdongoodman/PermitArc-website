@@ -127,6 +127,30 @@
     return !!href && href.toLowerCase().indexOf(SUPPORT) >= 0;
   }
 
+  function canonicalSupportHref() {
+    return window.PermitArcSupportMailto || null;
+  }
+
+  function normalizeSupportLinks() {
+    var canonical = canonicalSupportHref();
+    if (!canonical) return;
+    document.querySelectorAll('a[href^="mailto:"]').forEach(function (link) {
+      var href = link.getAttribute('href');
+      if (!href || !isSupportMailto(href)) return;
+      if (href.indexOf('body=') < 0) link.setAttribute('href', canonical);
+    });
+  }
+
+  function initSupportEmail() {
+    normalizeSupportLinks();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSupportEmail);
+  } else {
+    initSupportEmail();
+  }
+
   document.addEventListener(
     'click',
     function (e) {

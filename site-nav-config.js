@@ -15,7 +15,10 @@ window.PermitArcNav = {
     { label: 'Home', href: 'index.html' },
     { label: 'Pricing', href: 'pricing.html' },
     { label: 'Feedback', href: 'feedback.html' },
-    { label: 'support@permitarc.com', href: 'mailto:support@permitarc.com' },
+    {
+      label: 'support@permitarc.com',
+      href: window.PermitArcSupportMailto || 'mailto:support@permitarc.com',
+    },
     { label: 'Privacy', href: 'privacy.html' },
     { label: 'Terms', href: 'terms.html' },
     { label: 'Sales tax', href: 'sales-tax.html' },

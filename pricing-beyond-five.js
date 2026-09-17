@@ -18,6 +18,13 @@
 
   if (!totalInput || !quoteEl || !checkoutBtn || !panel) return;
 
+  function supportMailtoHref() {
+    return (
+      window.PermitArcSupportMailto ||
+      "mailto:support@permitarc.com?subject=PermitArc%20feedback"
+    );
+  }
+
   function quote(total) {
     var extra = total - 5;
     return {
@@ -82,7 +89,9 @@
     if (total > MAX_TOTAL) {
       quoteEl.hidden = false;
       quoteEl.innerHTML =
-        "For 100+ locations, email <a href=\"mailto:support@permitarc.com\">support@permitarc.com</a>.";
+        'For 100+ locations, email <a href="' +
+        supportMailtoHref() +
+        '">support@permitarc.com</a>.';
       checkoutBtn.disabled = true;
       checkoutBtn.textContent = "Continue to checkout";
       return;
