@@ -54,8 +54,7 @@ REPLACEMENTS: list[tuple[str, str]] = [
     ("Patrol � scoped", "Patrol · scoped"),
 ]
 
-WHY_NO = 'class="why-no"><span class="why-icon" aria-hidden="true">?</span>'
-WHY_YES = 'class="why-yes"><span class="why-icon" aria-hidden="true">?</span>'
+# why-list icons are CSS ::before (× / ✓) — do not inject characters here.
 
 # UTF-8 bytes mis-saved / mis-read as Latin-1 (common on Windows edits).
 MOJIBAKE: list[tuple[str, str]] = [
@@ -124,8 +123,6 @@ def fix_file(path: Path) -> bool:
         "site-public.js?v=20260917fix",
         text,
     )
-    text = text.replace(WHY_NO, 'class="why-no"><span class="why-icon" aria-hidden="true">×</span>')
-    text = text.replace(WHY_YES, 'class="why-yes"><span class="why-icon" aria-hidden="true">✓</span>')
     text = re.sub(r'(<details[^>]*)\sopen(\s|>)', r"\1\2", text)
     if text != original:
         path.write_text(text, encoding="utf-8", newline="\n")
