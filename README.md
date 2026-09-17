@@ -5,6 +5,12 @@ Marketing site for [PermitArc](https://permitarc.com) — static HTML on GitHub 
 - **Live:** https://permitarc.com
 - **Stack:** HTML + CSS · Cloudflare DNS · GitHub Pages
 
+## Launch status (Sep 17, 2026)
+
+**~99.9% finished** — copy, nav, sales tax, shield/radar chrome, feedback flow, and sitewide support email (Gmail / Outlook / Yahoo / default app chooser + feedback starter template) are on **`main`** and deploy via GitHub Pages.
+
+**Still before first paying customer:** flip `launch-config.js` after live Stripe Payment Links + hosted install files; end-to-end smoke (pricing → checkout → download); optional tutorial media / app screenshots; verify **receive** at `support@permitarc.com` (Cloudflare Email Routing — free forward; **send as** support@ may need Google Workspace or Zoho later — alerts already use Resend from `alerts@permitarc.com`).
+
 ## Preview locally (Windows)
 
 Double-click on Desktop:
@@ -33,7 +39,7 @@ Temporary workaround while fixing DNS: https://rdongoodman.github.io/PermitArc-w
 |------|--------|
 | Home (`index.html`) | Live — Phase 1 copy Jul 19 |
 | Pricing (`pricing.html`) | Live — included vs metered Jul 19 |
-| Feedback (`feedback.html`) | Live — mailto v1 |
+| Feedback (`feedback.html`) | Live — email app chooser + template (all support@ links) |
 | Privacy, Terms, AI disclaimer | Live |
 | Stripe checkout, Download page | Gated until launch (`launch-config.js`) |
 
