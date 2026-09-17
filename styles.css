@@ -145,6 +145,107 @@ a:hover {
   animation: logo-radar-glow 3.2s ease-in-out infinite;
 }
 
+/* Shield + radar sweep — matches in-app PermitArcShieldLogo (intro / dashboard). */
+.permitarc-shield-logo {
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: middle;
+  filter: drop-shadow(0 0 6px rgba(45, 212, 191, 0.35));
+}
+
+.permitarc-shield-logo .logo-mark {
+  display: block;
+  width: 100%;
+  height: 100%;
+  animation: none;
+}
+
+.permitarc-shield-inner-glow {
+  position: absolute;
+  top: 39%;
+  left: 50%;
+  width: 24%;
+  height: 24%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  box-shadow: 0 0 0.35rem rgba(45, 212, 191, 0.14);
+  pointer-events: none;
+}
+
+.permitarc-shield-radar {
+  position: absolute;
+  top: 35.8%;
+  left: 50%;
+  width: 26%;
+  height: 26%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.permitarc-shield-radar-rotator {
+  position: absolute;
+  inset: 0;
+  animation: permitarc-radar-rotate 3.2s linear infinite;
+}
+
+@keyframes permitarc-radar-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.permitarc-shield-radar-wedge {
+  position: absolute;
+  inset: -120%;
+  background: conic-gradient(
+    from -26deg at 50% 50%,
+    rgba(45, 212, 191, 0) 0deg,
+    rgba(45, 212, 191, 0.04) 12deg,
+    rgba(45, 212, 191, 0.09) 26deg,
+    rgba(45, 212, 191, 0) 27deg,
+    rgba(45, 212, 191, 0) 360deg
+  );
+}
+
+.permitarc-shield-radar-beam {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 38%;
+  height: 1px;
+  margin-top: -0.5px;
+  transform-origin: 0 50%;
+  background: rgba(45, 212, 191, 0.32);
+  border-radius: 1px;
+}
+
+.permitarc-shield-radar-beam::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 2.5px;
+  height: 2.5px;
+  transform: translate(50%, -50%);
+  border-radius: 50%;
+  background: rgba(45, 212, 191, 0.8);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .permitarc-shield-radar-rotator {
+    animation: none;
+  }
+
+  .permitarc-shield-logo {
+    animation: logo-radar-glow 3.2s ease-in-out infinite;
+  }
+}
+
 @keyframes logo-radar-glow {
   0%,
   100% {

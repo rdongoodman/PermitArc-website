@@ -42,4 +42,38 @@
       appendLink(footerRoot, item, false);
     });
   }
+
+  function upgradeShieldLogo(img) {
+    if (!img || img.closest('.permitarc-shield-logo')) return;
+
+    var wrap = document.createElement('span');
+    wrap.className = 'permitarc-shield-logo';
+
+    var glow = document.createElement('span');
+    glow.className = 'permitarc-shield-inner-glow';
+
+    var radar = document.createElement('span');
+    radar.className = 'permitarc-shield-radar';
+
+    var rotator = document.createElement('span');
+    rotator.className = 'permitarc-shield-radar-rotator';
+
+    var wedge = document.createElement('span');
+    wedge.className = 'permitarc-shield-radar-wedge';
+
+    var beam = document.createElement('span');
+    beam.className = 'permitarc-shield-radar-beam';
+
+    rotator.appendChild(wedge);
+    rotator.appendChild(beam);
+    radar.appendChild(rotator);
+
+    var parent = img.parentNode;
+    parent.insertBefore(wrap, img);
+    wrap.appendChild(glow);
+    wrap.appendChild(img);
+    wrap.appendChild(radar);
+  }
+
+  document.querySelectorAll('img.logo-mark').forEach(upgradeShieldLogo);
 })();
