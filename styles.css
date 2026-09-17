@@ -2179,6 +2179,127 @@ body.tax-modal-open {
   text-align: center;
 }
 
+.feedback-form {
+  margin: 0 0 1.25rem;
+}
+
+.feedback-fieldset {
+  border: 0;
+  margin: 0 0 1.25rem;
+  padding: 0;
+}
+
+.feedback-legend {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #1a202c;
+  margin-bottom: 0.65rem;
+  padding: 0;
+}
+
+.feedback-chip-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.feedback-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.88rem;
+  color: #2d3748;
+  background: #f7fafc;
+  border: 1px solid #cbd5e0;
+  border-radius: 999px;
+  padding: 0.45rem 0.85rem;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.feedback-chip:has(input:checked) {
+  border-color: #0d9488;
+  background: #ecfdf5;
+  color: #0f766e;
+}
+
+.feedback-chip input {
+  accent-color: #0d9488;
+}
+
+.feedback-label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #1a202c;
+  margin: 0 0 0.4rem;
+}
+
+.feedback-textarea,
+.feedback-input {
+  width: 100%;
+  box-sizing: border-box;
+  font: inherit;
+  font-size: 1rem;
+  line-height: 1.45;
+  color: #1a202c;
+  background: #fff;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  padding: 0.65rem 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.feedback-textarea:focus,
+.feedback-input:focus {
+  outline: 2px solid #0d9488;
+  outline-offset: 1px;
+  border-color: #0d9488;
+}
+
+.feedback-submit {
+  width: 100%;
+  margin-top: 0.25rem;
+}
+
+.feedback-form-error {
+  background: #fff5f5;
+  border: 1px solid #feb2b2;
+  color: #c53030;
+  border-radius: 8px;
+  padding: 0.65rem 0.85rem;
+  margin-bottom: 1rem;
+  font-size: 0.92rem;
+}
+
+.feedback-success {
+  background: #ecfdf5;
+  border: 1px solid #6ee7b7;
+  border-radius: 10px;
+  padding: 1.25rem 1.35rem;
+  margin-bottom: 1.25rem;
+}
+
+.feedback-success-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.15rem;
+  color: #065f46;
+}
+
+.feedback-success p {
+  margin: 0;
+  color: #047857;
+  line-height: 1.5;
+}
+
+.feedback-mail-alt {
+  margin: 0 0 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #4a5568;
+  line-height: 1.5;
+}
+
 /* Email app chooser (support@ mailto links) */
 body.email-chooser-open {
   overflow: hidden;

@@ -169,4 +169,12 @@
     },
     true
   );
+
+  window.PermitArcOpenSupportCompose = function (subject, body) {
+    openDialog({
+      to: SUPPORT,
+      subject: subject || 'PermitArc support',
+      body: body || '',
+    });
+  };
 })();
