@@ -69,8 +69,8 @@
     dialogEl.setAttribute('aria-modal', 'true');
     dialogEl.setAttribute('aria-labelledby', 'email-chooser-title');
     dialogEl.innerHTML =
-      '<h2 id="email-chooser-title">Send email with</h2>' +
-      '<p class="email-chooser-lead">Pick the app you use. We never see your password.</p>' +
+      '<h2 id="email-chooser-title">Email PermitArc support</h2>' +
+      '<p class="email-chooser-lead">Choose the mail app you use. We open a draft to <strong>support@permitarc.com</strong> with short prompts — click in the message, type your note, then Send. We never see your password.</p>' +
       '<div class="email-chooser-actions">' +
       '<button type="button" class="email-chooser-btn" data-provider="gmail">Gmail (web)</button>' +
       '<button type="button" class="email-chooser-btn" data-provider="outlook">Outlook (web)</button>' +
@@ -137,7 +137,7 @@
     document.querySelectorAll('a[href^="mailto:"]').forEach(function (link) {
       var href = link.getAttribute('href');
       if (!href || !isSupportMailto(href)) return;
-      if (href.indexOf('body=') < 0) link.setAttribute('href', canonical);
+      link.setAttribute('href', canonical);
     });
   }
 
@@ -151,13 +151,20 @@
     initSupportEmail();
   }
 
+  function supportMailForOpen(linkHref) {
+    var canonical = canonicalSupportHref();
+    var href =
+      isSupportMailto(linkHref) && canonical ? canonical : linkHref;
+    return parseMailto(href);
+  }
+
   document.addEventListener(
     'click',
     function (e) {
       var link = e.target.closest('a[href^="mailto:"]');
       if (!link || !isSupportMailto(link.getAttribute('href'))) return;
       e.preventDefault();
-      var parsed = parseMailto(link.getAttribute('href'));
+      var parsed = supportMailForOpen(link.getAttribute('href'));
       if (parsed) openDialog(parsed);
     },
     true

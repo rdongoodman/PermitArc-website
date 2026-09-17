@@ -21,7 +21,7 @@
   function supportMailtoHref() {
     return (
       window.PermitArcSupportMailto ||
-      "mailto:support@permitarc.com?subject=PermitArc%20feedback"
+      "mailto:support@permitarc.com?subject=PermitArc%20support"
     );
   }
 

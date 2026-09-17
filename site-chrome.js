@@ -78,7 +78,7 @@
   document.querySelectorAll('img.logo-mark').forEach(upgradeShieldLogo);
 
   var emailChooser = document.createElement('script');
-  emailChooser.src = 'site-email-compose.js?v=20260917email2';
+  emailChooser.src = 'site-email-compose.js?v=20260918support2';
   emailChooser.defer = true;
   document.body.appendChild(emailChooser);
 })();

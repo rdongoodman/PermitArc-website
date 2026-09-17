@@ -1,32 +1,71 @@
-"""Replace plain support@ mailto links with the feedback starter template."""
+"""Replace support@ mailto links with the canonical feedback starter template."""
 from __future__ import annotations
 
 import re
 from pathlib import Path
+from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parent.parent
 
-CANONICAL = (
-    "mailto:support@permitarc.com?subject=PermitArc%20feedback&amp;body="
-    "Category%20(bug%20%2F%20readability%20%2F%20feature%20%2F%20account%20%2F%20other)%3A%0A%0A"
-    "What%20I%20was%20trying%20to%20do%3A%0A%0AWhat%20happened%20instead%3A%0A%0A"
-    "Reply%20email%20(optional)%3A"
+SUPPORT_SCRIPT = (
+    '  <script src="site-support-mailto.js?v=20260918support2"></script>\n'
 )
 
-PLAIN = 'href="mailto:support@permitarc.com"'
-SUBJECT_ONLY = (
-    'href="mailto:support@permitarc.com?subject=PermitArc%20feedback"'
-)
-SUPPORT_SCRIPT = (
-    '  <script src="site-support-mailto.js?v=20260917email2"></script>\n'
-)
+
+def build_body() -> str:
+    lines = [
+        "Hi PermitArc team,",
+        "",
+        "Write your message BELOW the divider line.",
+        "Do not type above the divider (you can delete these instructions).",
+        "",
+        "----------------------------------------",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "Optional — only if it helps us reply faster:",
+        "",
+        "Topic (bug, billing, idea, other):",
+        "",
+        "",
+        "",
+        "What you were doing (if relevant):",
+        "",
+        "",
+        "",
+        "Your email for a reply (optional):",
+        "",
+        "",
+    ]
+    return "\r\n".join(lines)
+
+
+def build_canonical_href(for_html: bool) -> str:
+    subject = quote("PermitArc support")
+    body = quote(build_body(), safe="")
+    sep = "&amp;" if for_html else "&"
+    return f"mailto:support@permitarc.com?subject={subject}{sep}body={body}"
 
 
 def main() -> None:
+    canonical = build_canonical_href(for_html=True)
+    pattern = re.compile(r'href="mailto:support@permitarc\.com[^"]*"')
+
     for path in sorted(ROOT.glob("*.html")):
         text = path.read_text(encoding="utf-8", errors="replace")
-        updated = text.replace(PLAIN, f'href="{CANONICAL}"')
-        updated = updated.replace(SUBJECT_ONLY, f'href="{CANONICAL}"')
+        updated = pattern.sub(f'href="{canonical}"', text)
+        updated = updated.replace(
+            "site-support-mailto.js?v=20260918support",
+            "site-support-mailto.js?v=20260918support2",
+        )
+        updated = updated.replace(
+            "site-support-mailto.js?v=20260917email2",
+            "site-support-mailto.js?v=20260918support2",
+        )
         if "site-support-mailto.js" not in updated:
             updated = updated.replace(
                 '  <script src="site-nav-config.js',
