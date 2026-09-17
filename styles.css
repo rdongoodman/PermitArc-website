@@ -1498,6 +1498,10 @@ body.tax-modal-open {
   text-decoration: none;
 }
 
+.text-link-arrow::after {
+  content: " →";
+}
+
 .text-link-arrow:hover {
   color: var(--accent-teal);
   text-decoration: underline;
