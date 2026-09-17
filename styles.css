@@ -11,6 +11,11 @@
   --urgent: #ffa657;
   --valid: #56d364;
   --expired: #ff7b72;
+  /* Intel Deck pillar accents — match app CompliancePillarColors */
+  --pillar-radar: #ffa657;
+  --pillar-patrol: #2dd4bf;
+  --pillar-proactive: #bc8cff;
+  --pillar-intel-log: #58a6ff;
   --bg-light: #fafaf8;
   --text-dark: #1a1f2e;
   /* Desktop uses full width; phones/tablets stack via grids + breakpoint below */
@@ -137,8 +142,8 @@ a:hover {
 }
 
 .logo-mark {
-  width: 2rem;
-  height: 2rem;
+  width: 3rem;
+  height: 3rem;
   object-fit: contain;
   flex-shrink: 0;
   filter: drop-shadow(0 0 6px rgba(45, 212, 191, 0.35));
@@ -150,8 +155,8 @@ a:hover {
   position: relative;
   display: inline-block;
   flex-shrink: 0;
-  width: 2rem;
-  height: 2rem;
+  width: 3rem;
+  height: 3rem;
   vertical-align: middle;
   filter: drop-shadow(0 0 6px rgba(45, 212, 191, 0.35));
 }
@@ -433,7 +438,7 @@ a:hover {
   margin: 0 0 1.35rem;
 }
 
-.hero-pillar-badge {
+.hero-pillar-link {
   display: inline-flex;
   align-items: center;
   font-size: 0.68rem;
@@ -442,9 +447,92 @@ a:hover {
   letter-spacing: 0.04em;
   padding: 0.35rem 0.7rem;
   border-radius: 999px;
+  text-decoration: none;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+.hero-pillar-link:hover {
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+.hero-pillar-link--radar {
+  background: rgba(255, 166, 87, 0.14);
+  color: var(--pillar-radar);
+  border: 1px solid rgba(255, 166, 87, 0.45);
+}
+
+.hero-pillar-link--radar:hover {
+  background: rgba(255, 166, 87, 0.22);
+  color: var(--pillar-radar);
+}
+
+.hero-pillar-link--patrol {
   background: rgba(45, 212, 191, 0.12);
-  color: var(--accent-teal);
+  color: var(--pillar-patrol);
+  border: 1px solid rgba(45, 212, 191, 0.42);
+}
+
+.hero-pillar-link--patrol:hover {
+  background: rgba(45, 212, 191, 0.2);
+  color: var(--pillar-patrol);
+}
+
+.hero-pillar-link--proactive {
+  background: rgba(188, 140, 255, 0.14);
+  color: var(--pillar-proactive);
+  border: 1px solid rgba(188, 140, 255, 0.45);
+}
+
+.hero-pillar-link--proactive:hover {
+  background: rgba(188, 140, 255, 0.22);
+  color: var(--pillar-proactive);
+}
+
+.hero-pillar-link--intel-log {
+  background: rgba(88, 166, 255, 0.12);
+  color: var(--pillar-intel-log);
+  border: 1px solid rgba(88, 166, 255, 0.4);
+}
+
+.hero-pillar-link--intel-log:hover {
+  background: rgba(88, 166, 255, 0.2);
+  color: var(--pillar-intel-log);
+}
+
+.pillar-chip {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.28rem 0.6rem;
+  border-radius: 999px;
+}
+
+.pillar-chip--radar {
+  background: rgba(255, 166, 87, 0.14);
+  color: var(--pillar-radar);
+  border: 1px solid rgba(255, 166, 87, 0.4);
+}
+
+.pillar-chip--patrol {
+  background: rgba(45, 212, 191, 0.12);
+  color: var(--pillar-patrol);
   border: 1px solid rgba(45, 212, 191, 0.38);
+}
+
+.pillar-chip--proactive {
+  background: rgba(188, 140, 255, 0.14);
+  color: var(--pillar-proactive);
+  border: 1px solid rgba(188, 140, 255, 0.4);
+}
+
+.pillar-chip--intel-log {
+  background: rgba(88, 166, 255, 0.12);
+  color: var(--pillar-intel-log);
+  border: 1px solid rgba(88, 166, 255, 0.38);
 }
 
 .hero-pillars-note {
@@ -520,8 +608,8 @@ a:hover {
 }
 
 .mock-proactive {
-  background: rgba(88, 166, 255, 0.1);
-  border: 1px solid rgba(88, 166, 255, 0.35);
+  background: rgba(188, 140, 255, 0.12);
+  border: 1px solid rgba(188, 140, 255, 0.42);
   border-radius: 8px;
   padding: 0.75rem;
   font-size: 0.8rem;
@@ -1437,6 +1525,30 @@ body.tax-modal-open {
   box-shadow: 0 4px 20px rgba(45, 212, 191, 0.12);
   transform: translateY(-2px);
   text-decoration: none;
+}
+
+.pillar-teaser--radar:hover {
+  border-color: rgba(255, 166, 87, 0.55);
+  box-shadow: 0 4px 20px rgba(255, 166, 87, 0.12);
+}
+
+.pillar-teaser--patrol:hover {
+  border-color: rgba(45, 212, 191, 0.55);
+  box-shadow: 0 4px 20px rgba(45, 212, 191, 0.12);
+}
+
+.pillar-teaser--proactive:hover {
+  border-color: rgba(188, 140, 255, 0.55);
+  box-shadow: 0 4px 20px rgba(188, 140, 255, 0.12);
+}
+
+.pillar-teaser--intel-log:hover {
+  border-color: rgba(88, 166, 255, 0.55);
+  box-shadow: 0 4px 20px rgba(88, 166, 255, 0.12);
+}
+
+.ai-anchor {
+  scroll-margin-top: 5.5rem;
 }
 
 .pillar-teaser h3 {

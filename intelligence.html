@@ -8,14 +8,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260917sh">
+  <link rel="stylesheet" href="styles.css?v=20260917hp">
   <script src="launch-config.js?v=20260911c"></script>
   <script src="site-nav-config.js?v=20260911c"></script>
 </head>
 <body data-nav-page="intelligence">
   <header class="site-header">
     <div class="header-inner">
-      <a href="index.html" class="logo"><img src="assets/shield_logo.png" alt="" class="logo-mark" width="32" height="32"><span class="logo-wordmark">Permit<span class="logo-arc">Arc</span></span></a>
+      <a href="index.html" class="logo"><img src="assets/shield_logo.png" alt="" class="logo-mark" width="48" height="48"><span class="logo-wordmark">Permit<span class="logo-arc">Arc</span></span></a>
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
         <span class="nav-toggle-bar" aria-hidden="true"></span>
         <span class="nav-toggle-bar" aria-hidden="true"></span>
@@ -36,24 +36,31 @@
 
   <section id="ai" class="section-light page-content">
     <div class="section-inner section-inner-wide">
-      <p class="ai-included-banner"><span class="badge badge-included">Included</span> <strong>Expiration Radar</strong> — daily watch for permits, licenses, and certificates expiring in 30, 15, or 5 days. Email, in-app, and optional push. No extra charge per alert.</p>
+      <p id="expiration-radar" class="ai-included-banner ai-anchor"><span class="pillar-chip pillar-chip--radar">Expiration Radar</span> <strong>Included</strong> — daily watch for permits, licenses, and certificates expiring in 30, 15, or 5 days. Email, in-app, and optional push. No extra charge per alert.</p>
 
       <div class="ai-grid">
-        <div class="ai-card">
-          <span class="badge badge-included">Included</span>
+        <div id="weekly-patrol" class="ai-card ai-anchor">
+          <span class="pillar-chip pillar-chip--patrol">Weekly Patrol</span>
           <h3>Weekly Regulatory Patrol</h3>
           <p class="ai-where">Intel Deck ? Weekly Patrol · scoped to each shop's <strong>ZIP and business type</strong></p>
           <p>Each week, PermitArc scans official government sources for regulatory updates and law changes that may affect your kind of business in that area.</p>
           <p class="ai-benefit"><strong>Your benefit:</strong> Licensing changes, new requirements, and compliance updates — with links to official sources when something verifiable is found. Quiet weeks when nothing new appears.</p>
         </div>
-        <div class="ai-card">
-          <span class="badge badge-included">Included</span>
+        <div id="proactive" class="ai-card ai-anchor">
+          <span class="pillar-chip pillar-chip--proactive">Proactive Review</span>
           <h3>Proactive compliance review</h3>
           <p class="ai-where">Intel Deck ? Proactive Compliance · runs <strong>separately for each storefront</strong></p>
           <p>Cross-checks each storefront's uploaded permits and compliance documents for likely gaps and soft suggestions — plus HQ master policies when you use Corporate Vault. Runs separately per shop when enabled in Intel Deck and once enough documents are uploaded for that location.</p>
           <p class="ai-benefit"><strong>Your benefit:</strong> Up to three suggestions per shop per week. The more documents you scan and store for that location, the sharper the review becomes. Catch missing or overlooked items before a renewal or inspection surprise.</p>
         </div>
-        <div class="ai-card">
+        <div id="intelligence-log" class="ai-card ai-anchor">
+          <span class="pillar-chip pillar-chip--intel-log">Intelligence Log</span>
+          <h3>Compliance Intelligence Log</h3>
+          <p class="ai-where">Intel Deck ? Compliance Intelligence Log</p>
+          <p>When you ask location AI a question, answers can stay in your log — star the ones you want to find again. This is your saved Q&amp;A history, not a weekly alert channel.</p>
+          <p class="ai-benefit"><strong>Your benefit:</strong> Revisit grounded answers without re-asking. Separate from patrol and proactive inboxes — on demand, when you use chat.</p>
+        </div>
+        <div id="ai-chat" class="ai-card ai-anchor">
           <span class="badge badge-metered">Included AI allowance</span>
           <h3>Storefront AI chat</h3>
           <p class="ai-where">Business location ? Ask AI · <strong>that shop only</strong></p>
