@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260917fix">
+  <link rel="stylesheet" href="styles.css?v=20260917feedback">
   <script src="launch-config.js?v=20260911c"></script>
   <script src="site-nav-config.js?v=20260911c"></script>
 </head>
@@ -38,8 +38,10 @@
       <div class="feedback-panel card-elevated">
         <p class="feedback-intro">Something hard to read, broken, or missing? We want to hear from you &mdash; whether you use the app today or you are still exploring the website.</p>
 
-        <p class="feedback-section-pill" role="heading" aria-level="2">Send a message</p>
-        <p>Email <a href="mailto:support@permitarc.com">support@permitarc.com</a> with:</p>
+        <div class="feedback-mail-actions">
+          <a href="mailto:support@permitarc.com?subject=PermitArc%20feedback&amp;body=Category%20(bug%20%2F%20readability%20%2F%20feature%20%2F%20account%20%2F%20other)%3A%0A%0AWhat%20I%20was%20trying%20to%20do%3A%0A%0AWhat%20happened%20instead%3A%0A%0AReply%20email%20(optional)%3A" class="feedback-section-pill">Send a message</a>
+        </div>
+        <p>Email <a href="mailto:support@permitarc.com?subject=PermitArc%20feedback&amp;body=Category%20(bug%20%2F%20readability%20%2F%20feature%20%2F%20account%20%2F%20other)%3A%0A%0AWhat%20I%20was%20trying%20to%20do%3A%0A%0AWhat%20happened%20instead%3A%0A%0AReply%20email%20(optional)%3A">support@permitarc.com</a> with:</p>
         <ul class="feedback-list">
           <li><strong>What this is about</strong> &mdash; bug, hard to use, feature idea, account or billing, or other</li>
           <li><strong>Your message</strong> &mdash; what were you trying to do? What happened instead? The more detail, the better.</li>
@@ -49,6 +51,7 @@
         <div class="feedback-cta">
           <a href="mailto:support@permitarc.com?subject=PermitArc%20feedback&amp;body=Category%20(bug%20%2F%20readability%20%2F%20feature%20%2F%20account%20%2F%20other)%3A%0A%0AWhat%20I%20was%20trying%20to%20do%3A%0A%0AWhat%20happened%20instead%3A%0A%0AReply%20email%20(optional)%3A" class="btn btn-primary">Open email to send feedback</a>
         </div>
+        <p class="feedback-mailto-hint">All three links open your default email app with the same starter template (Gmail, Outlook, Apple Mail, etc.).</p>
 
         <p class="feedback-note">Already using PermitArc? You can also send feedback from <strong>Intel Deck &rarr; Feedback &amp; Support</strong> inside the app &mdash; same team, same inbox.</p>
       </div>

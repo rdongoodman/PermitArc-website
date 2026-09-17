@@ -569,9 +569,14 @@ a:hover {
   color: var(--text-dark);
 }
 
+.feedback-mail-actions {
+  text-align: center;
+  margin: 0 0 1.25rem;
+}
+
 .feedback-section-pill {
   display: inline-block;
-  margin: 0 0 1rem;
+  margin: 0;
   padding: 0.4rem 1.1rem;
   border-radius: 999px;
   font-size: 0.92rem;
@@ -580,6 +585,20 @@ a:hover {
   color: #0f766e;
   background: rgba(45, 212, 191, 0.14);
   border: 1px solid rgba(45, 212, 191, 0.45);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+a.feedback-section-pill:hover {
+  background: rgba(45, 212, 191, 0.24);
+  border-color: rgba(45, 212, 191, 0.65);
+  color: #0d9488;
+}
+
+a.feedback-section-pill:focus-visible {
+  outline: 2px solid var(--accent-teal);
+  outline-offset: 3px;
 }
 
 .pricing-detail-band {
@@ -2130,13 +2149,23 @@ body.tax-modal-open {
 }
 
 .feedback-cta {
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+.feedback-mailto-hint {
+  margin: 0 0 1.25rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #718096;
+  line-height: 1.45;
 }
 
 .feedback-note {
   margin: 0;
   font-size: 0.9rem;
   color: #718096;
+  text-align: center;
 }
 
 .coming-soon-panel {
