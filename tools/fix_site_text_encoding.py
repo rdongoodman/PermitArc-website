@@ -70,13 +70,45 @@ MOJIBAKE: list[tuple[str, str]] = [
     ("â€˜", "'"),
 ]
 
+# Lone CP1252 bytes saved inside UTF-8 HTML (shows as � in browsers).
+CP1252_LONE: list[tuple[str, str]] = [
+    ("\x97", "—"),
+    ("\x96", "–"),
+    ("\x95", "•"),
+    ("\xb7", "·"),
+]
+
+
+BYTE_TO_ENTITY: list[tuple[bytes, bytes]] = [
+    (b"\x97", b"&mdash;"),
+    (b"\x96", b"&ndash;"),
+]
+
+
+def fix_raw_bytes(raw: bytes) -> bytes:
+    for old, new in BYTE_TO_ENTITY:
+        raw = raw.replace(old, new)
+    # Lone CP1252 middot only — skip valid UTF-8 (C2 B7).
+    raw = re.sub(rb"(?<!\xc2)\xb7", b"&middot;", raw)
+    return raw
+
 
 def fix_file(path: Path) -> bool:
-    text = path.read_text(encoding="utf-8", errors="replace")
+    raw = fix_raw_bytes(path.read_bytes())
+    text = raw.decode("utf-8", errors="replace")
     original = text
     for old, new in MOJIBAKE + REPLACEMENTS:
         text = text.replace(old, new)
-    text = text.replace("\ufffd", "—")
+    text = text.replace("&mdash;&middot;", "&middot;")
+    text = text.replace("\ufffd", "&mdash;")
+    for char, entity in (
+        ("\u2014", "&mdash;"),
+        ("\u2013", "&ndash;"),
+        ("\u2192", "&rarr;"),
+        ("\u2190", "&larr;"),
+        ("\u00b7", "&middot;"),
+    ):
+        text = text.replace(char, entity)
     text = re.sub(
         r'(<a[^>]*class="[^"]*text-link-arrow[^"]*"[^>]*>)([^<]+?) →(</a>)',
         r"\1\2\3",
@@ -84,12 +116,12 @@ def fix_file(path: Path) -> bool:
     )
     text = re.sub(
         r'styles\.css\?v=[^"]+',
-        "styles.css?v=20260917utf",
+        "styles.css?v=20260917fix",
         text,
     )
     text = re.sub(
         r'site-public\.js\?v=[^"]+',
-        "site-public.js?v=20260917utf",
+        "site-public.js?v=20260917fix",
         text,
     )
     text = text.replace(WHY_NO, 'class="why-no"><span class="why-icon" aria-hidden="true">×</span>')
