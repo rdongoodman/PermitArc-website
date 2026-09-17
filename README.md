@@ -5,9 +5,11 @@ Marketing site for [PermitArc](https://permitarc.com) — static HTML on GitHub 
 - **Live:** https://permitarc.com
 - **Stack:** HTML + CSS · Cloudflare DNS · GitHub Pages
 
-## Launch status (Sep 17, 2026)
+## Launch status (Sep 18, 2026)
 
 **~99.9% finished** — copy, nav, sales tax, shield/radar chrome, feedback flow, and sitewide support email (Gmail / Outlook / Yahoo / default app chooser + feedback starter template) are on **`main`** and deploy via GitHub Pages.
+
+**App repo (not this site):** `rdongoodman/PermitArc` branch `backup/jul-21-qa-and-proactive-dispatch` — handheld launcher icon (83%, frozen Sep 18) + phone intro (full pillar rows, scroll-to-Sign-in hint) pushed **`c12f413`**.
 
 **Still before first paying customer:** flip `launch-config.js` after live Stripe Payment Links + hosted install files; end-to-end smoke (pricing → checkout → download); optional tutorial media / app screenshots; verify **receive** at `support@permitarc.com` (Cloudflare Email Routing — free forward; **send as** support@ may need Google Workspace or Zoho later — alerts already use Resend from `alerts@permitarc.com`).
 
