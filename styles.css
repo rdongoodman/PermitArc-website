@@ -882,11 +882,26 @@ a.feedback-section-pill:focus-visible {
   gap: 0.65rem;
 }
 
+.mock-score-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.15rem;
+  margin: 0.35rem 0 0;
+}
+
 .mock-score {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--valid);
+  line-height: 1;
+  color: #56d364;
   margin: 0;
+}
+
+.mock-score-out-of {
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1;
+  color: #e6edf3;
 }
 
 .mock-label {
