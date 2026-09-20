@@ -2808,3 +2808,48 @@ body.email-chooser-open {
     flex-wrap: wrap;
   }
 }
+
+/* Homepage trim (Sep 2026 preview) */
+.section-cta-row--tight {
+  margin-top: 0.75rem;
+}
+
+.step-hint {
+  margin: 0.65rem 0 0;
+  font-size: 0.88rem;
+}
+
+.step-hint a {
+  color: var(--accent-teal);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.step-hint a:hover {
+  text-decoration: underline;
+}
+
+.track-expand {
+  margin-top: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 0.35rem 1rem 0.5rem;
+}
+
+.track-expand summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.65rem 0;
+  list-style: none;
+  color: var(--text-light);
+}
+
+.track-expand summary::-webkit-details-marker {
+  display: none;
+}
+
+.track-grid--in-details {
+  margin-top: 0.5rem;
+  padding-bottom: 0.75rem;
+}
