@@ -289,6 +289,26 @@ a:hover {
   color: var(--accent-teal);
 }
 
+.nav a.nav-link-with-brand .nav-link-lead {
+  color: var(--text-body);
+}
+
+.nav a.nav-link-with-brand .logo-wordmark {
+  color: var(--text-light);
+}
+
+.nav a.nav-link-with-brand:hover .nav-link-lead {
+  color: var(--accent-teal);
+}
+
+.nav a.nav-link-with-brand:hover .logo-wordmark {
+  color: var(--text-light);
+}
+
+.nav a.nav-link-with-brand:hover .logo-arc {
+  color: var(--accent-teal);
+}
+
 .btn {
   display: inline-block;
   padding: 0.65rem 1.25rem;

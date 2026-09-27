@@ -18,11 +18,33 @@
     return href;
   }
 
+  function appendBrandWordmark(parent) {
+    var wm = document.createElement('span');
+    wm.className = 'logo-wordmark';
+    wm.appendChild(document.createTextNode('Permit'));
+    var arc = document.createElement('span');
+    arc.className = 'logo-arc';
+    arc.textContent = 'Arc';
+    wm.appendChild(arc);
+    parent.appendChild(wm);
+  }
+
   function appendLink(parent, item, isCurrent) {
     var a = document.createElement('a');
     a.href = resolveHref(item.href);
-    a.textContent = item.label;
-    if (item.download) a.className = 'nav-item-download';
+    if (item.brandPrefix) {
+      a.className = 'nav-link-with-brand';
+      if (item.download) a.classList.add('nav-item-download');
+      var lead = document.createElement('span');
+      lead.className = 'nav-link-lead';
+      lead.textContent = item.brandPrefix;
+      a.appendChild(lead);
+      appendBrandWordmark(a);
+      a.setAttribute('aria-label', item.label);
+    } else {
+      a.textContent = item.label;
+      if (item.download) a.className = 'nav-item-download';
+    }
     if (isCurrent) a.setAttribute('aria-current', 'page');
     parent.appendChild(a);
   }
