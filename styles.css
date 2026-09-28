@@ -768,15 +768,45 @@ a.feedback-section-pill:focus-visible {
 
 .hero-jurisdiction-callout {
   margin: 0 0 1.1rem;
-  padding: 0.85rem 1rem;
-  font-size: 1rem;
-  font-weight: 600;
+  padding: 0.95rem 1.05rem;
+  font-size: 1.02rem;
+  font-weight: 500;
   line-height: 1.6;
   color: var(--text-light);
-  background: rgba(45, 212, 191, 0.12);
-  border: 1px solid rgba(45, 212, 191, 0.45);
+  background: rgba(45, 212, 191, 0.14);
+  border: 1px solid rgba(45, 212, 191, 0.55);
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(45, 212, 191, 0.06);
+  box-shadow: 0 0 24px rgba(45, 212, 191, 0.1);
+}
+
+.hero-jurisdiction-callout-lead {
+  color: #f4fbfb;
+  font-weight: 700;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-jurisdiction-callout--pulse {
+    animation: hero-jurisdiction-glow 5.5s ease-in-out infinite;
+  }
+}
+
+@keyframes hero-jurisdiction-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(45, 212, 191, 0.08);
+    border-color: rgba(45, 212, 191, 0.5);
+  }
+
+  50% {
+    box-shadow: 0 0 28px rgba(45, 212, 191, 0.22), 0 0 48px rgba(45, 212, 191, 0.08);
+    border-color: rgba(45, 212, 191, 0.72);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-jurisdiction-callout--pulse {
+    animation: none;
+  }
 }
 
 .hero .scope {
