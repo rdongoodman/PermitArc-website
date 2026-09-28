@@ -732,6 +732,11 @@ a.feedback-section-pill:focus-visible {
   margin: 0 0 0.75rem;
 }
 
+.hero .subhead-all {
+  color: var(--accent-teal);
+  font-weight: 700;
+}
+
 .hero .scope {
   font-size: 0.95rem;
   color: var(--text-muted);
@@ -2872,4 +2877,82 @@ body.email-chooser-open {
 .track-grid--in-details {
   margin-top: 0.5rem;
   padding-bottom: 0.75rem;
+}
+
+/* #track — app-style compliance donut (demo only; hero unchanged) */
+.track-donut-showcase {
+  margin-top: 2.5rem;
+  padding: 2rem 0 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.track-donut-caption {
+  margin: 0;
+  font-size: 0.95rem;
+  color: rgba(230, 237, 243, 0.78);
+  max-width: 34rem;
+  line-height: 1.5;
+}
+
+.track-donut-caption strong {
+  color: rgba(230, 237, 243, 0.92);
+  font-weight: 600;
+}
+
+.compliance-donut {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.compliance-donut-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.compliance-donut-track {
+  stroke: rgba(139, 148, 158, 0.28);
+}
+
+.compliance-donut-progress {
+  stroke: var(--valid);
+  stroke-linecap: round;
+}
+
+.compliance-donut-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.05rem;
+  line-height: 1;
+}
+
+.compliance-donut-value {
+  font-size: 1.65rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--valid);
+}
+
+.compliance-donut-suffix {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #e6edf3;
+  align-self: center;
+}
+
+#track .compliance-donut--track {
+  width: 140px;
+  height: 140px;
+}
+
+#track .compliance-donut--track .compliance-donut-value {
+  font-size: 1.9rem;
 }
