@@ -737,6 +737,24 @@ a.feedback-section-pill:focus-visible {
   font-weight: 700;
 }
 
+.hero .subhead-jurisdiction {
+  font-weight: 600;
+  color: var(--text-body);
+}
+
+.hero-jurisdiction-callout {
+  margin: 0 0 1rem;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--text-light);
+  background: rgba(45, 212, 191, 0.12);
+  border: 1px solid rgba(45, 212, 191, 0.45);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(45, 212, 191, 0.06);
+}
+
 .hero .scope {
   font-size: 0.95rem;
   color: var(--text-muted);
@@ -879,6 +897,48 @@ a.feedback-section-pill:focus-visible {
   font-size: 0.8rem;
   color: var(--text-muted);
   line-height: 1.45;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-pillars--pulse .hero-pillar-link {
+    animation: hero-pillar-pulse 14s ease-in-out infinite;
+  }
+
+  .hero-pillars--pulse .hero-pillar-link--radar {
+    animation-delay: 2s;
+  }
+
+  .hero-pillars--pulse .hero-pillar-link--patrol {
+    animation-delay: 5.5s;
+  }
+
+  .hero-pillars--pulse .hero-pillar-link--proactive {
+    animation-delay: 9s;
+  }
+
+  .hero-pillars--pulse .hero-pillar-link--intel-log {
+    animation-delay: 12.5s;
+  }
+}
+
+@keyframes hero-pillar-pulse {
+  0%,
+  8%,
+  100% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+
+  4% {
+    transform: scale(1.07);
+    box-shadow: 0 0 14px rgba(255, 255, 255, 0.12);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-pillars--pulse .hero-pillar-link {
+    animation: none;
+  }
 }
 
 /* Phone mock */
@@ -1081,6 +1141,36 @@ section h2 {
   font-size: 0.95rem;
   color: var(--text-muted);
   text-align: center;
+}
+
+.why-pillar-lines {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.why-pillar-lines li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  margin-bottom: 0.85rem;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--text-body);
+}
+
+.why-pillar-lines li:last-child {
+  margin-bottom: 0;
+}
+
+.why-pillar-lines .pillar-chip {
+  text-decoration: none;
+}
+
+.why-pillar-lines .pillar-chip:hover {
+  text-decoration: none;
+  filter: brightness(1.08);
 }
 
 /* Intelligence section — light band (alternates with dark canvas) */
