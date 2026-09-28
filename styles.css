@@ -2940,45 +2940,6 @@ body.email-chooser-open {
     background: var(--bg-light);
   }
 
-  #why.why-band.premium-canvas {
-    background: #e4ebf2;
-    background-image: none;
-    color: var(--text-dark);
-    border-top: 1px solid #b8c5d4;
-  }
-
-  #why.premium-canvas::before {
-    display: none;
-  }
-
-  #why h2 {
-    color: var(--text-dark);
-  }
-
-  #why .section-lead {
-    color: #4a5568;
-  }
-
-  #why .why-col-muted {
-    background: #fff;
-    border-color: #c5d0dc;
-    box-shadow: 0 2px 10px rgba(15, 23, 42, 0.06);
-  }
-
-  #why .why-col-accent {
-    background: #fff;
-    border-color: rgba(45, 212, 191, 0.55);
-    box-shadow: 0 4px 16px rgba(45, 212, 191, 0.12);
-  }
-
-  #why .why-col h3 {
-    color: var(--text-dark);
-  }
-
-  #why .why-list li {
-    color: #4a5568;
-  }
-
   #included.section-light {
     background-color: #ffffff;
     border-top: 1px solid #b8c5d4;
