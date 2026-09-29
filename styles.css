@@ -983,15 +983,18 @@ a.feedback-section-pill:focus-visible {
 
 @keyframes hero-pillar-pulse {
   0%,
-  8%,
+  16%,
   100% {
     transform: scale(1);
     box-shadow: none;
   }
 
-  4% {
-    transform: scale(1.07);
-    box-shadow: 0 0 14px rgba(255, 255, 255, 0.12);
+  6%,
+  10% {
+    transform: scale(1.14);
+    box-shadow:
+      0 0 16px rgba(255, 255, 255, 0.22),
+      0 0 32px rgba(255, 255, 255, 0.1);
   }
 }
 
