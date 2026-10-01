@@ -93,10 +93,74 @@ body.door-page {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  min-height: 100dvh;
 }
 
+/* Sticky footer without a dead band between trust line and footer links */
 body.door-page footer.site-footer {
-  margin-top: auto;
+  margin-top: 0;
+  flex-shrink: 0;
+}
+
+.door-page__stack {
+  position: relative;
+  overflow: hidden;
+}
+
+.door-page__stack > .door-hero,
+.door-page__stack > .door-trust {
+  position: relative;
+  z-index: 1;
+}
+
+/* Full stack: grid flush under header, soft fade toward footer */
+.door-page__stack > .door-hero__grid-bg {
+  inset: 0;
+  mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 42%,
+    rgba(0, 0, 0, 0.75) 72%,
+    transparent 96%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 42%,
+    rgba(0, 0, 0, 0.75) 72%,
+    transparent 96%
+  );
+}
+
+.door-page__stack > .door-hero__circuit {
+  inset: 0;
+}
+
+/* Desktop/laptop: fill viewport; center hero + trust as one block; footer on the bottom edge */
+@media (min-width: 901px) {
+  .door-page__stack {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 0;
+  }
+
+  .door-page__stack .door-hero {
+    padding-bottom: 0.5rem;
+  }
+
+  .door-page__stack .door-trust {
+    padding-top: 0.75rem;
+    padding-bottom: 1rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .door-page__stack {
+    flex: 0 1 auto;
+    justify-content: flex-start;
+  }
 }
 
 .site-header--light .logo-wordmark,
