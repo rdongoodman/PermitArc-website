@@ -6,14 +6,18 @@
   var footerRoot = document.getElementById('site-footer-links');
   var current = (document.body && document.body.getAttribute('data-nav-page')) || '';
 
-  function onHome() {
+  function onLongHome() {
     var path = window.location.pathname || '';
-    return path === '/' || /index\.html$/i.test(path);
+    return /home-more\.html$/i.test(path);
   }
 
   function resolveHref(href) {
-    if (!onHome()) return href;
-    if (href.indexOf('index.html#') === 0) return href.slice('index.html'.length);
+    if (onLongHome()) {
+      if (href.indexOf('home-more.html#') === 0) {
+        return href.slice('home-more.html'.length);
+      }
+      if (href === 'home-more.html') return './';
+    }
     if (href === 'index.html') return './';
     return href;
   }

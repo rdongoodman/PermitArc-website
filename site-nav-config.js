@@ -1,13 +1,13 @@
 /** Shared PermitArc header nav + footer (Option B: no Sales tax in top nav). */
 window.PermitArcNav = {
   items: [
-    { id: 'why', label: 'Why PermitArc', href: 'index.html#why', brandPrefix: 'Why ' },
+    { id: 'why', label: 'Why PermitArc', href: 'home-more.html#why', brandPrefix: 'Why ' },
     { id: 'intelligence', label: "What's included", href: 'intelligence.html' },
     { id: 'quick-guide', label: 'Quick guide', href: 'how-it-works.html' },
     { id: 'tutorial', label: 'Tutorial', href: 'tutorial.html' },
-    { id: 'track', label: 'What we track', href: 'index.html#track' },
+    { id: 'track', label: 'What we track', href: 'home-more.html#track' },
     { id: 'pricing', label: 'Pricing', href: 'pricing.html' },
-    { id: 'faq', label: 'FAQ', href: 'index.html#faq' },
+    { id: 'faq', label: 'FAQ', href: 'home-more.html#faq' },
     { id: 'download', label: 'Download', href: 'download.html', download: true },
     { id: 'feedback', label: 'Feedback', href: 'feedback.html' },
   ],
