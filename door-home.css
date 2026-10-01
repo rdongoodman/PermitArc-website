@@ -255,6 +255,14 @@ body.door-page footer.site-footer {
   color: #0d9488;
 }
 
+.door-scan-hint {
+  margin: 0 0 1.25rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: #475569;
+  max-width: 42ch;
+}
+
 .door-score-mock {
   display: flex;
   align-items: center;
