@@ -1,6 +1,7 @@
 /** Shared PermitArc header nav + footer (Option B: no Sales tax in top nav). */
 window.PermitArcNav = {
   items: [
+    { id: 'overview', label: 'Overview', href: 'home-more.html#top' },
     { id: 'why', label: 'Why PermitArc', href: 'home-more.html#why', brandPrefix: 'Why ' },
     { id: 'intelligence', label: "What's included", href: 'intelligence.html' },
     { id: 'quick-guide', label: 'Quick guide', href: 'how-it-works.html' },

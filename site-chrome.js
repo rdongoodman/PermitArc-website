@@ -16,7 +16,9 @@
       if (href.indexOf('home-more.html#') === 0) {
         return href.slice('home-more.html'.length);
       }
-      if (href === 'home-more.html') return './';
+      if (href === 'home-more.html' || href === 'home-more.html#top') {
+        return href === 'home-more.html#top' ? '#top' : './';
+      }
     }
     if (href === 'index.html') return './';
     return href;
