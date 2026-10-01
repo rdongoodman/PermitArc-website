@@ -1,4 +1,9 @@
-/* Door homepage preview — light entry; does not replace index.html */
+/* Door homepage + unified light site chrome (header/footer) */
+:root {
+  --chrome-surface: #f6f8fa;
+  --chrome-border: #e2e8f0;
+}
+
 .door-preview-banner {
   background: #1a3a4a;
   color: #e8f4f8;
@@ -16,20 +21,82 @@
 /* Light header — door homepage + all inner pages */
 .site-header--light,
 .door-page .site-header {
-  background: rgba(255, 255, 255, 0.92);
-  border-bottom: 1px solid #e2e8f0;
-  box-shadow: 0 1px 0 rgba(15, 23, 42, 0.06);
+  background: var(--chrome-surface);
+  border-bottom: 1px solid var(--chrome-border);
+  box-shadow: 0 1px 0 rgba(15, 23, 42, 0.05);
 }
 
 .site-header--light::before,
 .door-page .site-header::before {
-  background: rgba(255, 255, 255, 0.92);
+  background: var(--chrome-surface);
 }
 
 .site-header--light .header-inner,
 .door-page .site-header .header-inner {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+}
+
+.site-header--light .logo,
+.door-page .site-header .logo {
+  gap: 0.28rem;
+}
+
+@media (min-width: 769px) {
+  .site-header--light .header-inner,
+  .door-page .site-header .header-inner {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    column-gap: 1.25rem;
+  }
+
+  .site-header--light .nav-toggle,
+  .door-page .site-header .nav-toggle {
+    display: none;
+  }
+
+  .site-header--light .nav,
+  .door-page .site-header .nav {
+    flex: 1;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    gap: 0.35rem 0.5rem;
+  }
+}
+
+/* Match header — light footer on all pages using site-header--light */
+body:has(.site-header--light) footer.site-footer.premium-canvas,
+.door-page footer.site-footer.premium-canvas {
+  background: var(--chrome-surface);
+  color: #64748b;
+  border-top: 1px solid var(--chrome-border) !important;
+  box-shadow: none;
+}
+
+body:has(.site-header--light) footer.site-footer.premium-canvas::before,
+.door-page footer.site-footer.premium-canvas::before {
+  display: none;
+}
+
+body:has(.site-header--light) footer.site-footer .footer-links a,
+.door-page footer.site-footer .footer-links a {
+  color: #64748b;
+}
+
+body:has(.site-header--light) footer.site-footer .footer-links a:hover,
+.door-page footer.site-footer .footer-links a:hover {
+  color: #0d9488;
+}
+
+body.door-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body.door-page footer.site-footer {
+  margin-top: auto;
 }
 
 .site-header--light .logo-wordmark,
@@ -333,6 +400,18 @@
 .door-btn-secondary:hover {
   border-color: #0d9488 !important;
   color: #0f172a !important;
+}
+
+.door-btn-outline-teal {
+  background: #fff !important;
+  color: #0f766e !important;
+  border: 1.5px solid rgba(13, 148, 136, 0.8) !important;
+}
+
+.door-btn-outline-teal:hover {
+  background: #ecfdf5 !important;
+  border-color: #0d9488 !important;
+  color: #0f766e !important;
 }
 
 .door-skip-link {
