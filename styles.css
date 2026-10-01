@@ -1,10 +1,19 @@
 /* PermitArc marketing site — palette matches app (compliance_form_theme.dart) */
 :root {
-  --bg-dark: #0d1117;
-  --bg-panel: #161b22;
-  --border: #30363d;
-  --text-muted: #8b949e;
-  --text-body: #c9d1d9;
+  /* Wave B+ (Oct 2026) — site-wide dark bands ~20% lighter than Wave B */
+  --bg-dark: #1c232c;
+  --bg-panel: #252d38;
+  --border: #48525f;
+  --text-muted: #b8c4d0;
+  --text-body: #e2e7ec;
+  --hint: #a6b2bf;
+  /* Small copy on white cards (pricing, teasers) */
+  --text-muted-on-light: #475569;
+  --canvas-highlight: #3a424d;
+  --canvas-mid: #1f2833;
+  --canvas-edge: #2a3542;
+  --canvas-why-top: #434b55;
+  --canvas-why-base: #252d38;
   --text-light: #fafaf8;
   --accent-teal: #2dd4bf;
   --accent-blue: #58a6ff;
@@ -70,7 +79,7 @@ a:hover {
   isolation: isolate;
   transform: translate3d(0, 0, 0);
   -webkit-transform: translate3d(0, 0, 0);
-  box-shadow: 0 1px 0 var(--border), 0 8px 32px rgba(13, 17, 23, 0.88);
+  box-shadow: 0 1px 0 var(--border), 0 8px 32px rgba(28, 35, 44, 0.72);
 }
 
 .site-header::before {
@@ -146,8 +155,7 @@ a:hover {
   height: 3rem;
   object-fit: contain;
   flex-shrink: 0;
-  filter: drop-shadow(0 0 6px rgba(45, 212, 191, 0.35));
-  animation: logo-radar-glow 3.2s ease-in-out infinite;
+  filter: none;
 }
 
 /* Shield + radar sweep — matches in-app PermitArcShieldLogo (intro / dashboard). */
@@ -158,7 +166,8 @@ a:hover {
   width: 3rem;
   height: 3rem;
   vertical-align: middle;
-  filter: drop-shadow(0 0 6px rgba(45, 212, 191, 0.35));
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35))
+    drop-shadow(0 0 5px rgba(45, 212, 191, 0.18));
 }
 
 .permitarc-shield-logo .logo-mark {
@@ -176,7 +185,7 @@ a:hover {
   height: 24%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  box-shadow: 0 0 0.35rem rgba(45, 212, 191, 0.14);
+  box-shadow: 0 0 0.2rem rgba(45, 212, 191, 0.08);
   pointer-events: none;
 }
 
@@ -244,20 +253,6 @@ a:hover {
 @media (prefers-reduced-motion: reduce) {
   .permitarc-shield-radar-rotator {
     animation: none;
-  }
-
-  .permitarc-shield-logo {
-    animation: logo-radar-glow 3.2s ease-in-out infinite;
-  }
-}
-
-@keyframes logo-radar-glow {
-  0%,
-  100% {
-    filter: drop-shadow(0 0 5px rgba(45, 212, 191, 0.3));
-  }
-  50% {
-    filter: drop-shadow(0 0 10px rgba(45, 212, 191, 0.55));
   }
 }
 
@@ -343,10 +338,15 @@ a:hover {
   color: var(--accent-teal);
 }
 
-/* App-matched canvas — premium_canvas_background.dart */
+/* App-matched canvas — premium_canvas_background.dart · Wave B+ */
 .premium-canvas {
   position: relative;
-  background: radial-gradient(ellipse 115% 100% at 50% -20%, #1e2024 0%, #0b0c0e 100%);
+  background: radial-gradient(
+    ellipse 115% 100% at 50% -18%,
+    var(--canvas-highlight) 0%,
+    var(--canvas-mid) 52%,
+    var(--canvas-edge) 100%
+  );
   overflow: hidden;
 }
 
@@ -355,11 +355,13 @@ a:hover {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(0, 255, 224, 0.07) 0.75px, transparent 0.75px),
-    linear-gradient(90deg, rgba(0, 255, 224, 0.07) 0.75px, transparent 0.75px);
-  background-size: 36px 36px;
-  mask-image: radial-gradient(ellipse 85% 85% at 50% 50%, black 40%, transparent 100%);
-  -webkit-mask-image: radial-gradient(ellipse 85% 85% at 50% 50%, black 40%, transparent 100%);
+    linear-gradient(rgba(0, 255, 224, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 224, 0.07) 1px, transparent 1px),
+    linear-gradient(rgba(0, 255, 224, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 224, 0.035) 1px, transparent 1px);
+  background-size: 64px 64px, 64px 64px, 16px 16px, 16px 16px;
+  mask-image: radial-gradient(ellipse 92% 88% at 50% 42%, black 38%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 92% 88% at 50% 42%, black 38%, transparent 100%);
   pointer-events: none;
 }
 
@@ -400,9 +402,13 @@ a:hover {
   border-radius: 12px;
   padding: 1.35rem 1.4rem;
   overflow: hidden;
-  background: radial-gradient(ellipse 115% 100% at 50% -20%, #1e2024 0%, #0b0c0e 100%);
+  background: radial-gradient(
+    ellipse 115% 100% at 50% -20%,
+    var(--canvas-highlight) 0%,
+    var(--canvas-mid) 100%
+  );
   border: 1px solid rgba(0, 255, 224, 0.14);
-  box-shadow: 0 8px 24px rgba(11, 12, 14, 0.22);
+  box-shadow: 0 8px 24px rgba(28, 35, 44, 0.2);
 }
 
 .premium-grid-card::before {
@@ -433,7 +439,7 @@ a:hover {
   margin: 0;
   font-size: 0.92rem;
   line-height: 1.55;
-  color: #9ca3af;
+  color: var(--text-muted);
 }
 
 .guide-step-num {
@@ -486,7 +492,7 @@ a:hover {
   margin: 0;
   font-size: 0.88rem;
   line-height: 1.5;
-  color: #9ca3af;
+  color: var(--text-muted);
 }
 
 .guide-pillar-card a {
@@ -699,7 +705,11 @@ a.feedback-section-pill:focus-visible {
 
 /* Slightly softer grid on second dark band so hero reads as the lead */
 .why-band.premium-canvas {
-  background: radial-gradient(ellipse 115% 100% at 50% -20%, #25282c 0%, #121316 100%);
+  background: radial-gradient(
+    ellipse 115% 100% at 50% -20%,
+    var(--canvas-why-top) 0%,
+    var(--canvas-why-base) 100%
+  );
 }
 
 .hero-inner {
@@ -1151,6 +1161,10 @@ section h2 {
 }
 
 .section-dark .section-lead {
+  color: var(--text-body);
+}
+
+.section-dark .why-folder-subline {
   color: var(--text-muted);
 }
 
@@ -1727,7 +1741,7 @@ section h2 {
 .beyond-five-close {
   border: none;
   background: transparent;
-  color: #718096;
+  color: var(--text-muted-on-light);
   font-size: 1.5rem;
   line-height: 1;
   padding: 0.15rem 0.35rem;
@@ -1818,7 +1832,7 @@ section h2 {
   display: block;
   margin-top: 0.35rem;
   font-size: 0.82rem;
-  color: #718096;
+  color: var(--text-muted-on-light);
 }
 
 .beyond-five-error {
@@ -1862,13 +1876,13 @@ section h2 {
 .price-card .amount span {
   font-size: 1rem;
   font-weight: 500;
-  color: #718096;
+  color: var(--text-muted-on-light);
 }
 
 .price-card p {
   margin: 0;
   font-size: 0.85rem;
-  color: #718096;
+  color: var(--text-muted-on-light);
 }
 
 .pricing-subscribe {
@@ -1912,7 +1926,7 @@ section h2 {
 .tax-gate-hint {
   margin: 0.45rem 0 0;
   font-size: 0.85rem;
-  color: #64748b;
+  color: var(--text-muted-on-light);
 }
 
 .prelaunch-notice {
@@ -2880,7 +2894,7 @@ body.email-chooser-open {
 
 @media (max-width: 768px) {
   .site-header {
-    box-shadow: 0 1px 0 var(--border), 0 12px 40px rgba(13, 17, 23, 0.96);
+    box-shadow: 0 1px 0 var(--border), 0 12px 40px rgba(28, 35, 44, 0.82);
   }
 
   .header-inner {
@@ -3001,7 +3015,12 @@ body.email-chooser-open {
 
   /* Hero: headline area stays dark; phone mock sits on a slightly lighter band */
   .hero.premium-canvas {
-    background: radial-gradient(ellipse 115% 100% at 50% -20%, #1e2024 0%, #0b0c0e 52%, #1f242c 100%);
+    background: radial-gradient(
+      ellipse 115% 100% at 50% -18%,
+      var(--canvas-highlight) 0%,
+      var(--canvas-mid) 52%,
+      #323d4b 100%
+    );
   }
 
   .hero.premium-canvas::before {
