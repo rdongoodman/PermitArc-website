@@ -13,83 +13,104 @@
   color: var(--text-dark, #1a1f2e);
 }
 
+/* Light header — door homepage + all inner pages */
+.site-header--light,
 .door-page .site-header {
   background: rgba(255, 255, 255, 0.92);
   border-bottom: 1px solid #e2e8f0;
   box-shadow: 0 1px 0 rgba(15, 23, 42, 0.06);
 }
 
+.site-header--light::before,
 .door-page .site-header::before {
   background: rgba(255, 255, 255, 0.92);
 }
 
+.site-header--light .header-inner,
+.door-page .site-header .header-inner {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.site-header--light .logo-wordmark,
 .door-page .logo-wordmark {
   color: #0d1117;
 }
 
+.site-header--light .nav a,
 .door-page .nav a {
   color: #334155;
 }
 
+.site-header--light .nav a:hover,
 .door-page .nav a:hover {
   color: #0d9488;
 }
 
 /* Nav "Why PermitArc" uses logo-wordmark markup — override dark-header light text */
+.site-header--light .nav a.nav-link-with-brand .nav-link-lead,
 .door-page .nav a.nav-link-with-brand .nav-link-lead {
   color: #334155;
 }
 
+.site-header--light .nav a.nav-link-with-brand .logo-wordmark,
 .door-page .nav a.nav-link-with-brand .logo-wordmark {
   color: #0d1117;
 }
 
+.site-header--light .nav a.nav-link-with-brand:hover .nav-link-lead,
+.site-header--light .nav a.nav-link-with-brand:hover .logo-wordmark,
 .door-page .nav a.nav-link-with-brand:hover .nav-link-lead,
 .door-page .nav a.nav-link-with-brand:hover .logo-wordmark {
   color: #0d9488;
 }
 
+.site-header--light .nav a.nav-link-with-brand:hover .logo-arc,
 .door-page .nav a.nav-link-with-brand:hover .logo-arc {
   color: #0d9488;
 }
 
-.door-page .site-header .btn-secondary,
-.door-page .site-header .door-header-fullsite {
+.site-header--light .nav-toggle,
+.door-page .nav-toggle {
+  border-color: #cbd5e1;
   background: #fff;
-  color: #0f172a;
-  border: 1px solid #94a3b8;
-  margin-right: 0.5rem;
 }
 
-.door-nav-hint {
-  margin: 1rem 0 0;
-  font-size: 0.8125rem;
-  color: #64748b;
-  line-height: 1.45;
-  max-width: 42ch;
+.site-header--light .nav-toggle-bar,
+.door-page .nav-toggle-bar {
+  background: #334155;
 }
 
-.door-nav-hint a {
-  color: #0d9488;
-  font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-.door-page .site-header .btn-primary {
-  background: rgba(45, 212, 191, 0.55);
-  color: #0f172a;
-  border: 1px solid rgba(45, 212, 191, 0.85);
-}
-
+.site-header--light .permitarc-shield-logo,
+.site-header--light .logo-mark,
 .door-page .site-header .permitarc-shield-logo,
 .door-page .site-header .logo-mark {
   filter: none !important;
   animation: none !important;
 }
 
+.site-header--light .permitarc-shield-inner-glow,
 .door-page .permitarc-shield-inner-glow {
   display: none;
+}
+
+@media (max-width: 768px) {
+  .site-header--light,
+  .door-page .site-header {
+    box-shadow: 0 1px 0 rgba(15, 23, 42, 0.06);
+  }
+
+  .site-header--light .nav,
+  .door-page .nav {
+    background-color: #fff;
+    border-bottom: 1px solid #e2e8f0;
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.1);
+  }
+
+  .site-header--light .nav a,
+  .door-page .nav a {
+    border-bottom: 1px solid #e2e8f0;
+  }
 }
 
 .door-hero {
