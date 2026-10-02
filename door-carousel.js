@@ -7,7 +7,7 @@
     { src: "assets/door-carousel/02-scan.png", caption: "Scan & review — AI fills renewal fields you verify" },
     { src: "assets/door-carousel/03-patrol.png", caption: "Weekly Regulatory Patrol — official updates for your ZIP" },
     { src: "assets/door-carousel/04-proactive.png", caption: "Proactive review — quiet vault cross-checks" },
-    { src: "assets/door-carousel/05-shop-ai.png", caption: "Shop AI — answers grounded in your documents" },
+    { src: "assets/door-carousel/05-shop-ai.png", caption: "Document Ask AI — renewal steps from your file, with official links" },
     { src: "assets/door-carousel/06-intel-deck.png", caption: "Intel Deck — patrol, proactive, and alerts in one place" },
   ];
 
@@ -26,7 +26,17 @@
   var dots = [];
   var timer = null;
   var lightbox = null;
-  var lbState = { scale: 1, tx: 0, ty: 0, dragging: false, px: 0, py: 0 };
+  var lbState = {
+    scale: 1,
+    fitScale: 1,
+    naturalW: 0,
+    naturalH: 0,
+    tx: 0,
+    ty: 0,
+    dragging: false,
+    px: 0,
+    py: 0,
+  };
 
   function buildSlides() {
     ring.className = "door-carousel__track";
@@ -140,17 +150,35 @@
     lightbox.appendChild(viewport);
     document.body.appendChild(lightbox);
 
+    function measureFitScale() {
+      if (!lbState.naturalW || !lbState.naturalH) return 1;
+      var maxW = viewport.clientWidth || window.innerWidth * 0.96;
+      var maxH = viewport.clientHeight || window.innerHeight * 0.88;
+      return Math.min(1, maxW / lbState.naturalW, maxH / lbState.naturalH);
+    }
+
     function applyLbTransform() {
-      figure.style.transform =
-        "translate(" + lbState.tx + "px," + lbState.ty + "px) scale(" + lbState.scale + ")";
-      viewport.classList.toggle("is-pannable", lbState.scale > 1.02);
+      var w = Math.round(lbState.naturalW * lbState.scale);
+      var h = Math.round(lbState.naturalH * lbState.scale);
+      img.style.width = w ? w + "px" : "";
+      img.style.height = h ? h + "px" : "";
+      figure.style.transform = "translate(" + lbState.tx + "px," + lbState.ty + "px)";
+      viewport.classList.toggle("is-pannable", lbState.scale > lbState.fitScale + 0.01);
+      viewport.style.cursor = lbState.scale > lbState.fitScale + 0.01 ? "grab" : "zoom-in";
     }
 
     function resetLbView() {
-      lbState.scale = 1;
+      lbState.fitScale = measureFitScale();
+      lbState.scale = lbState.fitScale;
       lbState.tx = 0;
       lbState.ty = 0;
       applyLbTransform();
+    }
+
+    function onLbImageReady() {
+      lbState.naturalW = img.naturalWidth;
+      lbState.naturalH = img.naturalHeight;
+      resetLbView();
     }
 
     function closeLb() {
@@ -172,9 +200,10 @@
       "wheel",
       function (e) {
         e.preventDefault();
-        var delta = e.deltaY > 0 ? -0.12 : 0.12;
-        lbState.scale = Math.min(4, Math.max(1, lbState.scale + delta));
-        if (lbState.scale <= 1) {
+        var delta = e.deltaY > 0 ? -0.08 : 0.08;
+        var minScale = lbState.fitScale || 0.1;
+        lbState.scale = Math.min(3, Math.max(minScale, lbState.scale + delta));
+        if (lbState.scale <= minScale + 0.01) {
           lbState.tx = 0;
           lbState.ty = 0;
         }
@@ -184,7 +213,7 @@
     );
 
     viewport.addEventListener("pointerdown", function (e) {
-      if (lbState.scale <= 1) return;
+      if (lbState.scale <= (lbState.fitScale || 1) + 0.01) return;
       lbState.dragging = true;
       lbState.px = e.clientX;
       lbState.py = e.clientY;
@@ -206,15 +235,21 @@
 
     lightbox._img = img;
     lightbox._reset = resetLbView;
+    lightbox._onReady = onLbImageReady;
+    img.addEventListener("load", onLbImageReady);
     return lightbox;
   }
 
   function openLightbox(index) {
     var lb = ensureLightbox();
     clearTimeout(timer);
+    lbState.naturalW = 0;
+    lbState.naturalH = 0;
     lb._img.src = SLIDES[index].src;
     lb._img.alt = SLIDES[index].caption;
-    lb._reset();
+    if (lb._img.complete && lb._img.naturalWidth) {
+      lb._onReady();
+    }
     lb.hidden = false;
     document.body.classList.add("door-lightbox-open");
   }
