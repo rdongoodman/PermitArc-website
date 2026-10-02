@@ -729,6 +729,16 @@ a.feedback-section-pill:focus-visible {
   padding-top: 0.35rem;
 }
 
+/* Overview (home-more.html): balance copy + compliance score mock vertically */
+.hero--split .hero-inner {
+  align-items: center;
+}
+
+.hero--split .hero-phone-col {
+  align-items: center;
+  padding-top: 0;
+}
+
 .hero-copy {
   display: flex;
   flex-direction: column;
@@ -1205,15 +1215,122 @@ section h2 {
   box-shadow: 0 0 24px rgba(45, 212, 191, 0.08);
 }
 
+.why-col-highlight {
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  box-shadow: 0 0 28px rgba(16, 185, 129, 0.12);
+}
+
 .why-col h3 {
   margin: 0 0 1.15rem;
   font-size: 1rem;
   color: var(--text-light);
 }
 
+#why .why-compare-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+#why .why-compare-list li {
+  position: relative;
+  margin: 0;
+  padding-left: 1.15rem;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+#why .why-col-muted .why-compare-card-title {
+  margin: 0 0 1.25rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #cbd5e1;
+}
+
+#why .why-col-highlight .why-compare-card-title {
+  margin: 0 0 1.25rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+}
+
+#why .why-compare-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #94a3b8;
+}
+
+#why .why-compare-list--accent li::before {
+  background: #34d399;
+}
+
+#why .why-col-muted .why-compare-lead {
+  color: #e2e8f0;
+  font-weight: 600;
+}
+
+#why .why-col-muted .why-compare-sep {
+  color: #e2e8f0;
+  margin: 0 0.2em;
+}
+
+#why .why-col-muted .why-compare-note {
+  color: #94a3b8;
+}
+
+#why .why-col-highlight .why-compare-lead {
+  color: #34d399;
+  font-weight: 600;
+}
+
+#why .why-col-highlight .why-compare-sep {
+  color: #34d399;
+  margin: 0 0.2em;
+}
+
+#why .why-col-highlight .why-compare-note {
+  color: #f8fafc;
+}
+
 #why.why-band {
   padding-top: 4rem;
   padding-bottom: 4rem;
+}
+
+#included h2.pillars-always-on-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.65rem;
+}
+
+#included .pillars-cta-link {
+  font-weight: 600;
+  color: #0d9488;
+  text-decoration: none;
+}
+
+#included .pillars-cta-link:hover {
+  color: #059669;
+  text-decoration: underline;
+}
+
+.section-dark .pillars-cta-link {
+  color: #34d399;
+}
+
+.section-dark .pillars-cta-link:hover {
+  color: #6ee7b7;
 }
 
 .why-folder-intro {
@@ -1626,8 +1743,8 @@ section h2 {
   height: 2rem;
   line-height: 2rem;
   text-align: center;
-  background: var(--accent-teal);
-  color: #0d1117;
+  background: #059669;
+  color: #ffffff;
   font-weight: 700;
   border-radius: 50%;
   font-size: 0.9rem;
@@ -1636,13 +1753,17 @@ section h2 {
 
 .step h3 {
   margin: 0 0 0.5rem;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
 }
 
 .step p {
   margin: 0;
   font-size: 0.95rem;
-  color: #4a5568;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #475569;
 }
 
 /* Track grid */
@@ -2264,16 +2385,17 @@ body.tax-modal-open {
 
 .faq-details {
   border-bottom: 1px solid #e2e8f0;
-  padding: 0.35rem 0;
+  padding: 1rem 0;
 }
 
 .faq-details summary {
   cursor: pointer;
   font-weight: 600;
-  font-size: 1rem;
-  padding: 0.75rem 0;
+  font-size: 1.1rem;
+  padding: 0.25rem 2rem 0.25rem 0;
   list-style: none;
-  color: var(--text-dark);
+  color: #0f172a;
+  line-height: 1.4;
 }
 
 .faq-details summary::-webkit-details-marker {
@@ -2283,8 +2405,12 @@ body.tax-modal-open {
 .faq-details summary::after {
   content: "+";
   float: right;
+  margin-right: 0.15rem;
   color: var(--accent-teal);
   font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1;
+  transition: transform 0.22s ease, color 0.22s ease;
 }
 
 .faq-details[open] summary::after {
@@ -2292,11 +2418,12 @@ body.tax-modal-open {
 }
 
 .faq-details p {
-  margin: 0 0 1rem;
-  padding-right: 1.5rem;
-  font-size: 0.95rem;
-  color: #4a5568;
-  line-height: 1.55;
+  margin: 0.5rem 0 0;
+  padding-right: 2rem;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #334155;
+  line-height: 1.6;
 }
 
 /* Footer */
@@ -3098,6 +3225,19 @@ body.email-chooser-open {
   padding: 0.35rem 1rem 0.5rem;
 }
 
+#track .track-expand {
+  margin-top: 1.5rem;
+  border: none;
+  padding: 0;
+  background: transparent;
+}
+
+#track .track-expand[open] {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 0.35rem 1rem 0.5rem;
+}
+
 .track-expand summary {
   cursor: pointer;
   font-weight: 600;
@@ -3105,6 +3245,19 @@ body.email-chooser-open {
   padding: 0.65rem 0;
   list-style: none;
   color: var(--text-light);
+}
+
+#track .track-types-cta {
+  display: inline-block;
+  padding: 0;
+  color: #34d399;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+#track .track-types-cta:hover {
+  color: #6ee7b7;
+  text-decoration: underline;
 }
 
 .track-expand summary::-webkit-details-marker {
@@ -3192,4 +3345,55 @@ body.email-chooser-open {
 
 #track .compliance-donut--track .compliance-donut-value {
   font-size: 1.9rem;
+}
+
+/* Overview (#pricing on home-more) — compact tier cards + Get Started */
+#pricing .price-card-badge {
+  display: inline-block;
+  margin: 0 auto 0.5rem;
+  padding: 0.28rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #0f766e;
+  background: #ccfbf1;
+  border: 1px solid #5eead4;
+}
+
+#pricing .pricing-overview-cta {
+  margin-top: auto;
+  padding-top: 1rem;
+  width: 100%;
+  font-size: 0.88rem;
+  box-sizing: border-box;
+}
+
+#pricing .pricing-overview-cta--light {
+  color: #2d3748;
+  border: 1px solid #cbd5e0;
+  background: #fff;
+}
+
+#pricing .pricing-overview-cta--light:hover {
+  border-color: var(--accent-teal);
+  color: #0f766e;
+}
+
+#pricing .price-card .amount {
+  margin-bottom: 0.25rem;
+}
+
+.pricing-beyond-note {
+  text-align: center;
+  margin: 1.35rem auto 0;
+  max-width: 40rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #4a5568;
+}
+
+.pricing-beyond-note a {
+  font-weight: 600;
 }
