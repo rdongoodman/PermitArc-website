@@ -390,49 +390,7 @@ body.door-page footer.site-footer {
   -webkit-font-smoothing: antialiased;
 }
 
-.door-page .door-copy .hero-pillar-link--radar {
-  color: #c2410c;
-  background: rgba(255, 166, 87, 0.28);
-  border-color: rgba(234, 88, 12, 0.55);
-}
-
-.door-page .door-copy .hero-pillar-link--radar:hover {
-  color: #9a3412;
-  background: rgba(255, 166, 87, 0.38);
-}
-
-.door-page .door-copy .hero-pillar-link--patrol {
-  color: #0f766e;
-  background: rgba(45, 212, 191, 0.26);
-  border-color: rgba(13, 148, 136, 0.55);
-}
-
-.door-page .door-copy .hero-pillar-link--patrol:hover {
-  color: #115e59;
-  background: rgba(45, 212, 191, 0.36);
-}
-
-.door-page .door-copy .hero-pillar-link--proactive {
-  color: #6d28d9;
-  background: rgba(188, 140, 255, 0.28);
-  border-color: rgba(124, 58, 237, 0.5);
-}
-
-.door-page .door-copy .hero-pillar-link--proactive:hover {
-  color: #5b21b6;
-  background: rgba(188, 140, 255, 0.38);
-}
-
-.door-page .door-copy .hero-pillar-link--intel-log {
-  color: #1d4ed8;
-  background: rgba(88, 166, 255, 0.26);
-  border-color: rgba(37, 99, 235, 0.5);
-}
-
-.door-page .door-copy .hero-pillar-link--intel-log:hover {
-  color: #1e40af;
-  background: rgba(88, 166, 255, 0.36);
-}
+/* Pillar pill colors: styles.css (overview parity on white) */
 
 @media (prefers-reduced-motion: no-preference) {
   .door-page .hero-pillars--pulse .hero-pillar-link {

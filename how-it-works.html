@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261003site4">
+  <link rel="stylesheet" href="styles.css?v=20261003site15">
   <link rel="stylesheet" href="door-home.css?v=20261002chrome">
   <script src="launch-config.js?v=20260911c"></script>
   <script src="site-ga4.js?v=20260923"></script>
@@ -32,15 +32,15 @@
     </div>
   </header>
 
-  <section class="page-hero premium-canvas">
+  <section class="page-hero page-hero--quick-guide premium-canvas">
     <div class="page-hero-inner">
-      <h1>Quick guide &mdash; where to go in the app</h1>
-      <p>PermitArc stays out of your way. This page is the map: what each alert means, where to read it, and how uploads make AI smarter over time.</p>
+      <h1>Quick Guide: Getting Started with Permit<span class="text-teal-400">Arc</span></h1>
+      <p class="quick-guide-hero-lead">Everything you need to set up your storefront, configure your alerts, and keep your compliance running smoothly from day one.</p>
       <p class="page-hero-scope"><strong>~5 min read.</strong> Bookmark this page for your team.</p>
     </div>
   </section>
 
-  <section class="section-band-muted page-content">
+  <section class="section-band-muted page-content guide-start-here">
     <div class="section-inner section-inner-wide">
       <h2>Start here (first week)</h2>
       <div class="guide-steps">
@@ -56,46 +56,51 @@
         </div>
         <div class="premium-grid-card">
           <span class="guide-step-num">3</span>
-          <h3>Open Intel Deck</h3>
-          <p>Patrol updates, proactive suggestions, and your communication toggles live here. Check it once a week.</p>
+          <h3>Review Compliance Feed</h3>
+          <p>Check your verified local patrol updates, review proactive suggestions, and configure how you receive alerts.</p>
         </div>
       </div>
 
       <div class="guide-vault-callout guide-scan-callout" id="scan-expect">
-        <h3>What to expect when you scan</h3>
-        <p>PermitArc <strong>stores your full document</strong>. The scan review form auto-fills the fields we need for <strong>Expiration Radar</strong>, <strong>Weekly Patrol</strong>, <strong>Proactive Review</strong>, and <strong>AI answers about your shop</strong> &mdash; not every line on your document. Add anything else with <strong>+ Add field</strong> or <strong>+ Add note</strong>.</p>
+        <h3>Automated Document Extraction</h3>
+        <p>PermitArc extracts essential renewal dates, permit numbers, and issuing authorities automatically. You verify the details before saving, and you can add custom notes or tags anytime.</p>
       </div>
 
       <div class="guide-vault-callout">
-        <h3>Upload more &rarr; smarter AI &rarr; fewer repeat nags</h3>
-        <p>The more licenses, insurance certificates, and permits you upload for each shop, the better Proactive Review understands what's already on file. Few documents on file means more &ldquo;you may be missing&hellip;&rdquo; suggestions. A fuller compliance binder gets quieter, sharper reviews &mdash; and the same suggestion won't spam you week after week once you've addressed it or uploaded the document.</p>
+        <h3>Complete Profiles Improve Coverage</h3>
+        <p>The more active licenses, certificates of insurance, and health permits you store for each shop, the more accurate your weekly review becomes&mdash;quieting unnecessary alerts and highlighting only real gaps.</p>
       </div>
     </div>
   </section>
 
-  <section class="section-dark page-content premium-canvas">
+  <section class="section-dark page-content premium-canvas guide-monitoring-feeds">
     <div class="section-inner section-inner-wide">
-      <h2>Four Intel Deck pillars (don't mix them up)</h2>
+      <h2>The Four Core Monitoring Feeds</h2>
+      <p class="guide-monitoring-feeds-lead">A quick reference for navigating your alerts, suggestions, and document records.</p>
       <div class="guide-pillar-row">
-        <div class="guide-pillar-card">
+        <div class="guide-pillar-card guide-pillar-card--feed">
           <span class="pillar-chip pillar-chip--patrol">Weekly Patrol</span>
-          <h3>Law &amp; rule changes</h3>
-          <p><strong>Where:</strong> Intel Deck &rarr; Patrol Updates &middot; Dashboard Alerts section.<br><strong>Not</strong> on the map strip.<br>Official-source scan for your ZIP + business type each week.</p>
+          <h3 class="guide-pillar-card__title">Weekly Patrol</h3>
+          <p class="guide-pillar-card__location">Location: Intel Deck &amp; Alerts</p>
+          <p class="guide-pillar-card__desc">Automated official-source scans for municipal, county, and state regulatory updates matching your shop's ZIP code and business classification.</p>
         </div>
-        <div class="guide-pillar-card">
+        <div class="guide-pillar-card guide-pillar-card--feed">
           <span class="pillar-chip pillar-chip--proactive">Proactive</span>
-          <h3>Document gap suggestions</h3>
-          <p><strong>Where:</strong> Intel Deck &rarr; Proactive Updates &middot; purple strips on Dashboard map (optional dismiss with X).<br>Soft suggestions from each storefront's uploaded permits and documents &mdash; not legal accusations. Not limited to Corporate Vault.</p>
+          <h3 class="guide-pillar-card__title">Proactive Review</h3>
+          <p class="guide-pillar-card__location">Location: Dashboard &amp; Intel Deck</p>
+          <p class="guide-pillar-card__desc">Intelligent suggestions highlighting potential document gaps based on your specific industry standards. Dismissible anytime.</p>
         </div>
-        <div class="guide-pillar-card">
+        <div class="guide-pillar-card guide-pillar-card--feed">
           <span class="pillar-chip pillar-chip--radar">Expiration Radar</span>
-          <h3>Deadlines on file</h3>
-          <p><strong>Where:</strong> Dashboard &mdash; red/amber compliance metrics.<br>Based on expiration dates AI extracted from your scans &mdash; not guesses.</p>
+          <h3 class="guide-pillar-card__title">Expiration Radar</h3>
+          <p class="guide-pillar-card__location">Location: Dashboard Metrics</p>
+          <p class="guide-pillar-card__desc">Real-time compliance tracking grounded strictly in extracted expiration dates from your uploaded permits, licenses, and certificates.</p>
         </div>
-        <div class="guide-pillar-card">
+        <div class="guide-pillar-card guide-pillar-card--feed">
           <span class="pillar-chip pillar-chip--intel-log">Intelligence Log</span>
-          <h3>Saved AI Q&amp;A</h3>
-          <p><strong>Where:</strong> Intel Deck &rarr; Intelligence Log.<br>Star chat answers you want again &mdash; not a weekly alert. <a href="intelligence.html#intelligence-log">Learn more &rarr;</a></p>
+          <h3 class="guide-pillar-card__title">Intelligence Log</h3>
+          <p class="guide-pillar-card__location">Location: Intel Deck Archive</p>
+          <p class="guide-pillar-card__desc">A permanent, searchable history of your AI Q&amp;A answers, municipal notices, and weekly activity across all storefronts.</p>
         </div>
       </div>
     </div>
@@ -104,60 +109,61 @@
   <section class="section-light page-content">
     <div class="section-inner section-inner-wide">
       <h2>Communication Profile (email, push, Discord)</h2>
-      <p class="page-hero-scope">Intel Deck &rarr; open Communication Profile. Same toggles control Weekly Patrol, Proactive Review, and Expiration Radar outbound alerts.</p>
+      <p class="guide-comm-profile-lead">Control where and when your team receives patrol findings, proactive reviews, and expiration warnings.</p>
       <table class="guide-toggle-table">
         <thead>
           <tr><th>Toggle</th><th>What it does</th></tr>
         </thead>
         <tbody>
-          <tr><td><strong>In-app (Intel Deck)</strong></td><td>Always on &mdash; your compliance inbox inside the app.</td></tr>
-          <tr><td><strong>Email</strong></td><td>HTML brief to the address you saved. Recommended ON.</td></tr>
-          <tr><td><strong>Device push</strong></td><td>Phone pop-up when the app is closed. Optional &mdash; you choose.</td></tr>
-          <tr><td><strong>Discord</strong></td><td>Webhook for power users. Optional.</td></tr>
+          <tr><td class="guide-toggle-table__name">In-app Intel Deck</td><td class="guide-toggle-table__desc">Always on &mdash; your central compliance inbox inside the software.</td></tr>
+          <tr><td class="guide-toggle-table__name">Email Digests</td><td class="guide-toggle-table__desc">Structured executive briefs delivered to the primary account address.</td></tr>
+          <tr><td class="guide-toggle-table__name">Device Push</td><td class="guide-toggle-table__desc">Direct notifications for high-priority expiration alerts and urgent local code changes.</td></tr>
+          <tr><td class="guide-toggle-table__name">Discord / Webhook</td><td class="guide-toggle-table__desc">Real-time dispatch to your operations or management team channels.</td></tr>
         </tbody>
       </table>
     </div>
   </section>
 
-  <section class="section-dark page-content premium-canvas">
+  <section class="section-dark page-content premium-canvas guide-managing-alerts">
     <div class="section-inner section-inner-wide">
-      <h2>Reading alerts (important)</h2>
+      <h2>Managing &amp; Resolving Alerts</h2>
+      <p class="guide-managing-alerts-lead">How to review, acknowledge, and clear notifications without cluttering your feed.</p>
       <div class="guide-steps">
         <div class="premium-grid-card">
-          <h3>Hide on map &mdash; then read</h3>
-          <p>Tapping <strong>X</strong> on a proactive map strip hides it until you open the full brief in Intel Deck. Your unread badge stays until you read there.</p>
+          <h3>Dismiss from Map</h3>
+          <p>Dismiss proactive alerts on the shop map with a single click. The item stays filed in your central compliance feed until officially resolved.</p>
         </div>
         <div class="premium-grid-card">
-          <h3>View full brief</h3>
-          <p>In Patrol or Proactive lists, tap <strong>View full brief</strong> to read and mark an item read. Scrolling past a row does not count as reading.</p>
+          <h3>View Detailed Brief</h3>
+          <p>Click any alert item to view official source links, cited municipal code sections, and AI-recommended actions. Opening the brief automatically marks it reviewed.</p>
         </div>
         <div class="premium-grid-card">
-          <h3>Mark all read</h3>
-          <p>The <strong>Mark all read</strong> (checkmark) icon in an inbox clears everything at once if you're caught up.</p>
+          <h3>Clear All Reviewed</h3>
+          <p>Use the bulk acknowledge action in your inbox header to clear resolved notices across all storefronts once your weekly review is complete.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section-light page-content">
+  <section class="section-light page-content guide-quick-faq">
     <div class="section-inner section-inner-wide">
-      <h2>Quick FAQ</h2>
+      <h2>Frequently Asked Questions</h2>
       <div class="faq-accordion">
         <details class="faq-details">
-          <summary>Why did I get email but no push?</summary>
-          <p>Push must be ON in Communication Profile and your phone must allow notifications for PermitArc. Email and in-app still work if push is off.</p>
+          <summary>Why did I receive an email brief but no mobile push notification?</summary>
+          <p>Push notifications must be enabled under your Communication Profile, and your device must permit notifications from the PermitArc app. Email summaries are delivered automatically by default.</p>
         </details>
         <details class="faq-details">
-          <summary>Why no proactive suggestion this week?</summary>
-          <p>Quiet weeks are normal when your uploaded documents haven't changed or nothing new applies to your business type and area. Patrol can also be quiet when no official changes appear.</p>
+          <summary>Why didn&rsquo;t I receive a proactive suggestion this week?</summary>
+          <p>Quiet weeks are normal. If your active documents are up to date and no local municipal codes have changed for your storefront&rsquo;s jurisdiction, the engine will not generate unnecessary notices.</p>
         </details>
         <details class="faq-details">
-          <summary>Will it keep telling me about the same grease trap / food handler cert?</summary>
-          <p>Once you upload the document or we've already suggested the same item, Proactive suppresses repeats. Upload more documents for that shop and suggestions drop sharply.</p>
+          <summary>Will the system repeatedly alert me about the same document or requirement?</summary>
+          <p>No. Once you upload the requested document or dismiss the suggestion, the item is cleared from your active deck. Proactive suggestions only re-appear if new regulatory requirements apply to your classification.</p>
         </details>
         <details class="faq-details">
-          <summary>Is this legal advice?</summary>
-          <p>No. PermitArc summarizes your documents and public sources. Verify with officials before you rely on any date or requirement.</p>
+          <summary>Does PermitArc provide official legal advice?</summary>
+          <p>No. PermitArc monitors, summarizes, and indexes public municipal records and your uploaded files. Always verify specific jurisdictional requirements with local authorities before taking regulatory action.</p>
         </details>
       </div>
       <p style="margin-top: 2rem;"><a href="intelligence.html">What's included vs AI allowance &rarr;</a> &middot; <a href="pricing.html">Pricing &rarr;</a> &middot; <a href="index.html">&larr; Back to home</a></p>
