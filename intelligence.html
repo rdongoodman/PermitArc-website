@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261003intel2">
+  <link rel="stylesheet" href="styles.css?v=20261003intel2col">
   <link rel="stylesheet" href="door-home.css?v=20261002chrome">
   <script src="launch-config.js?v=20260911c"></script>
   <script src="site-ga4.js?v=20260923"></script>
@@ -41,13 +41,12 @@
 
   <section id="ai" class="section-light page-content">
     <div class="section-inner section-inner-wide">
-      <p id="expiration-radar" class="ai-included-banner ai-anchor">
-        <span class="pillar-chip pillar-chip--radar">Expiration Radar</span>
-        <span class="ai-included-banner__included">Included</span>
-        <span class="ai-included-banner__detail">&mdash; Daily watch for permits, licenses, and certificates expiring in 30, 15, or 5 days. Email, in-app, and push alerts. No extra charge per alert.</span>
-      </p>
-
-      <div class="intel-feature-grid">
+      <div class="intel-feature-grid intel-feature-grid--pillars">
+        <article id="expiration-radar" class="intel-feature-card ai-anchor">
+          <span class="pillar-chip pillar-chip--radar">Expiration Radar</span>
+          <h3 class="intel-feature-title">Expiration Radar</h3>
+          <p class="intel-feature-body">Daily watch for permits, licenses, and certificates expiring in 30, 15, or 5 days. Email, in-app, and push alerts. No extra charge per alert.</p>
+        </article>
         <article id="weekly-patrol" class="intel-feature-card ai-anchor">
           <span class="pillar-chip pillar-chip--patrol">Weekly Patrol</span>
           <h3 class="intel-feature-title">Weekly Municipal Patrol</h3>
@@ -63,6 +62,9 @@
           <h3 class="intel-feature-title">Intelligence &amp; Activity Log</h3>
           <p class="intel-feature-body">Maintains a permanent, searchable history of all patrol findings, document updates, and regulatory notices across all your locations.</p>
         </article>
+      </div>
+
+      <div class="intel-feature-grid intel-feature-grid--tools">
         <article id="ai-chat" class="intel-feature-card ai-anchor">
           <span class="intel-feature-badge intel-feature-badge--tool">Interactive Tool</span>
           <h3 class="intel-feature-title">Storefront Document AI</h3>

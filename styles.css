@@ -1989,6 +1989,10 @@ section h2 {
 }
 
 #ai .ai-included-banner {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.65rem;
   background: #f8fafc;
   border-color: #e2e8f0;
   color: #334155;
@@ -2101,16 +2105,14 @@ section h2 {
   line-height: 1.55;
 }
 
+/* Intelligence page — one chip size for banner + feature cards */
 #ai .ai-included-banner .pillar-chip {
-  flex-shrink: 0;
-  padding: 0.25rem 0.75rem;
-  font-size: 0.75rem;
-  letter-spacing: 0.05em;
+  align-self: center;
 }
 
+#ai .ai-included-banner .pillar-chip,
 .intel-feature-card > .pillar-chip {
-  align-self: flex-start;
-  margin-bottom: 0.75rem;
+  flex-shrink: 0;
   padding: 0.125rem 0.625rem;
   font-size: 0.75rem;
   font-weight: 700;
@@ -2118,10 +2120,17 @@ section h2 {
   letter-spacing: normal;
 }
 
-.ai-included-banner__included {
-  font-weight: 700;
-  color: #0f172a;
-  margin-left: 0.5rem;
+.intel-feature-card > .pillar-chip {
+  align-self: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+#ai .ai-included-banner .ai-included-banner__detail {
+  flex: none;
+  width: 100%;
+  max-width: 52rem;
+  color: #334155;
+  line-height: 1.55;
 }
 
 .ai-included-banner__detail {
@@ -2137,43 +2146,31 @@ section h2 {
   margin-bottom: 1.25rem;
 }
 
-/* Intelligence page — feature card grid */
+/* Intelligence page — feature card grids (2-up, max-w-2xl; matches tools row width) */
 .intel-feature-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.25rem;
   margin-bottom: 1.25rem;
+  align-items: stretch;
 }
 
-@media (min-width: 640px) {
-  .intel-feature-grid {
+#ai .intel-feature-grid--pillars,
+#ai .intel-feature-grid--tools {
+  gap: 1.5rem;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.intel-feature-grid--tools {
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  #ai .intel-feature-grid--pillars,
+  #ai .intel-feature-grid--tools {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 960px) {
-  .intel-feature-grid {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-  }
-
-  .intel-feature-card:nth-child(1) {
-    grid-column: 1 / span 2;
-  }
-
-  .intel-feature-card:nth-child(2) {
-    grid-column: 3 / span 2;
-  }
-
-  .intel-feature-card:nth-child(3) {
-    grid-column: 5 / span 2;
-  }
-
-  .intel-feature-card:nth-child(4) {
-    grid-column: 2 / span 2;
-  }
-
-  .intel-feature-card:nth-child(5) {
-    grid-column: 4 / span 2;
   }
 }
 
