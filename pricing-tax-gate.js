@@ -34,7 +34,7 @@
 
 
 
-  var links = document.querySelectorAll('a.stripe-checkout-link');
+  var links = document.querySelectorAll('a.pricing-subscribe.stripe-checkout-link');
 
   var beyondBtn = document.getElementById('beyond-five-checkout');
 
@@ -236,29 +236,157 @@
 
 
 
-  function setSubscribeLocked(locked) {
+  function syncBeyondCheckoutButton() {
 
-    if (!checkoutAllowed()) locked = true;
+    if (!beyondBtn) return;
 
-    unlocked = !locked;
+    if (!checkoutAllowed() || !unlocked) {
+
+      beyondBtn.disabled = true;
+
+    } else {
+
+      beyondBtn.removeAttribute('disabled');
+
+    }
+
+  }
+
+
+
+  function applySubscribeLabelTypography(el, active) {
+
+    var span = el.querySelector('span');
+
+    var label = span || el;
+
+    var isSolo = el.classList.contains('bg-teal-400');
+
+
+
+    label.classList.remove(
+
+      'pointer-events-none',
+
+      'opacity-50',
+
+      'opacity-60',
+
+      'text-slate-400',
+
+      'text-white/50'
+
+    );
+
+    label.style.removeProperty('color');
+
+
+
+    if (!active) {
+
+      label.style.removeProperty('opacity');
+
+      return;
+
+    }
+
+
+
+    label.style.opacity = '1';
+
+    if (isSolo) {
+
+      label.classList.add('text-slate-950', 'font-bold', 'text-sm', 'tracking-wide');
+
+      label.classList.remove('text-slate-900', 'font-semibold');
+
+      label.style.color = '#020617';
+
+    } else {
+
+      label.classList.add('text-slate-900', 'font-semibold', 'text-sm');
+
+      label.classList.remove('text-slate-950', 'font-bold', 'tracking-wide');
+
+      label.style.color = '#0f172a';
+
+    }
+
+  }
+
+
+
+  function applySubscribeLinkState(el, taxLocked) {
+
+    el.classList.remove(
+
+      'pointer-events-none',
+
+      'opacity-50',
+
+      'opacity-60',
+
+      'text-slate-400',
+
+      'opacity-100',
+
+      'pricing-subscribe-active'
+
+    );
+
+    el.style.removeProperty('opacity');
+
+    el.style.removeProperty('pointer-events');
+
+    el.style.removeProperty('filter');
+
+    el.style.removeProperty('color');
+
+
+
+    if (taxLocked) {
+
+      el.classList.add('is-gated');
+
+      el.setAttribute('aria-disabled', 'true');
+
+      applySubscribeLabelTypography(el, false);
+
+      return;
+
+    }
+
+
+
+    el.classList.remove('is-gated');
+
+    el.classList.add('pricing-subscribe-active', 'opacity-100');
+
+    el.setAttribute('aria-disabled', 'false');
+
+    el.style.opacity = '1';
+
+    el.style.filter = 'none';
+
+    el.style.pointerEvents = '';
+
+    applySubscribeLabelTypography(el, true);
+
+  }
+
+
+
+  function setSubscribeLocked(taxLocked) {
+
+    unlocked = !taxLocked;
 
     links.forEach(function (el) {
 
-      if (locked) {
-
-        el.classList.add('is-gated');
-
-        el.setAttribute('aria-disabled', 'true');
-
-      } else {
-
-        el.classList.remove('is-gated');
-
-        el.setAttribute('aria-disabled', 'false');
-
-      }
+      applySubscribeLinkState(el, taxLocked);
 
     });
+
+    syncBeyondCheckoutButton();
 
   }
 
@@ -324,11 +452,15 @@
 
     var code = select.value;
 
-    setSubscribeLocked(true);
 
 
+    if (!code) {
 
-    if (!code) return;
+      setSubscribeLocked(true);
+
+      return;
+
+    }
 
 
 
@@ -338,15 +470,31 @@
 
 
 
+    /* Full-opacity Subscribe styling as soon as a valid state is chosen. */
+
+    links.forEach(function (el) {
+
+      applySubscribeLinkState(el, false);
+
+    });
+
+
+
     if (hasAck(code)) {
 
-      setSubscribeLocked(false);
+      unlocked = true;
+
+      syncBeyondCheckoutButton();
 
       return;
 
     }
 
 
+
+    unlocked = false;
+
+    syncBeyondCheckoutButton();
 
     openModal(row);
 

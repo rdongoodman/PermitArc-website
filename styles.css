@@ -268,6 +268,10 @@ a:hover {
   color: var(--accent-teal); /* #2dd4bf — matches app accent */
 }
 
+.text-teal-600 {
+  color: #0d9488;
+}
+
 .nav {
   display: flex;
   gap: 1.25rem;
@@ -875,12 +879,12 @@ a.feedback-section-pill:focus-visible {
   padding-top: 0;
 }
 
-/* Overview (home-more.html) — slate-200 / slate-300 hero + #why leads */
-body[data-nav-page="overview"] .hero .subhead,
-body[data-nav-page="overview"] .hero-platform {
-  color: #e2e8f0;
+/* Overview (home-more.html) — hero + mock + #why contrast */
+body[data-nav-page="overview"] .hero .subhead {
+  color: #f1f5f9;
 }
 
+body[data-nav-page="overview"] .hero-platform,
 body[data-nav-page="overview"] .hero-platform strong {
   color: #e2e8f0;
 }
@@ -894,11 +898,283 @@ body[data-nav-page="overview"] .hero-pillars-note {
 }
 
 body[data-nav-page="overview"] #why .section-lead {
+  color: #f1f5f9;
+}
+
+body[data-nav-page="overview"] .phone-mock .mock-alert,
+body[data-nav-page="overview"] .phone-mock .mock-ok,
+body[data-nav-page="overview"] .phone-mock .mock-proactive {
+  color: #f1f5f9;
+}
+
+body[data-nav-page="overview"] .phone-mock .mock-alert strong {
+  color: #f1f5f9;
+}
+
+/* Tailwind-like utilities (overview compare bullets) */
+.font-medium {
+  font-weight: 500;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.text-slate-300 {
+  color: #cbd5e1;
+}
+
+.text-slate-100 {
+  color: #f1f5f9;
+}
+
+.text-slate-200 {
   color: #e2e8f0;
 }
 
-body[data-nav-page="overview"] #why .why-col-muted .why-compare-note {
+.text-slate-900 {
+  color: #0f172a;
+}
+
+.text-slate-800 {
+  color: #1e293b;
+}
+
+.font-normal {
+  font-weight: 400;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.tracking-wide {
+  letter-spacing: 0.025em;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.px-2\.5 {
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.bg-orange-50 {
+  background-color: #fff7ed;
+}
+
+.border-orange-200 {
+  border-color: #fed7aa;
+}
+
+.text-orange-900 {
+  color: #7c2d12;
+}
+
+.bg-teal-50 {
+  background-color: #f0fdfa;
+}
+
+.border-teal-200 {
+  border-color: #99f6e4;
+}
+
+.text-teal-900 {
+  color: #134e4a;
+}
+
+.bg-purple-50 {
+  background-color: #faf5ff;
+}
+
+.border-purple-200 {
+  border-color: #e9d5ff;
+}
+
+.text-purple-900 {
+  color: #581c87;
+}
+
+.bg-blue-50 {
+  background-color: #eff6ff;
+}
+
+.border-blue-200 {
+  border-color: #bfdbfe;
+}
+
+.text-blue-900 {
+  color: #1e3a8a;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.border {
+  border-width: 1px;
+  border-style: solid;
+}
+
+.border-slate-300 {
+  border-color: #cbd5e1;
+}
+
+.border-slate-200 {
+  border-color: #e2e8f0;
+}
+
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+
+.p-5 {
+  padding: 1.25rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.shadow-sm {
+  box-shadow: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
+}
+
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.text-slate-600 {
+  color: #475569;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.tracking-tight {
+  letter-spacing: -0.025em;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mt-16 {
+  margin-top: 4rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.max-w-3xl {
+  max-width: 48rem;
+}
+
+.max-w-2xl {
+  max-width: 42rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.transition {
+  transition-property: border-color, box-shadow;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+}
+
+.hover\:border-slate-300:hover {
+  border-color: #cbd5e1;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 640px) {
+  .sm\:text-left {
+    text-align: left;
+  }
+}
+
+.page-hero p.text-slate-100 {
+  color: #f1f5f9;
+}
+
+.satisfaction-guarantee-dark p.text-slate-200,
+.satisfaction-guarantee-dark p.text-slate-200 strong {
   color: #e2e8f0;
+}
+
+
+.leading-relaxed {
+  line-height: 1.625;
+}
+
+.scope-pillar p.text-slate-200 {
+  color: #e2e8f0;
+}
+
+.scope-pillar p.leading-relaxed {
+  line-height: 1.625;
+}
+
+.text-rose-400 {
+  color: #fb7185;
 }
 
 .hero-copy {
@@ -1132,53 +1408,30 @@ body[data-nav-page="overview"] #why .why-col-muted .why-compare-note {
   border: 1px solid rgba(88, 166, 255, 0.38);
 }
 
-/* White backgrounds — same pillar hues as overview hero (premium-canvas); door intro + intelligence only */
-.door-page .door-copy .hero-pillar-link--radar,
+/* Door intro uses base .hero-pillar-link--* (overview parity). Light-grid rim bump in door-home.css */
+
 #ai .pillar-chip--radar {
-  background: rgba(255, 166, 87, 0.18);
+  background: rgba(255, 166, 87, 0.22);
   color: var(--pillar-radar);
-  border: 1px solid rgba(255, 166, 87, 0.5);
+  border-color: rgba(255, 166, 87, 0.68);
 }
 
-.door-page .door-copy .hero-pillar-link--patrol,
 #ai .pillar-chip--patrol {
-  background: rgba(45, 212, 191, 0.16);
+  background: rgba(45, 212, 191, 0.2);
   color: var(--pillar-patrol);
-  border: 1px solid rgba(45, 212, 191, 0.48);
+  border-color: rgba(45, 212, 191, 0.65);
 }
 
-.door-page .door-copy .hero-pillar-link--proactive,
 #ai .pillar-chip--proactive {
-  background: rgba(188, 140, 255, 0.18);
+  background: rgba(188, 140, 255, 0.22);
   color: var(--pillar-proactive);
-  border: 1px solid rgba(188, 140, 255, 0.5);
+  border-color: rgba(188, 140, 255, 0.68);
 }
 
-.door-page .door-copy .hero-pillar-link--intel-log,
 #ai .pillar-chip--intel-log {
-  background: rgba(88, 166, 255, 0.16);
+  background: rgba(88, 166, 255, 0.2);
   color: var(--pillar-intel-log);
-  border: 1px solid rgba(88, 166, 255, 0.48);
-}
-
-.door-page .door-copy .hero-pillar-link--radar:hover {
-  background: rgba(255, 166, 87, 0.26);
-  color: var(--pillar-radar);
-}
-
-.door-page .door-copy .hero-pillar-link--patrol:hover {
-  background: rgba(45, 212, 191, 0.24);
-  color: var(--pillar-patrol);
-}
-
-.door-page .door-copy .hero-pillar-link--proactive:hover {
-  background: rgba(188, 140, 255, 0.26);
-  color: var(--pillar-proactive);
-}
-
-.door-page .door-copy .hero-pillar-link--intel-log:hover {
-  background: rgba(88, 166, 255, 0.24);
-  color: var(--pillar-intel-log);
+  border-color: rgba(88, 166, 255, 0.65);
 }
 
 .hero-pillars-note {
@@ -2173,6 +2426,30 @@ section h2 {
 .beyond-five-toggle {
   flex-shrink: 0;
   white-space: nowrap;
+  color: #0f172a;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  background-color: #fff;
+  border: 1px solid #cbd5e1;
+  opacity: 1;
+  transform: none;
+  box-shadow: 0 1px 2px 0 rgba(15, 23, 42, 0.06);
+}
+
+.pricing-full .beyond-five-toggle:hover,
+.pricing-full .beyond-five-toggle:focus-visible,
+.pricing-full .beyond-five-toggle[aria-expanded="true"] {
+  color: #0f172a;
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
+  opacity: 1;
+  transform: none;
+}
+
+.pricing-full .beyond-five-toggle:focus-visible {
+  outline: 2px solid #2dd4bf;
+  outline-offset: 2px;
 }
 
 .pricing-beyond-panel {
@@ -2718,7 +2995,7 @@ body.tax-modal-open {
   max-width: var(--layout-read);
 }
 
-.faq-details {
+.faq-details:not(.bg-white) {
   border-bottom: 1px solid #e2e8f0;
   padding: 1rem 0;
 }
@@ -2759,6 +3036,46 @@ body.tax-modal-open {
   font-weight: 400;
   color: #334155;
   line-height: 1.6;
+}
+
+/* FAQ card accordions (pricing · how-it-works · home-more) */
+details.faq-details.bg-white {
+  border-bottom: none;
+  padding: 1rem 1.5rem;
+}
+
+details.faq-details.bg-white summary.text-base {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 0;
+}
+
+details.faq-details.bg-white summary.font-medium {
+  font-weight: 500;
+}
+
+details.faq-details.bg-white summary.text-slate-800 {
+  color: #1e293b;
+}
+
+details.faq-details.bg-white summary.text-base::after {
+  float: none;
+  flex-shrink: 0;
+  margin: 0.125rem 0 0;
+  color: #0d9488;
+}
+
+details.faq-details.bg-white p.text-sm {
+  margin: 0.75rem 0 0;
+  padding-right: 0;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #475569;
+  line-height: 1.625;
 }
 
 /* Footer */
@@ -2909,6 +3226,204 @@ body.tax-modal-open {
   margin-bottom: 2rem;
 }
 
+/* pricing.html — plan card + Subscribe utilities (no Tailwind build) */
+.pricing-full .price-card.rounded-xl {
+  border-radius: 0.75rem;
+}
+
+.pricing-full .price-card.shadow-sm {
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+.pricing-full .price-card.shadow-md {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.pricing-full .price-card.border {
+  border-style: solid;
+  border-width: 1px;
+}
+
+.pricing-full .price-card.border-slate-200 {
+  border-color: #e2e8f0;
+}
+
+.pricing-full .price-card.border-2 {
+  border-width: 2px;
+  border-style: solid;
+}
+
+.pricing-full .price-card.border-emerald-500 {
+  border-color: #10b981;
+}
+
+.pricing-full .price-card.featured.border-emerald-500 {
+  border-color: #10b981;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.pricing-full .text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.pricing-full .text-emerald-700 {
+  color: #047857;
+}
+
+.pricing-full .bg-emerald-100 {
+  background-color: #d1fae5;
+}
+
+.pricing-full .px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.pricing-full .py-0\.5 {
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+}
+
+.pricing-full .rounded-full {
+  border-radius: 9999px;
+}
+
+.pricing-full .mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.pricing-full .inline-block {
+  display: inline-block;
+}
+
+.pricing-full a.pricing-subscribe {
+  text-decoration: none;
+}
+
+.pricing-full a.pricing-subscribe.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.pricing-full a.pricing-subscribe.py-2\.5 {
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+}
+
+.pricing-full a.pricing-subscribe.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.pricing-full a.pricing-subscribe.w-full {
+  width: 100%;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.pricing-full a.pricing-subscribe.transition {
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.pricing-full a.pricing-subscribe.shadow-sm {
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+.pricing-full a.pricing-subscribe.bg-teal-400 {
+  background-color: #2dd4bf;
+  border: none;
+}
+
+.pricing-full a.pricing-subscribe.bg-teal-400:hover {
+  background-color: #5eead4;
+}
+
+.pricing-full a.pricing-subscribe span.text-slate-950 {
+  color: #020617;
+  opacity: 1;
+}
+
+.pricing-full a.pricing-subscribe span.text-slate-900 {
+  color: #0f172a;
+  opacity: 1;
+}
+
+.pricing-full a.pricing-subscribe span.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.pricing-full a.pricing-subscribe span.tracking-wide {
+  letter-spacing: 0.025em;
+}
+
+.pricing-full a.pricing-subscribe span.font-bold {
+  font-weight: 700;
+}
+
+.pricing-full a.pricing-subscribe span.font-semibold {
+  font-weight: 600;
+}
+
+.pricing-full a.pricing-subscribe.bg-white {
+  background-color: #fff;
+  border: 1px solid #cbd5e1;
+}
+
+.pricing-full a.pricing-subscribe.bg-white:hover {
+  background-color: #f8fafc;
+}
+
+.pricing-full a.pricing-subscribe.is-gated.bg-teal-400,
+.pricing-full a.pricing-subscribe.is-gated.bg-white {
+  opacity: 0.45;
+  cursor: not-allowed;
+  filter: grayscale(0.35);
+  box-shadow: none;
+  pointer-events: none;
+}
+
+.pricing-full a.pricing-subscribe.pricing-subscribe-active,
+.pricing-full a.pricing-subscribe.opacity-100 {
+  opacity: 1 !important;
+  filter: none !important;
+  cursor: pointer;
+  pointer-events: auto;
+  box-shadow: 0 1px 2px 0 rgba(15, 23, 42, 0.06);
+}
+
+.pricing-full a.pricing-subscribe.pricing-subscribe-active.bg-teal-400 {
+  background-color: #2dd4bf;
+  border: none;
+}
+
+.pricing-full a.pricing-subscribe.pricing-subscribe-active.bg-teal-400:hover {
+  background-color: #5eead4;
+}
+
+.pricing-full a.pricing-subscribe.pricing-subscribe-active.bg-white {
+  background-color: #fff;
+  border: 1px solid #cbd5e1;
+}
+
+.pricing-full a.pricing-subscribe.pricing-subscribe-active.bg-white:hover {
+  background-color: #f8fafc;
+}
+
+.pricing-full a.pricing-subscribe.pricing-subscribe-active span.text-slate-950 {
+  color: #020617 !important;
+  opacity: 1 !important;
+}
+
+.pricing-full a.pricing-subscribe.pricing-subscribe-active span.text-slate-900 {
+  color: #0f172a !important;
+  opacity: 1 !important;
+}
+
+.pricing-full a.pricing-subscribe.is-gated span {
+  opacity: 1;
+}
+
 .price-card ul {
   list-style: none;
   padding: 0;
@@ -2980,18 +3495,29 @@ body.tax-modal-open {
 .included-col ul {
   margin: 0;
   padding-left: 1.15rem;
-  color: #4a5568;
   font-size: 0.92rem;
+  color: #1e293b;
+  font-weight: 400;
+  line-height: 1.625;
 }
 
 .included-col li {
   margin-bottom: 0.4rem;
+  color: inherit;
 }
 
 .included-note {
   margin: 0.75rem 0 0;
   font-size: 0.85rem;
-  color: #718096;
+  color: #1e293b;
+  font-weight: 400;
+  line-height: 1.625;
+}
+
+.pricing-included .included-col ul.text-slate-800,
+.pricing-included .included-col li.text-slate-800,
+.pricing-included .included-note.text-slate-800 {
+  color: #1e293b;
 }
 
 /* Short pages — grow main content and center the panel (feedback, etc.) */
