@@ -285,6 +285,46 @@ body.door-page footer.site-footer {
     radial-gradient(circle at 78% 28%, rgba(88, 166, 255, 0.08) 0, transparent 38%);
 }
 
+.door-tester-announce {
+  margin: 0 0 1.35rem;
+  padding: 0 0 1.25rem;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  max-width: 36rem;
+}
+
+.door-tester-announce__headline {
+  margin: 0 0 0.4rem;
+  font-size: clamp(1.75rem, 3.6vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: #0a0a0a;
+}
+
+.door-tester-announce__subhead {
+  margin: 0 0 0.85rem;
+  font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+  font-weight: 600;
+  line-height: 1.35;
+  color: #0d4f4a;
+}
+
+.door-tester-announce__body {
+  margin: 0;
+}
+
+.door-tester-announce__body p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.55;
+  color: #475569;
+}
+
+.door-tester-announce__body p + p {
+  margin-top: 0.35rem;
+}
+
 .door-hero-eyebrow {
   display: inline-block;
   margin: 0 0 0.875rem;
